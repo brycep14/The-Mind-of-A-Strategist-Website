@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bryce Peterson | Museum of Thought</title>
+    <meta
+      name="description"
+      content="A minimalist editorial portfolio presenting strategic projects as exhibits in a museum of thought."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              paper: "#FAFAF7",
+              ink: "#111111",
+              olive: "#6B705C",
+              mist: "#ECE9E1",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            letterSpacing: {
+              curator: "0.18em",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="bg-paper text-ink antialiased">
+    <div id="root"></div>
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
