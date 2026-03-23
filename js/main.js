@@ -193,7 +193,9 @@ function renderNavbar(route) {
           data-menu-toggle
           type="button"
         >
-          Menu
+          <span class="mobile-menu-bar"></span>
+          <span class="mobile-menu-bar"></span>
+          <span class="mobile-menu-bar"></span>
         </button>
       </div>
       ${
