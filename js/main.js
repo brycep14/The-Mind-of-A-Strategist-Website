@@ -93,6 +93,7 @@ const navItems = [
 ];
 
 const root = document.getElementById("root");
+let mobileMenuOpen = false;
 
 function getRouteFromHash() {
   const hash = window.location.hash.replace(/^#/, "");
@@ -100,7 +101,13 @@ function getRouteFromHash() {
 }
 
 function navigate(route) {
+  mobileMenuOpen = false;
   window.location.hash = route;
+}
+
+function toggleMobileMenu() {
+  mobileMenuOpen = !mobileMenuOpen;
+  renderApp();
 }
 
 function sectionWrapper(content, options = {}) {
@@ -160,7 +167,7 @@ function renderNavbar(route) {
         <button class="font-serif text-lg tracking-[0.02em]" data-route="/" aria-label="Go to Entrance" type="button">
           Bryce Peterson
         </button>
-        <nav class="flex flex-wrap items-center justify-end gap-x-4 gap-y-2 text-[0.72rem] uppercase tracking-curator text-black/72 md:gap-x-8 md:text-sm md:normal-case md:tracking-normal">
+        <nav class="hidden flex-wrap items-center justify-end gap-x-4 gap-y-2 text-[0.72rem] uppercase tracking-curator text-black/72 md:flex md:gap-x-8 md:text-sm md:normal-case md:tracking-normal">
           ${navItems
             .map((item) => {
               const isCurrent =
@@ -179,7 +186,43 @@ function renderNavbar(route) {
             })
             .join("")}
         </nav>
+        <button
+          class="mobile-menu-toggle md:hidden"
+          aria-expanded="${mobileMenuOpen ? "true" : "false"}"
+          aria-label="Toggle navigation menu"
+          data-menu-toggle
+          type="button"
+        >
+          Menu
+        </button>
       </div>
+      ${
+        mobileMenuOpen
+          ? `
+            <div class="border-t border-black/5 md:hidden">
+              <nav class="mx-auto flex max-w-6xl flex-col px-6 py-4 text-[0.72rem] uppercase tracking-curator text-black/72">
+                ${navItems
+                  .map((item) => {
+                    const isCurrent =
+                      route === item.route || (item.route === "/gallery" && route.startsWith("/exhibit/"));
+
+                    return `
+                      <button
+                        class="mobile-nav-link"
+                        ${isCurrent ? 'aria-current="page"' : ""}
+                        data-route="${item.route}"
+                        type="button"
+                      >
+                        ${item.label}
+                      </button>
+                    `;
+                  })
+                  .join("")}
+              </nav>
+            </div>
+          `
+          : ""
+      }
     </header>
   `;
 }
@@ -543,6 +586,11 @@ function renderApp() {
   root.querySelectorAll("[data-route]").forEach((button) => {
     button.addEventListener("click", () => navigate(button.dataset.route));
   });
+
+  const menuToggle = root.querySelector("[data-menu-toggle]");
+  if (menuToggle) {
+    menuToggle.addEventListener("click", toggleMobileMenu);
+  }
 
   root.querySelectorAll("[data-scroll-target]").forEach((button) => {
     button.addEventListener("click", () => {
