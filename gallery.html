@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | Bryce Peterson</title>
+    <meta name="description" content="The collection of strategic exhibits in Bryce Peterson's Museum of Thought." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/rbk1jkj.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              paper: "#FAFAF7",
+              ink: "#2B2B2B",
+              charcoal: "#2B2B2B",
+              olive: "#6B705C",
+              mist: "#ECE9E1",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["ivypresto-display", "Playfair Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="bg-paper text-ink antialiased">
+    <div class="site-shell min-h-screen">
+      <header class="top-nav sticky top-0 z-50 border-b border-black/5">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
+          <a class="text-left font-serif text-xl tracking-[-0.01em] text-charcoal transition duration-700 hover:text-olive" href="index.html">Bryce Peterson</a>
+          <nav class="hidden items-center gap-8 text-sm text-charcoal/70 md:flex">
+            <a class="nav-link" href="index.html">Entrance</a>
+            <a class="nav-link" aria-current="page" href="gallery.html">Gallery</a>
+            <a class="nav-link" href="artist-statement.html">About the Artist</a>
+            <a class="nav-link" href="inquiries.html">Inquiries</a>
+          </nav>
+          <button class="mobile-menu-toggle md:hidden" aria-expanded="false" aria-label="Toggle navigation" data-menu-toggle type="button">
+            <span class="mobile-menu-bar"></span>
+            <span class="mobile-menu-bar"></span>
+            <span class="mobile-menu-bar"></span>
+          </button>
+        </div>
+        <div class="hidden border-t border-black/5 bg-paper/80 px-6 pb-5 pt-2 backdrop-blur md:hidden" data-mobile-menu>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="index.html">Entrance</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" aria-current="page" href="gallery.html">Gallery</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="artist-statement.html">About the Artist</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="inquiries.html">Inquiries</a>
+        </div>
+      </header>
+
+      <main class="page-enter">
+        <section class="gallery-section pt-8 md:pt-12" id="gallery-exhibits">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <div class="relative mb-8 md:mb-10">
+              <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">Gallery</p>
+              <h1 class="section-title font-serif text-charcoal">The Collection</h1>
+              <p class="mt-5 max-w-2xl text-base leading-8 text-charcoal/68 md:text-lg">
+                My thoughts as a strategist put on display. Click on a title to learn more about how I think through problems while putting an emphasis on the consumer.
+              </p>
+            </div>
+
+            <div class="grid gap-5 md:grid-cols-2">
+              <a class="featured-card w-full p-6 text-left md:p-8" href="exhibit-dove-campaign.html?from=gallery">
+                <div class="flex min-h-[220px] flex-col justify-between gap-8">
+                  <div class="space-y-5">
+                    <p class="eyebrow text-[0.72rem] font-medium uppercase text-olive/90">Exhibit</p>
+                    <h3 class="font-serif text-[1.9rem] leading-[1.12] text-charcoal md:text-[2.3rem]">How do we help men build real confidence in an AI-driven beauty culture?</h3>
+                  </div>
+                  <div class="flex items-end justify-between gap-6 text-sm text-charcoal/62 md:text-base">
+                    <p>Dove | 2026</p>
+                    <span class="hidden text-xs uppercase tracking-[0.2em] text-olive/70 md:block">Spec RFP Response</span>
+                  </div>
+                </div>
+              </a>
+
+              <a class="featured-card w-full p-6 text-left md:p-8" href="exhibit-thoughts-on-ai.html?from=gallery">
+                <div class="flex min-h-[220px] flex-col justify-between gap-8">
+                  <div class="space-y-5">
+                    <p class="eyebrow text-[0.72rem] font-medium uppercase text-olive/90">Exhibit</p>
+                    <h3 class="font-serif text-[1.9rem] leading-[1.12] text-charcoal md:text-[2.3rem]">How can I use AI to improve my work without losing my creativity?</h3>
+                  </div>
+                  <div class="flex items-end justify-between gap-6 text-sm text-charcoal/62 md:text-base">
+                    <p>Bryce Peterson | 2026</p>
+                    <span class="hidden text-xs uppercase tracking-[0.2em] text-olive/70 md:block">Thought Piece</span>
+                  </div>
+                </div>
+              </a>
+
+              <a class="featured-card w-full p-6 text-left md:p-8" href="exhibit-nba-x-philharmonic.html?from=gallery">
+                <div class="flex min-h-[220px] flex-col justify-between gap-8">
+                  <div class="space-y-5">
+                    <p class="eyebrow text-[0.72rem] font-medium uppercase text-olive/90">Exhibit</p>
+                    <h3 class="font-serif text-[1.9rem] leading-[1.12] text-charcoal md:text-[2.3rem]">How do we make watching the NBA feel worth the royal price?</h3>
+                  </div>
+                  <div class="flex items-end justify-between gap-6 text-sm text-charcoal/62 md:text-base">
+                    <p>NBA | 2026</p>
+                    <span class="hidden text-xs uppercase tracking-[0.2em] text-olive/70 md:block">Spec Collab</span>
+                  </div>
+                </div>
+              </a>
+
+              <a class="featured-card w-full p-6 text-left md:p-8" href="exhibit-making-complex-finance-feel-human.html?from=gallery">
+                <div class="flex min-h-[220px] flex-col justify-between gap-8">
+                  <div class="space-y-5">
+                    <p class="eyebrow text-[0.72rem] font-medium uppercase text-olive/90">Exhibit</p>
+                    <h3 class="font-serif text-[1.9rem] leading-[1.12] text-charcoal md:text-[2.3rem]">How do we get 1,000,000 people creating on the Nothing Phone 3?</h3>
+                  </div>
+                  <div class="flex items-end justify-between gap-6 text-sm text-charcoal/62 md:text-base">
+                    <p>Nothing | 2026</p>
+                    <span class="hidden text-xs uppercase tracking-[0.2em] text-olive/70 md:block">D&amp;AD</span>
+                  </div>
+                </div>
+              </a>
+
+              <a class="featured-card w-full p-6 text-left md:p-8" href="exhibit-helping-a-heritage-brand-matter-to-a-new-generation.html?from=gallery">
+                <div class="flex min-h-[220px] flex-col justify-between gap-8">
+                  <div class="space-y-5">
+                    <p class="eyebrow text-[0.72rem] font-medium uppercase text-olive/90">Exhibit</p>
+                    <h3 class="font-serif text-[1.9rem] leading-[1.12] text-charcoal md:text-[2.3rem]">How do we reverse the online narrative that Whiskas kills cats?</h3>
+                  </div>
+                  <div class="flex items-end justify-between gap-6 text-sm text-charcoal/62 md:text-base">
+                    <p>Whiskas | 2026</p>
+                    <span class="hidden text-xs uppercase tracking-[0.2em] text-olive/70 md:block">Young Ones</span>
+                  </div>
+                </div>
+              </a>
+
+              <a class="featured-card w-full p-6 text-left md:p-8" href="exhibit-turning-sustainability-from-claim-into-proof.html?from=gallery">
+                <div class="flex min-h-[220px] flex-col justify-between gap-8">
+                  <div class="space-y-5">
+                    <p class="eyebrow text-[0.72rem] font-medium uppercase text-olive/90">Exhibit</p>
+                    <h3 class="font-serif text-[1.9rem] leading-[1.12] text-charcoal md:text-[2.3rem]">How do we turn the new AskRalph AI into a go-to tool?</h3>
+                  </div>
+                  <div class="flex items-end justify-between gap-6 text-sm text-charcoal/62 md:text-base">
+                    <p>Ralph Lauren | 2025</p>
+                    <span class="hidden text-xs uppercase tracking-[0.2em] text-olive/70 md:block">Spec Campaign</span>
+                  </div>
+                </div>
+              </a>
+
+              <a class="featured-card w-full p-6 text-left md:p-8" href="exhibit-giving-a-fashion-launch-a-clear-cultural-angle.html?from=gallery">
+                <div class="flex min-h-[220px] flex-col justify-between gap-8">
+                  <div class="space-y-5">
+                    <p class="eyebrow text-[0.72rem] font-medium uppercase text-olive/90">Exhibit</p>
+                    <h3 class="font-serif text-[1.9rem] leading-[1.12] text-charcoal md:text-[2.3rem]">How do we revamp Penguin Bros brand strategy to bring it back to cultural relevance?</h3>
+                  </div>
+                  <div class="flex items-end justify-between gap-6 text-sm text-charcoal/62 md:text-base">
+                    <p>Penguin Bros | 2025</p>
+                    <span class="hidden text-xs uppercase tracking-[0.2em] text-olive/70 md:block">Spec Brand Strategy</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="relative mt-8 bg-paper/80 backdrop-blur-sm">
+        <div class="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 text-sm text-charcoal/60 md:flex-row md:items-center md:justify-between md:px-10">
+          <p>A gallery of thoughts that I brought to life with AI vibe coding.</p>
+          <p>© Bryce Peterson</p>
+        </div>
+      </footer>
+    </div>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

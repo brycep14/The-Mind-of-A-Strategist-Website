@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inquiries | Bryce Peterson</title>
+    <meta name="description" content="Direct contact information for Bryce Peterson, including email and LinkedIn." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/rbk1jkj.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              paper: "#FAFAF7",
+              ink: "#2B2B2B",
+              charcoal: "#2B2B2B",
+              olive: "#6B705C",
+              mist: "#ECE9E1",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["ivypresto-display", "Playfair Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="bg-paper text-ink antialiased">
+    <div class="site-shell min-h-screen">
+      <header class="top-nav sticky top-0 z-50 border-b border-black/5">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
+          <a class="text-left font-serif text-xl tracking-[-0.01em] text-charcoal transition duration-700 hover:text-olive" href="index.html">Bryce Peterson</a>
+          <nav class="hidden items-center gap-8 text-sm text-charcoal/70 md:flex">
+            <a class="nav-link" href="index.html">Entrance</a>
+            <a class="nav-link" href="gallery.html">Gallery</a>
+            <a class="nav-link" href="artist-statement.html">About the Artist</a>
+            <a class="nav-link" aria-current="page" href="inquiries.html">Inquiries</a>
+          </nav>
+          <button class="mobile-menu-toggle md:hidden" aria-expanded="false" aria-label="Toggle navigation" data-menu-toggle type="button">
+            <span class="mobile-menu-bar"></span>
+            <span class="mobile-menu-bar"></span>
+            <span class="mobile-menu-bar"></span>
+          </button>
+        </div>
+        <div class="hidden border-t border-black/5 bg-paper/80 px-6 pb-5 pt-2 backdrop-blur md:hidden" data-mobile-menu>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="index.html">Entrance</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="gallery.html">Gallery</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="artist-statement.html">About the Artist</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" aria-current="page" href="inquiries.html">Inquiries</a>
+        </div>
+      </header>
+
+      <main class="page-enter">
+        <section class="gallery-section pt-10 md:pt-16">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-4xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">Inquiries</p>
+              <h1 class="section-title font-serif text-charcoal">Please reach out and connect with me!</h1>
+            </div>
+
+            <div class="contact-display soft-panel max-w-2xl">
+              <div class="contact-placard">
+                <p class="contact-kicker">Direct Contact</p>
+                <div class="contact-link-list">
+                  <a class="contact-link-card" href="mailto:xcbryce.peterson@gmail.com">
+                    <span class="contact-link-label">Email</span>
+                    <span class="contact-link-value">xcbryce.peterson@gmail.com</span>
+                  </a>
+                  <a class="contact-link-card" href="https://www.linkedin.com/in/bryce-peterson14" target="_blank" rel="noreferrer">
+                    <span class="contact-link-label">LinkedIn</span>
+                    <span class="contact-link-value">www.linkedin.com/in/bryce-peterson14</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="relative mt-8 bg-paper/80 backdrop-blur-sm">
+        <div class="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 text-sm text-charcoal/60 md:flex-row md:items-center md:justify-between md:px-10">
+          <p>A gallery of thoughts that I brought to life with AI vibe coding.</p>
+          <p>© Bryce Peterson</p>
+        </div>
+      </footer>
+    </div>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

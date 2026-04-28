@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nothing Exhibit | Bryce Peterson</title>
+    <meta
+      name="description"
+      content="Exhibit page for Bryce Peterson's Nothing Phone 3 concept."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/rbk1jkj.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              paper: "#FAFAF7",
+              ink: "#2B2B2B",
+              charcoal: "#2B2B2B",
+              olive: "#6B705C",
+              mist: "#ECE9E1",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["ivypresto-display", "Playfair Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="bg-paper text-ink antialiased">
+    <div class="site-shell min-h-screen">
+      <header class="top-nav sticky top-0 z-50 border-b border-black/5">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
+          <a
+            class="text-left font-serif text-xl tracking-[-0.01em] text-charcoal transition duration-700 hover:text-olive"
+            href="index.html"
+          >
+            Bryce Peterson
+          </a>
+
+          <nav class="hidden items-center gap-8 text-sm text-charcoal/70 md:flex">
+            <a class="nav-link" href="index.html">Entrance</a>
+            <a class="nav-link" aria-current="page" href="gallery.html">Gallery</a>
+            <a class="nav-link" href="artist-statement.html">About the Artist</a>
+            <a class="nav-link" href="inquiries.html">Inquiries</a>
+          </nav>
+
+          <button
+            class="mobile-menu-toggle md:hidden"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            data-menu-toggle
+            type="button"
+          >
+            <span class="mobile-menu-bar"></span>
+            <span class="mobile-menu-bar"></span>
+            <span class="mobile-menu-bar"></span>
+          </button>
+        </div>
+
+        <div
+          class="hidden border-t border-black/5 bg-paper/80 px-6 pb-5 pt-2 backdrop-blur md:hidden"
+          data-mobile-menu
+        >
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="index.html">Entrance</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" aria-current="page" href="gallery.html">Gallery</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="artist-statement.html">About the Artist</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="inquiries.html">Inquiries</a>
+        </div>
+      </header>
+
+      <main class="page-enter">
+        <section class="gallery-section pt-10 md:pt-16">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <a class="exhibit-top-back" data-back-link href="gallery.html#gallery-exhibits">← Back to Gallery</a>
+            <div class="exhibit-title-wall relative mb-10 md:mb-14">
+              <div class="exhibit-title-copy">
+                <p class="eyebrow mb-5 text-[0.72rem] font-medium uppercase text-olive/90">Title Wall</p>
+                <h1 class="exhibit-title font-serif text-[clamp(42px,6vw,72px)] leading-[1.1] text-charcoal">
+                  How do we get 1,000,000 people creating on the Nothing Phone 3?
+                </h1>
+                <p class="mt-6 text-sm uppercase tracking-[0.18em] text-charcoal/55">
+                  Nothing | 2026 | D&amp;AD
+                </p>
+              </div>
+              <div class="exhibit-title-frame" aria-hidden="true">
+                <img src="photos/hero-background.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-2">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-4xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Context</h2>
+            </div>
+            <p class="text-base leading-8 text-charcoal/72 md:text-lg md:leading-9">
+              Nothing has built a strong design-led identity, but reaching a million creators requires the phone to become a
+              tool people actively make with, not just admire.
+            </p>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-4xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Key Research</h2>
+            </div>
+            <p class="text-base leading-8 text-charcoal/72 md:text-lg md:leading-9">
+              Use this section for research on creator habits, mobile-first making, social expression, and what makes a
+              device feel like part of someone's creative identity.
+            </p>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-4xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Insight</h2>
+            </div>
+            <div class="insight-block p-8 pl-10 md:p-10 md:pl-14">
+              <p class="font-serif text-[1.9rem] leading-tight text-charcoal md:text-[2.5rem]">
+                People do not become creators because a tool is powerful. They become creators when a tool makes expression
+                feel immediate, visible, and worth sharing.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-4xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Idea</h2>
+            </div>
+            <p class="text-base leading-8 text-charcoal/72 md:text-lg md:leading-9">
+              Position Phone 3 as a creative catalyst, building a campaign that turns everyday users into visible makers and
+              makes creation itself feel like the product story.
+            </p>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Execution</h2>
+            </div>
+            <div class="grid gap-5 md:grid-cols-3">
+              <div class="process-panel p-6 md:p-7">
+                <p class="eyebrow mb-4 text-[0.68rem] font-medium uppercase text-olive/85">Study 01</p>
+                <p class="text-sm leading-7 text-charcoal/68 md:text-base md:leading-8">
+                  Platform ideas that invite people to create, remix, and publish directly from the device.
+                </p>
+              </div>
+              <div class="process-panel p-6 md:p-7">
+                <p class="eyebrow mb-4 text-[0.68rem] font-medium uppercase text-olive/85">Study 02</p>
+                <p class="text-sm leading-7 text-charcoal/68 md:text-base md:leading-8">
+                  Messaging that reframes specs as creative possibilities instead of engineering brag points.
+                </p>
+              </div>
+              <div class="process-panel p-6 md:p-7">
+                <p class="eyebrow mb-4 text-[0.68rem] font-medium uppercase text-olive/85">Study 03</p>
+                <p class="text-sm leading-7 text-charcoal/68 md:text-base md:leading-8">
+                  Creator partnerships and challenges designed to scale identity, not just awareness.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-4xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Reflection</h2>
+            </div>
+            <div class="relative rounded-[1.8rem] bg-white/25 p-8 shadow-[0_12px_32px_rgba(0,0,0,0.04)] md:p-10">
+              <p class="text-base leading-8 text-charcoal/72 md:text-lg md:leading-9">
+                This exhibit is really about turning tech enthusiasm into creative momentum people can see themselves inside.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <div class="flex flex-col gap-5 border-t border-black/10 pt-8 text-sm uppercase tracking-[0.18em] text-olive md:flex-row md:items-center md:justify-between">
+              <a class="text-left transition duration-500 hover:text-charcoal" data-back-link href="gallery.html#gallery-exhibits">← Back to Gallery</a>
+              <div class="flex flex-col gap-5 md:flex-row md:gap-10">
+                <a class="text-left transition duration-500 hover:text-charcoal" data-preserve-source href="exhibit-giving-a-fashion-launch-a-clear-cultural-angle.html">Previous Exhibit</a>
+                <a class="text-left transition duration-500 hover:text-charcoal" data-preserve-source href="exhibit-helping-a-heritage-brand-matter-to-a-new-generation.html">Next Exhibit →</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="relative mt-8 bg-paper/80 backdrop-blur-sm">
+        <div class="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 text-sm text-charcoal/60 md:flex-row md:items-center md:justify-between md:px-10">
+          <p>A gallery of thoughts that I brought to life with AI vibe coding.</p>
+          <p>© Bryce Peterson</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

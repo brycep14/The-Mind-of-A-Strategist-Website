@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About the Artist | Bryce Peterson</title>
+    <meta name="description" content="About the artist, problem-solving process, and side projects for Bryce Peterson's Museum of Thought." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/rbk1jkj.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              paper: "#FAFAF7",
+              ink: "#2B2B2B",
+              charcoal: "#2B2B2B",
+              olive: "#6B705C",
+              mist: "#ECE9E1",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["ivypresto-display", "Playfair Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="bg-paper text-ink antialiased">
+    <div class="site-shell min-h-screen">
+      <header class="top-nav sticky top-0 z-50 border-b border-black/5">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
+          <a class="text-left font-serif text-xl tracking-[-0.01em] text-charcoal transition duration-700 hover:text-olive" href="index.html">Bryce Peterson</a>
+          <nav class="hidden items-center gap-8 text-sm text-charcoal/70 md:flex">
+            <a class="nav-link" href="index.html">Entrance</a>
+            <a class="nav-link" href="gallery.html">Gallery</a>
+            <a class="nav-link" aria-current="page" href="artist-statement.html">About the Artist</a>
+            <a class="nav-link" href="inquiries.html">Inquiries</a>
+          </nav>
+          <button class="mobile-menu-toggle md:hidden" aria-expanded="false" aria-label="Toggle navigation" data-menu-toggle type="button">
+            <span class="mobile-menu-bar"></span>
+            <span class="mobile-menu-bar"></span>
+            <span class="mobile-menu-bar"></span>
+          </button>
+        </div>
+        <div class="hidden border-t border-black/5 bg-paper/80 px-6 pb-5 pt-2 backdrop-blur md:hidden" data-mobile-menu>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="index.html">Entrance</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="gallery.html">Gallery</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" aria-current="page" href="artist-statement.html">About the Artist</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="inquiries.html">Inquiries</a>
+        </div>
+      </header>
+
+      <main class="page-enter">
+        <section class="gallery-section pt-10 md:pt-16">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">About the Artist</p>
+              <h1 class="section-title font-serif text-charcoal">How I work through a problem</h1>
+              <p class="mt-5 max-w-2xl text-base leading-8 text-charcoal/68 md:text-lg">
+                A museum-style map of the way I move from instinct to research to insight, with a few personal artifacts around the edges.
+              </p>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-[1.18fr_0.82fr] md:items-start">
+              <div class="thinking-diagram-wrap soft-panel">
+                <div class="thinking-diagram-header">
+                  <p class="eyebrow mb-3 text-[0.68rem] font-medium uppercase text-olive/85">Artist's Process</p>
+                  <p class="text-sm leading-7 text-charcoal/66 md:text-base md:leading-8">
+                    The path bends, loops, and doubles back. Insight only counts when the research still holds after the return trip.
+                  </p>
+                </div>
+                <ol class="thinking-diagram" aria-label="Bryce Peterson problem solving process">
+                  <li class="process-step step-problem">
+                    <span class="process-number">01</span>
+                    <h2 class="process-title">Find a problem</h2>
+                  </li>
+                  <li class="process-step step-gut">
+                    <span class="process-number">02</span>
+                    <h2 class="process-title">Gut reaction solution</h2>
+                  </li>
+                  <li class="process-step step-execution">
+                    <span class="process-number">03</span>
+                    <h2 class="process-title">Imagine execution</h2>
+                  </li>
+                  <li class="process-step turning-point step-backward-one">
+                    <span class="process-number">04</span>
+                    <h2 class="process-title">Work backwards toward possible insights</h2>
+                  </li>
+                  <li class="process-step step-primary">
+                    <span class="process-number">05</span>
+                    <h2 class="process-title">Conduct primary research</h2>
+                  </li>
+                  <li class="process-step step-themes">
+                    <span class="process-number">06</span>
+                    <h2 class="process-title">Explore themes and new angles</h2>
+                  </li>
+                  <li class="process-step step-secondary">
+                    <span class="process-number">07</span>
+                    <h2 class="process-title">Support or disprove with secondary research</h2>
+                  </li>
+                  <li class="process-step insight-step step-insight">
+                    <span class="process-number">08</span>
+                    <h2 class="process-title">Identify insights</h2>
+                  </li>
+                  <li class="process-step turning-point step-backward-two">
+                    <span class="process-number">09</span>
+                    <h2 class="process-title">Work backwards again to confirm the research lines up</h2>
+                  </li>
+                  <li class="process-step step-creative">
+                    <span class="process-number">10</span>
+                    <h2 class="process-title">Use the insight to spark creative thought starters</h2>
+                  </li>
+                </ol>
+              </div>
+              <div class="space-y-7">
+                <div class="soft-panel p-7 md:p-9">
+                  <p class="text-base leading-8 text-charcoal/72 md:text-lg md:leading-9">
+                    I’m Bryce Peterson, a strategist and storyteller interested in the ideas that solve problems people face. I am the kind of person who believes work can always be improved. Sometimes that means crushing long hours and hitting project overhauls, but seeing the improved product always makes it worth it.  
+                  </p>
+                </div>
+                <div class="soft-panel p-7 md:p-9">
+                  <h2 class="mb-4 font-serif text-[2rem] leading-tight text-charcoal">Philosophy</h2>
+                  <p class="text-base leading-8 text-charcoal/72 md:text-lg md:leading-9">
+                    I believe that strategy is the unseen building block of all good ideas. The best creative ideas are
+                    built on strategy whether people realize it or not, and the process gets stronger when instinct and
+                    research are willing to challenge each other.
+                  </p>
+                </div>
+                <div class="soft-panel p-7 md:p-9">
+                  <h2 class="mb-4 font-serif text-[2rem] leading-tight text-charcoal">Vision</h2>
+                  <p class="text-base leading-8 text-charcoal/72 md:text-lg md:leading-9">
+                    I want to make work that inspires. I want to create ads that solve problems while encouraging growth and improvement. I want to leave a positive impact on the world. I want to work hard and see that effort pay off. And an award or two wouldn’t hurt.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-artist-gallery mt-14 md:mt-16">
+              <div class="relative mb-8 md:mb-10">
+                <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">Beyond the Brief</p>
+                <h2 class="section-title font-serif text-charcoal">Hobbies, side projects, and the other rooms I keep wandering into</h2>
+                <p class="mt-5 max-w-2xl text-base leading-8 text-charcoal/68 md:text-lg">
+                  A few quieter obsessions that keep feeding the work from the side.
+                </p>
+              </div>
+
+              <div class="gallery-glimpse">
+                <div class="gallery-glimpse-grid">
+                  <div class="gallery-glimpse-piece">
+                    <div class="glimpse-frame">
+                      <img class="glimpse-art" src="images/thewavepainting.jpg" alt="Wave painting study" loading="lazy" decoding="async" />
+                    </div>
+                    <div class="glimpse-label glimpse-label-small">
+                      <p class="glimpse-meta">Side Project 01</p>
+                      <h3 class="glimpse-title">Painting Studies</h3>
+                      <p class="glimpse-description">A reminder that mood, interpretation, and texture can carry just as much meaning as explanation.</p>
+                    </div>
+                  </div>
+
+                  <div class="gallery-glimpse-piece">
+                    <div class="glimpse-frame">
+                      <img class="glimpse-art" src="photos/basketballwithframe.png" alt="Basketball portrait" loading="lazy" decoding="async" />
+                    </div>
+                    <div class="glimpse-label glimpse-label-small">
+                      <p class="glimpse-meta">Hobby 02</p>
+                      <h3 class="glimpse-title">Basketball</h3>
+                      <p class="glimpse-description">Competition keeps me honest about repetition, adjustment, and what improvement actually demands.</p>
+                    </div>
+                  </div>
+
+                  <div class="gallery-glimpse-piece">
+                    <div class="glimpse-frame">
+                      <img class="glimpse-art" src="images/sweater2.svg" alt="Olive sweater" loading="lazy" decoding="async" />
+                    </div>
+                    <div class="glimpse-label glimpse-label-small">
+                      <p class="glimpse-meta">Archive 03</p>
+                      <h3 class="glimpse-title">Thrift Finds</h3>
+                      <p class="glimpse-description">Proof that taste often comes from noticing what others skip past and giving it a second life.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="relative mt-8 bg-paper/80 backdrop-blur-sm">
+        <div class="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 text-sm text-charcoal/60 md:flex-row md:items-center md:justify-between md:px-10">
+          <p>A gallery of thoughts that I brought to life with AI vibe coding.</p>
+          <p>© Bryce Peterson</p>
+        </div>
+      </footer>
+    </div>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whiskas Exhibit | Bryce Peterson</title>
+    <meta
+      name="description"
+      content="Strategy case study for Bryce Peterson's Whiskas Let Them Speak campaign."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/rbk1jkj.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              paper: "#FAFAF7",
+              ink: "#2B2B2B",
+              charcoal: "#2B2B2B",
+              olive: "#6B705C",
+              mist: "#ECE9E1",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["ivypresto-display", "Playfair Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="bg-paper text-ink antialiased">
+    <div class="site-shell min-h-screen">
+      <header class="top-nav sticky top-0 z-50 border-b border-black/5">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
+          <a
+            class="text-left font-serif text-xl tracking-[-0.01em] text-charcoal transition duration-700 hover:text-olive"
+            href="index.html"
+          >
+            Bryce Peterson
+          </a>
+
+          <nav class="hidden items-center gap-8 text-sm text-charcoal/70 md:flex">
+            <a class="nav-link" href="index.html">Entrance</a>
+            <a class="nav-link" aria-current="page" href="gallery.html">Gallery</a>
+            <a class="nav-link" href="artist-statement.html">About the Artist</a>
+            <a class="nav-link" href="inquiries.html">Inquiries</a>
+          </nav>
+
+          <button
+            class="mobile-menu-toggle md:hidden"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            data-menu-toggle
+            type="button"
+          >
+            <span class="mobile-menu-bar"></span>
+            <span class="mobile-menu-bar"></span>
+            <span class="mobile-menu-bar"></span>
+          </button>
+        </div>
+
+        <div
+          class="hidden border-t border-black/5 bg-paper/80 px-6 pb-5 pt-2 backdrop-blur md:hidden"
+          data-mobile-menu
+        >
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="index.html">Entrance</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" aria-current="page" href="gallery.html">Gallery</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="artist-statement.html">About the Artist</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="inquiries.html">Inquiries</a>
+        </div>
+      </header>
+
+      <main class="page-enter">
+        <section class="gallery-section pt-10 md:pt-16">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <a class="exhibit-top-back" data-back-link href="gallery.html#gallery-exhibits">← Back to Gallery</a>
+            <div class="exhibit-title-wall relative mb-10 md:mb-14">
+              <div class="exhibit-title-copy">
+                <p class="eyebrow mb-5 text-[0.72rem] font-medium uppercase text-olive/90">Title Wall</p>
+                <h1 class="exhibit-title font-serif text-[clamp(42px,6vw,72px)] leading-[1.1] text-charcoal">
+                  How do we reverse the online narrative that Whiskas kills cats?
+                </h1>
+                <h2 class="mt-4 font-serif text-[1.45rem] leading-tight text-charcoal md:text-[1.8rem]">
+                  Whiskas: Let Them Speak
+                </h2>
+                <p class="mt-4 max-w-2xl text-base leading-8 text-charcoal/68 md:text-lg">
+                  A campaign strategy for Whiskas that flips online misinformation by turning the most trusted voice in cat food into the hero: the cat.
+                </p>
+                <p class="mt-5 text-sm uppercase tracking-[0.18em] text-charcoal/55">
+                  Whiskas | 2026 | Young Ones
+                </p>
+              </div>
+              <div class="exhibit-title-frame" aria-hidden="true">
+                <img src="images/Whiskasdeck/whiskaspictureframe.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-2">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-5xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Campaign Context</h2>
+            </div>
+            <div class="process-panel whiskas-context-panel p-6 md:p-8">
+              <p class="text-base leading-8 text-charcoal/72 md:text-lg md:leading-9">
+                Whiskas is being labeled online as a "cat killer" while premium and organic cat food brands dominate the conversation with health-driven buzzwords. Younger cat parents are navigating a confusing category filled with claims about ingredients, nutrition, quality, and safety.
+              </p>
+              <p class="mt-4 text-base leading-8 text-charcoal/72 md:text-lg md:leading-9">
+                The problem is not just that people misunderstand Whiskas. It is that young cat owners are overwhelmed by too many outside voices telling them what is best for their cat.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Key Research</h2>
+            </div>
+            <div class="research-group-grid">
+              <article class="process-panel whiskas-research-panel p-6 md:p-7">
+                <p class="eyebrow mb-4 text-[0.68rem] font-medium uppercase text-olive/85">Category &amp; Brand Context</p>
+                <ul class="case-list whiskas-list">
+                  <li>Whiskas is often perceived as the "McDonald's of cat food."</li>
+                  <li>Premium and organic brands have raised expectations around ingredients and quality.</li>
+                  <li>Health-driven language in the category has become confusing and difficult to interpret.</li>
+                  <li>Whiskas is being compared negatively to more expensive, refined brands.</li>
+                  <li>Whiskas is perceived as convenient and affordable, but not always as credible or healthy.</li>
+                  <li>The internet contains negative discussion around Whiskas, including claims that it harms cats.</li>
+                </ul>
+              </article>
+              <article class="process-panel whiskas-research-panel p-6 md:p-7">
+                <p class="eyebrow mb-4 text-[0.68rem] font-medium uppercase text-olive/85">Audience Context</p>
+                <ul class="case-list whiskas-list">
+                  <li>The audience is young cat parents ages 16-30, called "The Cat Whisperers."</li>
+                  <li>They are digitally savvy and culturally aware.</li>
+                  <li>They are first-time and experienced cat owners.</li>
+                  <li>They are emotionally bonded to their cats.</li>
+                  <li>They turn to social media and peer recommendations.</li>
+                  <li>They treat their cats like family or children.</li>
+                  <li>They are part of online cat meme culture.</li>
+                  <li>They feel overwhelmed by the amount of advice surrounding cat food and cat health.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Supporting Proof</h2>
+            </div>
+            <div class="proof-grid">
+              <article class="proof-card">
+                <span>8/10</span>
+                <p>cats prefer Whiskas.</p>
+              </article>
+              <article class="proof-card">
+                <span>Taste</span>
+                <p>is a major driver of cat food choice.</p>
+              </article>
+              <article class="proof-card">
+                <span>Enjoyment</span>
+                <p>Whiskas is a brand cats genuinely enjoy.</p>
+              </article>
+              <article class="proof-card">
+                <span>Culture</span>
+                <p>Cats dominate meme culture online, making them a natural voice for social-first creative.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-5xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">The Strategic Path</h2>
+            </div>
+            <div class="whiskas-path-flow">
+              <article class="strategy-path-card whiskas-path-card">
+                <p class="eyebrow text-[0.66rem] font-medium uppercase text-olive/85">The Problem</p>
+                <h3 class="font-serif text-[1.55rem] leading-tight text-charcoal md:text-[1.9rem]">Young cat parents feel overwhelmed by conflicting advice about what is best for their cats.</h3>
+              </article>
+              <article class="strategy-path-card whiskas-path-card">
+                <p class="eyebrow text-[0.66rem] font-medium uppercase text-olive/85">Consumer Insight</p>
+                <h3 class="font-serif text-[1.55rem] leading-tight text-charcoal md:text-[1.9rem]">Young cat parents are surrounded by advice, but the voice they care about most is the one they imagine their cat would give them.</h3>
+              </article>
+              <article class="strategy-path-card whiskas-path-card">
+                <p class="eyebrow text-[0.66rem] font-medium uppercase text-olive/85">Brand Insight</p>
+                <h3 class="font-serif text-[1.55rem] leading-tight text-charcoal md:text-[1.9rem]">Whiskas can cut through the noise by letting cats "speak" for the food they already love.</h3>
+              </article>
+              <article class="strategy-path-card strategy-path-card-dark whiskas-strategy-card">
+                <p class="eyebrow text-[0.66rem] font-medium uppercase text-white/70">Strategy</p>
+                <h3 class="font-serif text-[1.55rem] leading-tight text-white md:text-[1.9rem]">Encourage Cat Whisperers to listen to their cats when approaching pet health in an overwhelming category, repositioning Whiskas as a safe, trusted choice that supports both cat wellbeing and cat enjoyment.</h3>
+              </article>
+              <article class="strategy-line-card whiskas-idea-card">
+                <p class="eyebrow text-[0.66rem] font-medium uppercase text-white/65">Strategic Idea</p>
+                <h3 class="font-serif text-[2.1rem] leading-none text-white md:text-[3.2rem]">Let Them Speak</h3>
+                <p class="mt-4 max-w-3xl text-sm leading-7 text-white/72 md:text-base md:leading-8">
+                  Instead of letting the internet decide what cats need, Whiskas lets cats "say" what they love through purrs, meows, memes, captions, and social participation.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-5xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Think / Feel / Do</h2>
+            </div>
+            <div class="think-feel-do-grid">
+              <article class="whiskas-mini-card">
+                <h3 class="font-serif text-[1.45rem] leading-tight text-charcoal">Think</h3>
+                <p>Reconsider negative opinions about Whiskas.</p>
+              </article>
+              <article class="whiskas-mini-card">
+                <h3 class="font-serif text-[1.45rem] leading-tight text-charcoal">Feel</h3>
+                <p>Relief from confusion and overwhelm in navigating cat nutrition.</p>
+              </article>
+              <article class="whiskas-mini-card">
+                <h3 class="font-serif text-[1.45rem] leading-tight text-charcoal">Do</h3>
+                <p>Let their cat's reaction guide their food choice and reconsider Whiskas.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Creative Executions</h2>
+            </div>
+            <div class="whiskas-execution-grid" data-whiskas-executions></div>
+            <div class="mt-6 whiskas-supporting-grid" data-whiskas-supporting-executions></div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-4xl px-6 md:px-10">
+            <div class="whiskas-brief-cta">
+              <h2 class="font-serif text-[1.7rem] leading-tight text-charcoal md:text-[2.1rem]">Want to explore the full thinking behind this campaign?</h2>
+              <p class="mt-3 text-sm leading-7 text-charcoal/64 md:text-base md:leading-8">
+                The creative executions above open the saved campaign assets. A public brief link can be added here when available.
+              </p>
+              <span class="deck-link-button brief-link-disabled mt-5" aria-disabled="true">View Full Brief →</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <div class="flex flex-col gap-5 border-t border-black/10 pt-8 text-sm uppercase tracking-[0.18em] text-olive md:flex-row md:items-center md:justify-between">
+              <a class="text-left transition duration-500 hover:text-charcoal" data-back-link href="gallery.html#gallery-exhibits">← Back to Gallery</a>
+              <div class="flex flex-col gap-5 md:flex-row md:gap-10">
+                <a class="text-left transition duration-500 hover:text-charcoal" data-preserve-source href="exhibit-making-complex-finance-feel-human.html">Previous Exhibit</a>
+                <a class="text-left transition duration-500 hover:text-charcoal" data-preserve-source href="exhibit-turning-sustainability-from-claim-into-proof.html">Next Exhibit →</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="relative mt-8 bg-paper/80 backdrop-blur-sm">
+        <div class="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 text-sm text-charcoal/60 md:flex-row md:items-center md:justify-between md:px-10">
+          <p>A gallery of thoughts that I brought to life with AI vibe coding.</p>
+          <p>© Bryce Peterson</p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      window.whiskasExecutions = [
+        {
+          title: 'Static Post Series: "Let Them Speak"',
+          role: "Make Whiskas feel like the bridge of communication between cat and owner.",
+          description: 'A multi-post social series showing cats eating Whiskas and "speaking" in words cat owners recognize.',
+          tone: "Friendly, cute, trustworthy.",
+          label: "Multi-post series",
+          format: "Static Series",
+          asset: "images/Whiskasdeck/LetThemSpeak-StaticPostSeries.pdf",
+          image: "images/Whiskasdeck/LetThemSpeak-StaticPostSeries.pdf.png"
+        },
+        {
+          title: "Cat Filter Execution",
+          role: 'Turn the "Let Them Speak" idea into an interactive social tool.',
+          description: 'A playful filter that "translates" what your cat is thinking, helping bridge communication between owner and cat.',
+          tone: "Silly, light-hearted, participatory.",
+          label: "Interactive filter concept",
+          format: "Filter",
+          asset: "images/Whiskasdeck/v2-CatFilter-Whiskas.pdf",
+          image: "images/Whiskasdeck/v2-CatFilter-Whiskas.pdf.png"
+        },
+        {
+          title: "Interactive Cat-ption Contest",
+          role: "Let the audience participate in the cat voice idea.",
+          description: "Social story prompts invite people to caption what cats are saying. The funniest responses can become static posts.",
+          tone: "Playful, participatory, meme-native.",
+          label: "Story sequence",
+          format: "Stories",
+          asset: "images/Whiskasdeck/CatptionContest-Stories-Whiskas.pdf",
+          image: "images/Whiskasdeck/CatptionContest-Stories-Whiskas.pdf.png"
+        }
+      ];
+
+      window.whiskasSupportingExecutions = [
+        {
+          title: "If Cats Could Speak Carousel",
+          description: "An Instagram carousel telling the story of what cats would say really killed them if they could speak.",
+          label: "Carousel post",
+          format: "Carousel",
+          asset: "images/Whiskasdeck/Carousel-WhiskasFinalized.pdf",
+          image: "images/Whiskasdeck/Carousel-WhiskasFinalized.pdf.png"
+        }
+      ];
+    </script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
