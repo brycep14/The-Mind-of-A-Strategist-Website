@@ -9,6 +9,20 @@ if (menuToggle && mobileMenu) {
   });
 }
 
+const processToggle = document.querySelector("[data-process-toggle]");
+const processChart = document.querySelector("#artist-process-chart");
+
+if (processToggle && processChart) {
+  processToggle.addEventListener("click", () => {
+    const isExpanded = processToggle.getAttribute("aria-expanded") === "true";
+    const nextExpanded = !isExpanded;
+
+    processToggle.setAttribute("aria-expanded", String(nextExpanded));
+    processToggle.textContent = nextExpanded ? "Hide How I Think Chart" : "View How I Think Chart";
+    processChart.hidden = !nextExpanded;
+  });
+}
+
 const pageParams = new URLSearchParams(window.location.search);
 const source = pageParams.get("from");
 
@@ -365,6 +379,122 @@ if (doveGallery && Array.isArray(window.doveGallery)) {
               class="dove-gallery-image"
               src="images/Dovedeck/${safeFilename}"
               alt="Dove strategy slide: ${safeCaption}"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+          <figcaption>${safeCaption}</figcaption>
+        </figure>
+      `;
+    })
+    .join("");
+}
+
+const redbubbleStats = document.querySelector("[data-redbubble-stats]");
+
+if (redbubbleStats && Array.isArray(window.redbubbleStats)) {
+  redbubbleStats.innerHTML = window.redbubbleStats
+    .map(({ value, label }) => {
+      const safeValue = escapeHTML(value);
+      const safeLabel = escapeHTML(label);
+
+      return `
+        <article class="redbubble-stat-card">
+          <span>${safeValue}</span>
+          <p>${safeLabel}</p>
+        </article>
+      `;
+    })
+    .join("");
+}
+
+const redbubbleQuotes = document.querySelector("[data-redbubble-quotes]");
+
+if (redbubbleQuotes && Array.isArray(window.redbubbleQuotes)) {
+  redbubbleQuotes.innerHTML = window.redbubbleQuotes
+    .map(({ quote, source }) => {
+      const safeQuote = escapeHTML(quote);
+      const safeSource = escapeHTML(source);
+
+      return `
+        <figure class="redbubble-quote-card">
+          <blockquote>${safeQuote}</blockquote>
+          <figcaption>${safeSource}</figcaption>
+        </figure>
+      `;
+    })
+    .join("");
+}
+
+const redbubbleExecutions = document.querySelector("[data-redbubble-executions]");
+
+if (redbubbleExecutions && Array.isArray(window.redbubbleExecutions)) {
+  redbubbleExecutions.innerHTML = window.redbubbleExecutions
+    .map(({ title, role, description, examples, image }) => {
+      const safeTitle = escapeHTML(title);
+      const safeRole = escapeHTML(role);
+      const safeDescription = escapeHTML(description);
+      const safeImage = escapeHTML(image);
+      const exampleMarkup = Array.isArray(examples) && examples.length
+        ? `<div class="redbubble-example-lines">${examples.map((example) => `<span>${escapeHTML(example)}</span>`).join("")}</div>`
+        : "";
+
+      return `
+        <article class="redbubble-execution-card">
+          <img
+            class="redbubble-execution-image"
+            src="${safeImage}"
+            alt="Redbubble creative execution page: ${safeTitle}"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="redbubble-execution-copy">
+            <h3>${safeTitle}</h3>
+            <p><strong>Role:</strong> ${safeRole}</p>
+            <p>${safeDescription}</p>
+            ${exampleMarkup}
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+}
+
+const redbubbleBudget = document.querySelector("[data-redbubble-budget]");
+
+if (redbubbleBudget && Array.isArray(window.redbubbleBudget)) {
+  redbubbleBudget.innerHTML = window.redbubbleBudget
+    .map(({ channel, amount, share }) => {
+      const safeChannel = escapeHTML(channel);
+      const safeAmount = escapeHTML(amount);
+      const safeShare = escapeHTML(share);
+
+      return `
+        <article class="redbubble-budget-card">
+          <span>${safeShare}</span>
+          <h3>${safeChannel}</h3>
+          <p>${safeAmount}</p>
+        </article>
+      `;
+    })
+    .join("");
+}
+
+const redbubbleGallery = document.querySelector("[data-redbubble-gallery]");
+
+if (redbubbleGallery && Array.isArray(window.redbubbleGallery)) {
+  redbubbleGallery.innerHTML = window.redbubbleGallery
+    .map(({ filename, caption }) => {
+      const safeFilename = escapeHTML(filename);
+      const safeCaption = escapeHTML(caption);
+
+      return `
+        <figure class="redbubble-gallery-card">
+          <a href="images/RedBubbledeck/${safeFilename}" target="_blank" rel="noreferrer">
+            <img
+              class="redbubble-gallery-image"
+              src="images/RedBubbledeck/${safeFilename}"
+              alt="Redbubble campaign book page: ${safeCaption}"
               loading="lazy"
               decoding="async"
             />

@@ -318,6 +318,23 @@ body::after {
   align-items: center;
 }
 
+.hobby-link-card {
+  color: inherit;
+  text-decoration: none;
+  transition: transform 500ms ease, filter 500ms ease;
+}
+
+.hobby-link-card:hover,
+.hobby-link-card:focus-visible {
+  transform: translateY(-4px);
+  filter: saturate(1.04);
+}
+
+.hobby-link-card:focus-visible {
+  outline: 2px solid rgba(107, 112, 92, 0.56);
+  outline-offset: 0.55rem;
+}
+
 .gallery-glimpse-grid {
   display: grid;
   gap: 1.9rem 1.6rem;
@@ -965,17 +982,6 @@ body::after {
   display: grid;
 }
 
-.whiskas-brief-cta {
-  border-radius: 1.45rem;
-  padding: 1.45rem;
-  background:
-    linear-gradient(135deg, rgba(255, 248, 224, 0.56), rgba(250, 250, 247, 0.38)),
-    rgba(250, 250, 247, 0.44);
-  box-shadow:
-    inset 0 0 0 1px rgba(176, 126, 38, 0.12),
-    0 12px 24px rgba(92, 66, 22, 0.04);
-}
-
 .nba-context-panel,
 .nba-creative-panel,
 .nba-strategy-panel {
@@ -1604,6 +1610,332 @@ body::after {
   color: rgba(43, 43, 43, 0.56);
 }
 
+.redbubble-context-panel,
+.redbubble-strategy-panel,
+.redbubble-creative-panel {
+  background:
+    linear-gradient(135deg, rgba(255, 83, 128, 0.13), rgba(72, 205, 235, 0.12)),
+    rgba(250, 250, 247, 0.4);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 83, 128, 0.12),
+    0 10px 22px rgba(91, 54, 103, 0.035);
+}
+
+.redbubble-problem-card,
+.redbubble-insight-card,
+.redbubble-big-idea-card,
+.redbubble-popup-feature {
+  border-radius: 1.45rem;
+  padding: 1.45rem;
+  background:
+    linear-gradient(135deg, rgba(29, 27, 36, 0.98), rgba(93, 48, 120, 0.94)),
+    #1d1b24;
+  box-shadow: 0 16px 34px rgba(91, 54, 103, 0.14);
+}
+
+.redbubble-problem-card h3,
+.redbubble-insight-card h3,
+.redbubble-big-idea-card h2,
+.redbubble-popup-feature h2 {
+  margin: 0.75rem 0 0;
+}
+
+.redbubble-insight-card h3 {
+  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-size: 1.55rem;
+  line-height: 1.14;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.redbubble-insight-card-alt,
+.redbubble-big-idea-card {
+  background:
+    linear-gradient(135deg, rgba(11, 120, 139, 0.96), rgba(93, 48, 120, 0.94)),
+    #0b788b;
+}
+
+.redbubble-audience-panel {
+  display: grid;
+  gap: 1rem;
+  padding: 1.35rem;
+  border-radius: 1.45rem;
+  background:
+    linear-gradient(135deg, rgba(255, 241, 106, 0.24), rgba(255, 255, 255, 0.18)),
+    rgba(250, 250, 247, 0.44);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 83, 128, 0.12),
+    0 10px 22px rgba(91, 54, 103, 0.035);
+}
+
+.redbubble-audience-panel p {
+  margin: 0.9rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(43, 43, 43, 0.72);
+}
+
+.redbubble-value-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.redbubble-value-list li,
+.redbubble-example-lines span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.85rem;
+  padding: 0.42rem 0.66rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: inset 0 0 0 1px rgba(255, 83, 128, 0.13);
+  font-size: 0.75rem;
+  color: rgba(43, 43, 43, 0.74);
+}
+
+.redbubble-stat-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.redbubble-stat-card {
+  padding: 1.05rem 1.1rem;
+  border-radius: 1.15rem;
+  background:
+    linear-gradient(135deg, rgba(255, 83, 128, 0.16), rgba(72, 205, 235, 0.12)),
+    rgba(250, 250, 247, 0.46);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 83, 128, 0.12),
+    0 8px 18px rgba(91, 54, 103, 0.035);
+}
+
+.redbubble-stat-card span {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: rgba(43, 43, 43, 0.92);
+}
+
+.redbubble-stat-card p {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: rgba(43, 43, 43, 0.7);
+}
+
+.redbubble-research-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.redbubble-research-copy,
+.redbubble-media-copy {
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  background: rgba(250, 250, 247, 0.48);
+  box-shadow: inset 0 0 0 1px rgba(255, 83, 128, 0.1);
+}
+
+.redbubble-research-copy h3,
+.redbubble-research-copy p,
+.redbubble-media-copy p {
+  margin: 0;
+}
+
+.redbubble-research-copy h3 {
+  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-size: 1.35rem;
+  line-height: 1.12;
+}
+
+.redbubble-research-copy p,
+.redbubble-media-copy p {
+  margin-top: 0.7rem;
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: rgba(43, 43, 43, 0.72);
+}
+
+.redbubble-media-copy p {
+  margin-top: 0;
+}
+
+.redbubble-quote-stack {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.redbubble-quote-card {
+  margin: 0;
+  padding: 1.05rem 1.1rem;
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow:
+    inset 0 0 0 1px rgba(72, 205, 235, 0.14),
+    0 8px 18px rgba(91, 54, 103, 0.035);
+}
+
+.redbubble-quote-card blockquote {
+  margin: 0;
+  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-size: 1.12rem;
+  line-height: 1.2;
+  color: rgba(43, 43, 43, 0.9);
+}
+
+.redbubble-quote-card figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(93, 48, 120, 0.86);
+}
+
+.redbubble-big-idea-card p,
+.redbubble-popup-feature p {
+  margin: 1rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.redbubble-execution-grid,
+.redbubble-budget-grid,
+.redbubble-kpi-grid,
+.redbubble-gallery-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.redbubble-execution-card {
+  overflow: hidden;
+  border-radius: 1.35rem;
+  background: rgba(250, 250, 247, 0.44);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 83, 128, 0.12),
+    0 12px 24px rgba(91, 54, 103, 0.045);
+}
+
+.redbubble-execution-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 17 / 22;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.66);
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.redbubble-execution-card:hover .redbubble-execution-image {
+  transform: scale(1.01);
+  filter: saturate(1.04);
+}
+
+.redbubble-execution-copy {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1.15rem;
+}
+
+.redbubble-execution-copy h3 {
+  margin: 0;
+  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-size: 1.35rem;
+  line-height: 1.12;
+}
+
+.redbubble-execution-copy p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(43, 43, 43, 0.7);
+}
+
+.redbubble-execution-copy strong {
+  color: rgba(43, 43, 43, 0.92);
+}
+
+.redbubble-example-lines {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.redbubble-budget-card,
+.redbubble-kpi-grid article {
+  padding: 1rem 1.05rem;
+  border-radius: 1.1rem;
+  background:
+    linear-gradient(135deg, rgba(255, 241, 106, 0.24), rgba(72, 205, 235, 0.12)),
+    rgba(250, 250, 247, 0.46);
+  box-shadow: inset 0 0 0 1px rgba(255, 83, 128, 0.11);
+}
+
+.redbubble-budget-card span {
+  display: block;
+  margin-bottom: 0.28rem;
+  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.redbubble-budget-card h3,
+.redbubble-budget-card p,
+.redbubble-kpi-grid article {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(43, 43, 43, 0.72);
+}
+
+.redbubble-budget-card h3 {
+  font-weight: 600;
+  color: rgba(43, 43, 43, 0.9);
+}
+
+.redbubble-gallery-card {
+  display: grid;
+  gap: 0.72rem;
+  margin: 0;
+}
+
+.redbubble-gallery-card a {
+  display: block;
+}
+
+.redbubble-gallery-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 17 / 22;
+  object-fit: contain;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 12px 24px rgba(91, 54, 103, 0.08);
+  transition: transform 0.45s ease, box-shadow 0.45s ease, filter 0.45s ease;
+}
+
+.redbubble-gallery-card:hover .redbubble-gallery-image {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 18px 34px rgba(91, 54, 103, 0.12);
+  filter: saturate(1.04);
+}
+
+.redbubble-gallery-card figcaption {
+  margin: 0;
+  padding: 0 0.15rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(43, 43, 43, 0.56);
+}
+
 .penguin-gallery-grid {
   display: grid;
   gap: 1rem;
@@ -1657,6 +1989,12 @@ body::after {
   transition: transform 0.45s ease, opacity 0.45s ease, box-shadow 0.45s ease;
 }
 
+.deck-link-button[type="button"] {
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
 .deck-link-button:hover {
   transform: translateY(-2px);
   opacity: 0.92;
@@ -1665,18 +2003,21 @@ body::after {
     0 12px 20px rgba(43, 43, 43, 0.05);
 }
 
-.brief-link-disabled {
-  cursor: not-allowed;
-  opacity: 0.56;
-}
-
-.brief-link-disabled:hover {
-  transform: none;
-  opacity: 0.56;
-}
-
 .thinking-diagram-wrap {
   padding: 1.5rem;
+}
+
+.artist-process-chart[hidden] {
+  display: none;
+}
+
+.about-copy-grid > .space-y-7 {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.about-copy-grid > .space-y-7 > * + * {
+  margin-top: 0;
 }
 
 .thinking-diagram-header {
@@ -1774,6 +2115,46 @@ body::after {
   position: relative;
 }
 
+.hobby-detail-section {
+  min-height: calc(100vh - 9rem);
+}
+
+.hobby-detail-hero {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hobby-detail-frame {
+  width: min(100%, 24rem);
+  justify-self: center;
+}
+
+.hobby-detail-grid {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.hobby-photo-grid {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.hobby-photo-placeholder {
+  display: grid;
+  min-height: 8rem;
+  place-items: center;
+  border: 1px dashed rgba(107, 112, 92, 0.32);
+  border-radius: 1rem;
+  background: rgba(250, 250, 247, 0.5);
+  color: rgba(43, 43, 43, 0.48);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
 .wardrobe-archive {
   position: relative;
   overflow: hidden;
@@ -1802,14 +2183,14 @@ body::after {
   display: flex;
   align-items: flex-start;
   width: max-content;
-  animation: wardrobeLoop 26s linear infinite;
+  animation: wardrobeLoop 48s linear infinite;
 }
 
 .wardrobe-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: clamp(2.5rem, 5vw, 4.75rem);
+  margin-right: clamp(1.35rem, 2.8vw, 2.6rem);
   transform: none;
 }
 
@@ -1821,10 +2202,17 @@ body::after {
 }
 
 .wardrobe-image {
-  width: clamp(7.5rem, 11vw, 10.25rem);
+  display: block;
+  width: clamp(12rem, 22vw, 20rem);
+  aspect-ratio: 16 / 10;
   height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 8px 12px rgba(43, 43, 43, 0.05));
+  border-radius: 1rem;
+  object-fit: cover;
+  object-position: center;
+  box-shadow:
+    inset 0 0 0 1px rgba(43, 43, 43, 0.07),
+    0 10px 22px rgba(43, 43, 43, 0.08);
+  filter: saturate(0.98) contrast(0.99) brightness(1.01);
 }
 
 .contact-display {
@@ -1914,6 +2302,10 @@ body::after {
     padding: 3.2rem 0;
   }
 
+  .hobby-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
   .gallery-card-offset-a,
   .gallery-card-offset-b,
   .gallery-card-offset-c,
@@ -1945,6 +2337,19 @@ body::after {
   .gallery-glimpse-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2.3rem 1.9rem;
+  }
+
+  .hobby-detail-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.48fr);
+  }
+
+  .hobby-detail-grid {
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1fr);
+  }
+
+  .about-copy-grid > .space-y-7 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
   }
 
   .soft-panel {
@@ -2067,6 +2472,26 @@ body::after {
     gap: 1.1rem;
   }
 
+  .redbubble-audience-panel,
+  .redbubble-research-grid {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  }
+
+  .redbubble-stat-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .redbubble-execution-grid,
+  .redbubble-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.1rem;
+  }
+
+  .redbubble-budget-grid,
+  .redbubble-kpi-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .penguin-gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.1rem;
@@ -2077,52 +2502,40 @@ body::after {
   }
 
   .thinking-diagram {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
   }
 
   .process-step {
-    min-height: 7.2rem;
+    min-height: auto;
     padding: 1.05rem 1.05rem 1.1rem;
   }
 
   .process-step::after {
-    left: auto;
-    right: -0.62rem;
-    top: 50%;
-    bottom: auto;
-    width: 0.62rem;
-    height: 1px;
-    transform: translateY(-50%);
-    background: linear-gradient(90deg, rgba(107, 112, 92, 0.42), rgba(107, 112, 92, 0.08));
-  }
-
-  .process-step:nth-child(2n)::after {
+    left: 1.25rem;
     right: auto;
-    left: 50%;
     top: auto;
-    bottom: -0.62rem;
+    bottom: -0.7rem;
     width: 1px;
-    height: 0.62rem;
-    transform: translateX(-50%);
+    height: 0.7rem;
+    transform: none;
     background: linear-gradient(180deg, rgba(107, 112, 92, 0.42), rgba(107, 112, 92, 0.08));
   }
 
-  .process-step:nth-child(8)::after,
   .process-step:last-child::after {
     display: none;
   }
 
   .step-backward-one {
-    transform: translateX(0.5rem);
+    transform: none;
   }
 
   .step-themes {
-    transform: translateX(0.5rem);
+    transform: none;
   }
 
   .step-insight {
-    grid-column: 1 / span 2;
+    grid-column: auto;
     min-height: auto;
     padding: 1.15rem 1.2rem 1.2rem;
   }
@@ -2132,11 +2545,11 @@ body::after {
   }
 
   .step-backward-two {
-    transform: translateX(-0.5rem);
+    transform: none;
   }
 
   .step-creative {
-    transform: translateX(-0.5rem);
+    transform: none;
   }
 
   .contact-display {
@@ -2200,6 +2613,23 @@ body::after {
   .dove-gallery-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.2rem;
+  }
+
+  .redbubble-stat-grid {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .redbubble-execution-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .redbubble-gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+
+  .redbubble-budget-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
   .proof-grid,

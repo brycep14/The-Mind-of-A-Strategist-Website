@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redbubble Exhibit | Bryce Peterson</title>
+    <meta name="description" content="Strategy case study for Bryce Peterson's Redbubble Anything But Basic campaign." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/rbk1jkj.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              paper: "#FAFAF7",
+              ink: "#2B2B2B",
+              charcoal: "#2B2B2B",
+              olive: "#6B705C",
+              mist: "#ECE9E1",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              serif: ["ivypresto-display", "Playfair Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="bg-paper text-ink antialiased">
+    <div class="site-shell min-h-screen">
+      <header class="top-nav sticky top-0 z-50 border-b border-black/5">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10">
+          <a class="text-left font-serif text-xl tracking-[-0.01em] text-charcoal transition duration-700 hover:text-olive" href="index.html">Bryce Peterson</a>
+          <nav class="hidden items-center gap-8 text-sm text-charcoal/70 md:flex">
+            <a class="nav-link" href="index.html">Entrance</a>
+            <a class="nav-link" aria-current="page" href="gallery.html">Gallery</a>
+            <a class="nav-link" href="artist-statement.html">About the Artist</a>
+            <a class="nav-link" href="inquiries.html">Inquiries</a>
+          </nav>
+          <button class="mobile-menu-toggle md:hidden" aria-expanded="false" aria-label="Toggle navigation" data-menu-toggle type="button">
+            <span class="mobile-menu-bar"></span>
+            <span class="mobile-menu-bar"></span>
+            <span class="mobile-menu-bar"></span>
+          </button>
+        </div>
+        <div class="hidden border-t border-black/5 bg-paper/80 px-6 pb-5 pt-2 backdrop-blur md:hidden" data-mobile-menu>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="index.html">Entrance</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" aria-current="page" href="gallery.html">Gallery</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="artist-statement.html">About the Artist</a>
+          <a class="mobile-nav-link block w-full border-b border-black/5 text-left text-sm text-charcoal/70" href="inquiries.html">Inquiries</a>
+        </div>
+      </header>
+
+      <main class="page-enter">
+        <section class="gallery-section pt-10 md:pt-16">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <a class="exhibit-top-back" data-back-link href="gallery.html#gallery-exhibits">← Back to Gallery</a>
+            <div class="exhibit-title-wall relative mb-10 md:mb-14">
+              <div class="exhibit-title-copy">
+                <p class="eyebrow mb-5 text-[0.72rem] font-medium uppercase text-olive/90">Title Wall</p>
+                <h1 class="exhibit-title font-serif text-charcoal">How do we help Redbubble become more than just stickers?</h1>
+                <h2 class="mt-4 font-serif text-[1.45rem] leading-tight text-charcoal md:text-[1.8rem]">Redbubble: Anything But Basic</h2>
+                <p class="mt-5 text-sm uppercase tracking-[0.18em] text-charcoal/55">Redbubble | 2024 | Spec Campaign</p>
+              </div>
+              <div class="exhibit-title-frame" aria-hidden="true">
+                <img src="images/RedBubbledeck/Redbubblepictureframe.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-2">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-5xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Campaign Context</h2>
+            </div>
+            <div class="process-panel redbubble-context-panel p-6 md:p-8">
+              <p class="text-base leading-8 text-charcoal/72 md:text-lg md:leading-9">
+                Redbubble is an online marketplace founded to help independent artists share their work with the world. It connects more than 700,000 artists with customers globally and allows designs to be placed on a wide variety of products.
+              </p>
+              <p class="mt-4 text-base leading-8 text-charcoal/72 md:text-lg md:leading-9">
+                But while Redbubble is reputable among artists, it is less relevant to everyday consumers. Most young consumers either do not know Redbubble or only associate it with stickers.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-5xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">The Problem</h2>
+            </div>
+            <div class="redbubble-problem-card">
+              <p class="eyebrow text-[0.66rem] font-medium uppercase text-white/65">Discovery Problem</p>
+              <h3 class="font-serif text-[1.85rem] leading-tight text-white md:text-[2.55rem]">
+                Redbubble has a discovery problem: young consumers know the stickers, but not the full world of self-expression behind the brand.
+              </h3>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-5xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Target Audience</h2>
+            </div>
+            <div class="redbubble-audience-panel">
+              <div>
+                <p class="eyebrow mb-4 text-[0.68rem] font-medium uppercase text-olive/85">The Raconteurs</p>
+                <h3 class="font-serif text-[1.7rem] leading-tight text-charcoal md:text-[2.15rem]">
+                  Women ages 18-25 who want to emerge from the norm and connect with others who feel the same.
+                </h3>
+                <p>Raconteurs are thoughtful and deliberate shoppers who spend most of their shopping time online, value quality over quantity, and seek products that stand out from the norm.</p>
+              </div>
+              <ul class="redbubble-value-list">
+                <li>Self-expression</li>
+                <li>Creativity</li>
+                <li>Humor</li>
+                <li>Trustworthiness</li>
+                <li>Meaningful connection</li>
+                <li>Good ethics</li>
+                <li>Individuality</li>
+                <li>Products that signal identity</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Key Research</h2>
+            </div>
+            <div class="redbubble-stat-grid" data-redbubble-stats></div>
+            <div class="mt-5 redbubble-research-grid">
+              <div class="redbubble-research-copy">
+                <h3>Research takeaways</h3>
+                <p>Redbubble has strong brand potential, but consumer awareness is narrow. The audience uses products as social signals, especially when expressive items can help introverted connection happen naturally.</p>
+                <p>Originality matters, but trust matters just as much. Raconteurs want expressive products without feeling like they are shopping somewhere sketchy.</p>
+              </div>
+              <div class="redbubble-quote-stack" data-redbubble-quotes></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-5xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Insights</h2>
+            </div>
+            <div class="case-study-duo">
+              <article class="redbubble-insight-card">
+                <p class="eyebrow text-[0.66rem] font-medium uppercase text-white/65">Consumer Insight</p>
+                <h3>They use what they wear, carry, and display to say something about themselves before they ever have to start a conversation.</h3>
+              </article>
+              <article class="redbubble-insight-card redbubble-insight-card-alt">
+                <p class="eyebrow text-[0.66rem] font-medium uppercase text-white/65">Brand Insight</p>
+                <h3>Redbubble helps turn personal taste into visible connection.</h3>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-5xl px-6 md:px-10">
+            <div class="case-study-duo">
+              <article class="process-panel redbubble-strategy-panel p-6 md:p-7">
+                <p class="eyebrow mb-4 text-[0.68rem] font-medium uppercase text-olive/85">Strategy</p>
+                <p class="font-serif text-[1.35rem] leading-tight text-charcoal md:text-[1.6rem]">
+                  For Raconteurs who want to stand out to fit in, Redbubble helps them show off their inner selves.
+                </p>
+                <p class="mt-4 text-sm leading-7 text-charcoal/70 md:text-base md:leading-8">
+                  Position Redbubble as the one-stop marketplace for expressive products that help young consumers show who they are, spark connection, and find kindred spirits through shared interests.
+                </p>
+              </article>
+              <article class="strategy-line-card redbubble-big-idea-card">
+                <p class="eyebrow text-[0.66rem] font-medium uppercase text-white/65">Big Idea</p>
+                <h2 class="font-serif text-[2.1rem] leading-none text-white md:text-[3.2rem]">Anything But Basic</h2>
+                <p class="mt-4 text-sm leading-7 text-white/72 md:text-base md:leading-8">
+                  In a world full of ordinary, Redbubble is the brand that gets them. The campaign shows Raconteurs that Redbubble offers vibrant, stylish products that help them stand out from the crowd and find people who connect with the same interests.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-5xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Creative Strategy</h2>
+            </div>
+            <div class="process-panel redbubble-creative-panel p-6 md:p-8">
+              <p class="text-base leading-8 text-charcoal/72 md:text-lg md:leading-9">
+                Use bright, quirky imagery featuring stylish individuals showing off Redbubble products. Bold colors and expressive fonts create excitement, drive awareness, and show that Redbubble offers far more than stickers.
+              </p>
+              <p class="mt-4 text-sm uppercase tracking-[0.18em] text-charcoal/55">Tone: Bright, quirky, expressive, stylish, witty, and playful.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Creative Executions</h2>
+            </div>
+            <div class="redbubble-execution-grid" data-redbubble-executions></div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-5xl px-6 md:px-10">
+            <div class="redbubble-popup-feature">
+              <p class="eyebrow text-[0.66rem] font-medium uppercase text-white/65">Sales Promotion</p>
+              <h2 class="font-serif text-[1.9rem] leading-tight text-white md:text-[2.65rem]">SoHo Pop-Up Museum/Shop</h2>
+              <p>From May to August, Redbubble opens an interactive pop-up shop in SoHo during New York's high season. Visitors explore product-focused exhibits, take photos, and purchase featured products at the end.</p>
+              <p>This generates awareness for the full Redbubble marketplace and establishes the brand as a unique, authentic brand that values fun and originality.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Media Plan</h2>
+            </div>
+            <div class="redbubble-media-copy">
+              <p>The campaign uses a pulsing schedule. Magazine and digital ads ramp up during June-August and November-December, while alternative ads like sticker benches and murals remain present year-round.</p>
+            </div>
+            <div class="mt-5 redbubble-budget-grid" data-redbubble-budget></div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-5xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">KPIs</h2>
+            </div>
+            <div class="redbubble-kpi-grid">
+              <article>Increased overall sales</article>
+              <article>Increased awareness</article>
+              <article>Increased shares and follows on social platforms</article>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <div class="relative mb-10 md:mb-14">
+              <h2 class="section-title font-serif text-charcoal">Visual Gallery</h2>
+            </div>
+            <div class="redbubble-gallery-grid" data-redbubble-gallery></div>
+            <div class="mt-8 flex justify-start">
+              <a class="deck-link-button" href="images/RedBubbledeck/v6-RedbubbleCampaignBook-compressed.pdf" target="_blank" rel="noreferrer">View Full Campaign Book →</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section pt-0">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <div class="flex flex-col gap-5 border-t border-black/10 pt-8 text-sm uppercase tracking-[0.18em] text-olive md:flex-row md:items-center md:justify-between">
+              <a class="text-left transition duration-500 hover:text-charcoal" data-back-link href="gallery.html#gallery-exhibits">← Back to Gallery</a>
+              <div class="flex flex-col gap-5 md:flex-row md:gap-10">
+                <a class="text-left transition duration-500 hover:text-charcoal" data-preserve-source href="exhibit-giving-a-fashion-launch-a-clear-cultural-angle.html">Previous Exhibit</a>
+                <a class="text-left transition duration-500 hover:text-charcoal" data-preserve-source href="exhibit-dove-campaign.html">Next Exhibit →</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="relative mt-8 bg-paper/80 backdrop-blur-sm">
+        <div class="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 text-sm text-charcoal/60 md:flex-row md:items-center md:justify-between md:px-10">
+          <p>A gallery of thoughts that I brought to life with AI vibe coding.</p>
+          <p>© Bryce Peterson</p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      window.redbubbleStats = [
+        { value: "700,000+", label: "artists connected with customers globally" },
+        { value: "30%", label: "of surveyed participants had purchased from Redbubble" },
+        { value: "100%", label: "of purchasers bought stickers" },
+        { value: "95%", label: "of purchases were stickers" },
+        { value: "93%", label: "value trustworthiness in an online company" },
+        { value: "65%", label: "value creativity" },
+        { value: "53%", label: "make online purchases about once a month" }
+      ];
+
+      window.redbubbleQuotes = [
+        { quote: "I think individuality is important, especially for college students, because I've had conversations started by certain stickers based on shared interests.", source: "Sophie I." },
+        { quote: "It's an easy conversation starter, cause I think a lot of times you just come up dry with what to talk about.", source: "Hailey H." },
+        { quote: "The cost of having those relationships with my social battery is like, I've got to balance that. So stickers help because they make it easier to start conversations.", source: "Hailey H." }
+      ];
+
+      window.redbubbleExecutions = [
+        {
+          title: "Print Ads",
+          role: "Build awareness in audience-relevant lifestyle media.",
+          description: "Redbubble print ads are placed in Seventeen and Cosmopolitan to reach young women already engaging with style and culture content.",
+          examples: ["Don't Fumble the Bag", "Too Good to Keep Under Wraps"],
+          image: "images/RedBubbledeck/redbubble-print-ad.png"
+        },
+        {
+          title: "Digital Ads",
+          role: "Build digital presence and product awareness.",
+          description: "Instagram posts and TikTok content show that Redbubble offers far more than stickers. A TikTok filter randomly assigns users a Redbubble hat to showcase product variety.",
+          examples: [],
+          image: "images/RedBubbledeck/redbubble-digital-ad.png"
+        },
+        {
+          title: "Alternative Ads",
+          role: "Bring Redbubble's identity-led products into the real world.",
+          description: "Mirror ads, digital billboards, sticker benches, and city murals turn Redbubble products into public conversation starters.",
+          examples: [],
+          image: "images/RedBubbledeck/redbubble-alternative-ad.png"
+        },
+        {
+          title: "SoHo Pop-Up Museum/Shop",
+          role: "Turn product discovery into an experience.",
+          description: "A summer pop-up shop in SoHo is laid out like a museum with interactive exhibits featuring real Redbubble products, Instagram-worthy photo ops, and opportunities to purchase featured products.",
+          examples: [],
+          image: "images/RedBubbledeck/redbubble-popup.png"
+        }
+      ];
+
+      window.redbubbleBudget = [
+        { channel: "Digital Billboard", amount: "$1.5M", share: "30%" },
+        { channel: "NYC Pop-Up", amount: "$1.4M", share: "27%" },
+        { channel: "Magazine Ads", amount: "$700K", share: "14%" },
+        { channel: "Mural", amount: "$500K", share: "10%" },
+        { channel: "Benches", amount: "$500K", share: "10%" },
+        { channel: "Mirror Ad", amount: "$450K", share: "9%" }
+      ];
+
+      window.redbubbleGallery = [
+        { filename: "redbubble-problem.png", caption: "Problem Statement" },
+        { filename: "redbubble-target.png", caption: "Target Market: Raconteurs" },
+        { filename: "redbubble-research-survey.png", caption: "Survey Results" },
+        { filename: "redbubble-research-group.png", caption: "Friendship Group Results" },
+        { filename: "redbubble-insights.png", caption: "Key Insights" },
+        { filename: "redbubble-strategy.png", caption: "Strategy Statement" },
+        { filename: "redbubble-creative.png", caption: "Tone & Manner" },
+        { filename: "redbubble-execution.png", caption: "Creative Execution Example" },
+        { filename: "redbubble-popup.png", caption: "SoHo Pop-Up Museum/Shop" }
+      ];
+    </script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
