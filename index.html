@@ -82,8 +82,11 @@
               <div class="text-center md:text-left">
                 <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/85">The Museum of Thought</p>
                 <h1 class="hero-title font-serif text-charcoal">Bryce Peterson</h1>
+                <p class="mt-4 max-w-md text-base leading-7 text-charcoal/70 md:text-lg">
+                  Advertising strategist turning consumer tensions into inspiring brand actions.
+                </p>
                 <div class="mt-6 flex flex-wrap items-center justify-center gap-4 md:justify-start">
-                  <a class="text-sm uppercase tracking-[0.2em] text-olive transition duration-500 hover:text-charcoal" href="gallery.html">
+                  <a class="museum-link" href="gallery.html">
                     Enter the Gallery →
                   </a>
                 </div>
@@ -111,47 +114,102 @@
           <div class="section-wash"></div>
           <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
             <div class="relative mb-8 md:mb-10">
-              <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">Gallery Glimpse</p>
-              <h2 class="section-title font-serif text-charcoal">My Current Favorite Works</h2>
+              <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">Featured Exhibits</p>
+              <h2 class="section-title font-serif text-charcoal">Strategy Work On Display</h2>
               <p class="mt-5 max-w-2xl text-base leading-8 text-charcoal/68 md:text-lg">
-                My current favorite work. Click a painting to learn more.
+                Curated strategy work turning consumer tensions, cultural context, and insights into inspiring ideas.
               </p>
             </div>
 
-            <div class="gallery-glimpse">
-              <div class="gallery-glimpse-grid">
-                <a class="gallery-glimpse-piece" href="exhibit-dove-campaign.html?from=curated-works">
-                  <div class="glimpse-frame">
-                    <img class="glimpse-art" src="images/dovepictureframe.png" alt="Dove campaign cover art" loading="lazy" decoding="async" />
-                  </div>
-                  <div class="glimpse-label glimpse-label-small">
-                    <p class="glimpse-meta">Exhibit 01</p>
-                    <h3 class="glimpse-title">Dove Campaign</h3>
-                    <p class="glimpse-description">How do we help men build real confidence in an AI-driven beauty culture?</p>
-                  </div>
-                </a>
+            <div class="exhibit-card-grid featured-exhibit-grid">
+              <a class="exhibit-card" href="exhibit-dove-campaign.html?from=curated-works">
+                <div class="exhibit-card-media">
+                  <img src="images/dovepictureframe.png" alt="Dove campaign cover art" loading="lazy" decoding="async" />
+                </div>
+                <div class="exhibit-card-label">
+                  <p class="exhibit-card-number">Exhibit 01</p>
+                  <h3 class="exhibit-card-title">How do we help men build real confidence in an AI-driven beauty culture?</h3>
+                  <p class="exhibit-card-meta">Dove | 2026 | Spec RFP Response</p>
+                  <p class="exhibit-card-payoff">Turns AI-era male insecurity into a human validation platform: Call Your Boys Beautiful.</p>
+                </div>
+              </a>
 
-                <a class="gallery-glimpse-piece" href="exhibit-thoughts-on-ai.html?from=curated-works">
-                  <div class="glimpse-frame">
-                    <img class="glimpse-art" src="images/My-thoughts-on-AI-Picture-Frame.png" alt="Thoughts on AI cover art" loading="lazy" decoding="async" />
-                  </div>
-                  <div class="glimpse-label glimpse-label-small">
-                    <p class="glimpse-meta">Exhibit 02</p>
-                    <h3 class="glimpse-title">My Thoughts on AI</h3>
-                    <p class="glimpse-description">How do we use AI without losing the human spirit?</p>
-                  </div>
-                </a>
+              <a class="exhibit-card" href="exhibit-nba-x-philharmonic.html?from=curated-works">
+                <div class="exhibit-card-media">
+                  <img src="images/NBA-x-Philharmonic-Picture-Frame.png" alt="NBA x Philharmonic cover art" loading="lazy" decoding="async" />
+                </div>
+                <div class="exhibit-card-label">
+                  <p class="exhibit-card-number">Exhibit 02</p>
+                  <h3 class="exhibit-card-title">How do we make watching the NBA feel worth the royal price?</h3>
+                  <p class="exhibit-card-meta">NBA | 2026 | Spec Collab</p>
+                  <p class="exhibit-card-payoff">Reframes cost frustration into premium feeling through a cinematic league-and-orchestra partnership.</p>
+                </div>
+              </a>
 
-                <a class="gallery-glimpse-piece" href="exhibit-nba-x-philharmonic.html?from=curated-works">
-                  <div class="glimpse-frame">
-                    <img class="glimpse-art" src="images/NBA-x-Philharmonic-Picture-Frame.png" alt="NBA x Philharmonic cover art" loading="lazy" decoding="async" />
-                  </div>
-                  <div class="glimpse-label glimpse-label-small">
-                    <p class="glimpse-meta">Exhibit 03</p>
-                    <h3 class="glimpse-title">NBA x Philharmonic Collab</h3>
-                    <p class="glimpse-description">How do we make watching the NBA feel worth the royal price?</p>
-                  </div>
-                </a>
+              <a class="exhibit-card" href="exhibit-redbubble-anything-but-basic.html?from=curated-works">
+                <div class="exhibit-card-media">
+                  <img src="images/RedBubbledeck/Redbubblepictureframe.png" alt="Redbubble campaign cover art" loading="lazy" decoding="async" />
+                </div>
+                <div class="exhibit-card-label">
+                  <p class="exhibit-card-number">Exhibit 03</p>
+                  <h3 class="exhibit-card-title">How do we help Redbubble become more than just stickers?</h3>
+                  <p class="exhibit-card-meta">Redbubble | 2024 | Spec Campaign</p>
+                  <p class="exhibit-card-payoff">Positions Redbubble as a marketplace for visible identity and connection, not just product decoration.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <div class="relative mb-8 md:mb-10">
+              <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">How I Think</p>
+              <h2 class="section-title font-serif text-charcoal">Problem → Instinct → Evidence → Insight → Idea</h2>
+              <p class="mt-5 max-w-2xl text-base leading-8 text-charcoal/68 md:text-lg">
+                I start with the consumer problem, test my first creative instinct against research, and keep looping until the tension, insight, strategy, and idea all point in the same direction.
+              </p>
+              <div class="mt-6">
+                <a class="museum-link" href="artist-statement.html">See the Framework →</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section">
+          <div class="section-wash"></div>
+          <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
+            <div class="relative mb-8 md:mb-10">
+              <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">Curator’s Note</p>
+              <h2 class="font-serif text-[clamp(28px,3.8vw,48px)] leading-[1.08] tracking-[-0.01em] text-charcoal">Take every opportunity to do it better than the last.</h2>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-[0.95fr_1.05fr] md:items-start">
+              <div class="soft-panel p-7 md:p-10">
+                <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">Artist Statement</p>
+                <p class="text-lg leading-9 text-charcoal/72">
+                 I am a grinder. I love locking in and searching through sources to find new angles that turn into insights. These insights provide opportunities for brands to grow not just by encouraging a purchase but by solving real problems. I want to use my determination to create ads that inspire a better world.
+                </p>
+              </div>
+              <div class="flex flex-col gap-4 md:max-w-[30rem]">
+                <div class="relative self-start rounded-[2rem] bg-white/20 p-5 shadow-[0_14px_34px_rgba(0,0,0,0.04)] md:p-6">
+                  <p class="mb-3 font-serif text-[1.5rem] leading-[1.15] text-charcoal md:text-[1.95rem]">
+                    Life is meant for improvement, is it not?
+                  </p>
+                  <a class="museum-link" href="artist-statement.html">
+                  Read About the Artist →
+                  </a>
+                </div>
+                <div class="relative overflow-hidden rounded-[2rem] bg-white/20 shadow-[0_14px_34px_rgba(0,0,0,0.04)]">
+                  <img
+                    src="images/thewavepainting.jpg"
+                    alt="Wave painting"
+                    class="block h-[170px] w-full object-cover md:h-[190px]"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -161,14 +219,17 @@
           <div class="section-wash"></div>
           <div class="mx-auto max-w-6xl px-6 md:px-10">
             <div class="mb-8 md:mb-10">
-              <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">My Sweater Collection</p>
+              <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">Personal Taste Archive</p>
               <h2 class="section-title font-serif">Throwing a Fit</h2>
               <p class="mt-5 max-w-2xl text-base leading-8 text-charcoal/68 md:text-lg">
-                There's nothing better than a new sweater, except for a thrifted sweater.
+                The only thing better than a new sweater, is a thrifted one.
               </p>
+              <div class="mt-6">
+                <a class="museum-link" href="closet.html">Explore the Closet →</a>
+              </div>
             </div>
           </div>
-          <div class="wardrobe-marquee" aria-label="Wardrobe archive">
+          <div class="wardrobe-marquee" aria-label="Personal taste archive">
             <div class="wardrobe-track">
               <div class="wardrobe-item">
                 <div class="wardrobe-string" aria-hidden="true"></div>
@@ -233,36 +294,14 @@
         <section class="gallery-section">
           <div class="section-wash"></div>
           <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
-            <div class="relative mb-8 md:mb-10">
-              <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">Curator’s Note</p>
-              <h2 class="font-serif text-[clamp(28px,3.8vw,48px)] leading-[1.08] tracking-[-0.01em] text-charcoal">Take every opportunity to do it better than the last.</h2>
-            </div>
-
-            <div class="grid gap-6 md:grid-cols-[0.95fr_1.05fr] md:items-start">
-              <div class="soft-panel p-7 md:p-10">
-                <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">Artist Statement</p>
-                <p class="text-lg leading-9 text-charcoal/72">
-                 I am a grinder. I love locking in and searching through sources to find new angles that turn into insights. These insights provide opportunities for brands to grow not just by encouraging a purchase but by solving real problems. I want to use my determination to create ads that inspire a better world.
-                </p>
-              </div>
-              <div class="flex flex-col gap-4 md:max-w-[30rem]">
-                <div class="relative self-start rounded-[2rem] bg-white/20 p-5 shadow-[0_14px_34px_rgba(0,0,0,0.04)] md:p-6">
-                  <p class="mb-3 font-serif text-[1.5rem] leading-[1.15] text-charcoal md:text-[1.95rem]">
-                    Life is meant for improvement, is it not?
-                  </p>
-                  <a class="text-sm uppercase tracking-[0.2em] text-olive transition duration-500 hover:text-charcoal" href="artist-statement.html">
-                  Read About the Artist →
-                  </a>
-                </div>
-                <div class="relative overflow-hidden rounded-[2rem] bg-white/20 shadow-[0_14px_34px_rgba(0,0,0,0.04)]">
-                  <img
-                    src="images/thewavepainting.jpg"
-                    alt="Wave painting"
-                    class="block h-[170px] w-full object-cover md:h-[190px]"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
+            <div class="soft-panel p-7 md:p-10">
+              <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">Inquiries</p>
+              <h2 class="section-title font-serif text-charcoal">Let’s talk strategy.</h2>
+              <p class="mt-4 max-w-2xl text-base leading-8 text-charcoal/68 md:text-lg">
+                Please reach out for portfolio conversations, internships, freelance strategy projects, mentorship, or thoughtful brand problems.
+              </p>
+              <div class="mt-6">
+                <a class="museum-link" href="inquiries.html">Visit Inquiries →</a>
               </div>
             </div>
           </div>
@@ -271,7 +310,7 @@
 
       <footer class="relative mt-8 bg-paper/80 backdrop-blur-sm">
         <div class="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 text-sm text-charcoal/60 md:flex-row md:items-center md:justify-between md:px-10">
-          <p>A gallery of thoughts that I brought to life with AI vibe coding.</p>
+          <p>A working gallery of strategy, insights, and ideas.</p>
           <p>© Bryce Peterson</p>
         </div>
       </footer>

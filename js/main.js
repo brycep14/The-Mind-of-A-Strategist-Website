@@ -18,7 +18,7 @@ if (processToggle && processChart) {
     const nextExpanded = !isExpanded;
 
     processToggle.setAttribute("aria-expanded", String(nextExpanded));
-    processToggle.textContent = nextExpanded ? "Hide How I Think Chart" : "View How I Think Chart";
+    processToggle.textContent = nextExpanded ? "Hide The Insight Loop" : "View The Insight Loop";
     processChart.hidden = !nextExpanded;
   });
 }

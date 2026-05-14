@@ -8,6 +8,26 @@
   --card: #f3f1eb;
   --shadow-soft: 0 8px 18px rgba(43, 43, 43, 0.045);
   --surface-tint: rgba(255, 255, 255, 0.26);
+  --label-dark: rgba(18, 18, 18, 0.94);
+  --line-soft: rgba(43, 43, 43, 0.09);
+  --marble-light: url("../images/marbletextures/whitegreymarble.jpg");
+  --marble-warm: url("../images/marbletextures/whitegreygoldmarble.jpg");
+  --marble-green: url("../images/marbletextures/lightgreenmarble.jpg");
+  --marble-green-vertical: url("../images/marbletextures/lightgreenmarblevertical.jpg");
+  --marble-dark: url("../images/marbletextures/darkgreenmarble.jpg");
+  --marble-dark-square: url("../images/marbletextures/darkgreenmarblesquare.jpg");
+  --marble-surface:
+    linear-gradient(180deg, rgba(250, 250, 247, 0.82), rgba(250, 250, 247, 0.58)),
+    var(--marble-light);
+  --marble-green-surface:
+    linear-gradient(135deg, rgba(250, 250, 247, 0.62), rgba(216, 232, 205, 0.42)),
+    var(--marble-green);
+  --marble-green-accent:
+    linear-gradient(135deg, rgba(250, 250, 247, 0.32), rgba(174, 202, 158, 0.18)),
+    var(--marble-green);
+  --marble-dark-surface:
+    linear-gradient(135deg, rgba(13, 17, 15, 0.92), rgba(33, 44, 35, 0.86)),
+    var(--marble-dark-square);
 }
 
 html {
@@ -30,7 +50,13 @@ body::after {
 }
 
 body::before {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 22%);
+  opacity: 0.58;
+  background-image:
+    radial-gradient(circle at 88% 14%, rgba(139, 163, 126, 0.16), transparent 22rem),
+    radial-gradient(circle at 8% 68%, rgba(107, 112, 92, 0.08), transparent 20rem);
+  background-size: auto;
+  background-position: center;
+  mix-blend-mode: multiply;
 }
 
 body::after {
@@ -58,7 +84,7 @@ body::after {
 
 .top-nav {
   backdrop-filter: blur(8px);
-  background: rgba(250, 250, 247, 0.74);
+  background: rgba(250, 250, 247, 0.82);
 }
 
 .nav-link {
@@ -135,6 +161,25 @@ body::after {
 .hero-section {
   position: relative;
   min-height: calc(100vh - 6rem);
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 2rem 0 auto auto;
+  width: min(46vw, 34rem);
+  height: min(76vh, 46rem);
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(250, 250, 247, 0), rgba(250, 250, 247, 0.2)),
+    var(--marble-green-vertical);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.34;
+  filter: saturate(1.08) contrast(0.98);
+  mask-image: linear-gradient(90deg, transparent, #000 22%, #000 82%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 82%, transparent);
 }
 
 .hero-grid {
@@ -187,7 +232,8 @@ body::after {
 
 .gallery-section {
   position: relative;
-  padding: 4.1rem 0;
+  padding: clamp(3rem, 5vw, 4.6rem) 0;
+  overflow: hidden;
 }
 
 .gallery-section::after {
@@ -206,7 +252,14 @@ body::after {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 26%);
+  opacity: 0.42;
+  background-image:
+    radial-gradient(circle at 8% 15%, rgba(107, 112, 92, 0.08), transparent 18rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28), transparent 34%),
+    var(--marble-green);
+  background-size: auto, auto, min(44rem, 86vw) auto;
+  background-position: center, center, right top;
+  mix-blend-mode: multiply;
 }
 
 .eyebrow {
@@ -296,6 +349,216 @@ body::after {
 .section-title {
   font-size: clamp(28px, 4vw, 42px);
   line-height: 1.15;
+}
+
+.museum-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(107, 112, 92, 0.9);
+}
+
+.museum-link,
+.deck-link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 2.7rem;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(107, 112, 92, 0.24);
+  background: rgba(250, 250, 247, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: rgba(74, 79, 63, 0.95);
+  transition: background 0.45s ease, border-color 0.45s ease, color 0.45s ease, transform 0.45s ease;
+}
+
+.museum-link:hover,
+.deck-link-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(107, 112, 92, 0.42);
+  background-image: var(--marble-green-surface);
+  background-size: cover;
+  background-position: center;
+  color: var(--charcoal);
+}
+
+.exhibit-card-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.exhibit-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: 1.1rem;
+  min-height: 100%;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(43, 43, 43, 0.08);
+  background: rgba(250, 250, 247, 0.7);
+  box-shadow: 0 12px 26px rgba(43, 43, 43, 0.045);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
+}
+
+.exhibit-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 0.28rem;
+  background-image: var(--marble-green-accent);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.78;
+}
+
+.exhibit-card:hover,
+.exhibit-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(107, 112, 92, 0.24);
+  box-shadow: 0 18px 34px rgba(43, 43, 43, 0.07);
+}
+
+.exhibit-card:focus-visible {
+  outline: 2px solid rgba(107, 112, 92, 0.42);
+  outline-offset: 0.35rem;
+}
+
+.exhibit-card-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 11rem;
+}
+
+.exhibit-card-media img {
+  width: min(100%, 15.5rem);
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: saturate(0.98) contrast(0.99) brightness(1.01) drop-shadow(0 8px 14px rgba(43, 43, 43, 0.05));
+}
+
+.exhibit-card-label {
+  display: grid;
+  gap: 0.55rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(43, 43, 43, 0.09);
+}
+
+.exhibit-card-number,
+.exhibit-card-meta {
+  margin: 0;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(107, 112, 92, 0.9);
+}
+
+.exhibit-card-title {
+  margin: 0;
+  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: rgba(43, 43, 43, 0.95);
+}
+
+.exhibit-card-payoff {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(43, 43, 43, 0.68);
+}
+
+.gallery-category {
+  display: grid;
+  gap: 1.15rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.gallery-category + .gallery-category {
+  margin-top: 2.25rem;
+}
+
+.gallery-category-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.strategy-plaque {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(43, 43, 43, 0.1);
+  background: rgba(250, 250, 247, 0.76);
+  box-shadow: 0 14px 30px rgba(43, 43, 43, 0.05);
+  padding: 1.25rem;
+}
+
+.strategy-plaque::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 0.42rem;
+  background-image: var(--marble-green-accent);
+  background-size: cover;
+  background-position: center;
+}
+
+.strategy-plaque-grid {
+  position: relative;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.strategy-plaque-item {
+  display: grid;
+  gap: 0.28rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(43, 43, 43, 0.08);
+}
+
+.strategy-plaque-item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.strategy-plaque-item dt {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(107, 112, 92, 0.94);
+}
+
+.strategy-plaque-item dd {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: rgba(43, 43, 43, 0.74);
+}
+
+.strategy-plaque-item dd strong {
+  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-size: 1.15rem;
+  line-height: 1.15;
+  color: rgba(43, 43, 43, 0.95);
 }
 
 .soft-panel {
@@ -1315,6 +1578,45 @@ body::after {
   color: rgba(43, 43, 43, 0.9);
 }
 
+.dove-featured-executions {
+  display: grid;
+  gap: 1rem;
+}
+
+.dove-featured-execution {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0.9rem;
+  border-radius: 0.55rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.36), rgba(232, 244, 250, 0.24)),
+    rgba(250, 250, 247, 0.48);
+  box-shadow:
+    inset 0 0 0 1px rgba(99, 142, 166, 0.12),
+    0 14px 28px rgba(65, 97, 118, 0.06);
+}
+
+.dove-featured-execution img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 34rem;
+  object-fit: contain;
+  border-radius: 0.45rem;
+  background: rgba(232, 244, 250, 0.58);
+  box-shadow: 0 10px 22px rgba(65, 97, 118, 0.08);
+}
+
+.dove-featured-execution figcaption {
+  margin: 0;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(43, 43, 43, 0.56);
+}
+
 .dove-stat-grid {
   display: grid;
   gap: 0.85rem;
@@ -1352,6 +1654,72 @@ body::after {
   gap: 1rem;
 }
 
+.dove-research-story {
+  display: grid;
+  gap: 1rem;
+}
+
+.dove-research-point {
+  display: grid;
+  gap: 1rem;
+  padding: 1.15rem;
+  border-radius: 0.65rem;
+  background-image:
+    linear-gradient(180deg, rgba(250, 250, 247, 0.78), rgba(232, 244, 250, 0.36)),
+    var(--marble-green);
+  background-size: cover;
+  background-position: center;
+  box-shadow:
+    inset 0 0 0 1px rgba(99, 142, 166, 0.12),
+    0 10px 22px rgba(65, 97, 118, 0.035);
+}
+
+.dove-research-point h3 {
+  margin: 0.35rem 0 0;
+}
+
+.dove-signal-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.dove-signal-list p {
+  position: relative;
+  margin: 0;
+  padding-left: 1rem;
+  font-size: 0.92rem;
+  line-height: 1.62;
+  color: rgba(43, 43, 43, 0.7);
+}
+
+.dove-signal-list p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 999px;
+  background: rgba(99, 142, 166, 0.78);
+}
+
+.dove-interpretation {
+  margin: 0;
+  padding: 0.95rem 1rem;
+  border-radius: 0.55rem;
+  background: rgba(255, 255, 255, 0.54);
+  box-shadow: inset 0 0 0 1px rgba(99, 142, 166, 0.12);
+  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-size: 1.25rem;
+  line-height: 1.18;
+  color: rgba(43, 43, 43, 0.9);
+}
+
+.dove-research-quotes {
+  display: grid;
+  gap: 0.75rem;
+}
+
 .dove-research-flow {
   display: grid;
   gap: 0.75rem;
@@ -1374,6 +1742,10 @@ body::after {
   font-size: 1.2rem;
   line-height: 1.1;
   color: rgba(43, 43, 43, 0.92);
+}
+
+.dove-research-flow p + h3 {
+  margin-top: 0.85rem;
 }
 
 .dove-research-flow p {
@@ -1997,7 +2369,7 @@ body::after {
 
 .deck-link-button:hover {
   transform: translateY(-2px);
-  opacity: 0.92;
+  background-image: var(--marble-green-surface);
   box-shadow:
     inset 0 0 0 1px rgba(107, 112, 92, 0.18),
     0 12px 20px rgba(43, 43, 43, 0.05);
@@ -2005,6 +2377,11 @@ body::after {
 
 .thinking-diagram-wrap {
   padding: 1.5rem;
+  background:
+    linear-gradient(180deg, rgba(250, 250, 247, 0.78), rgba(250, 250, 247, 0.68)),
+    var(--marble-green);
+  background-size: cover;
+  background-position: center;
 }
 
 .artist-process-chart[hidden] {
@@ -2039,14 +2416,13 @@ body::after {
   gap: 0.22rem;
   padding: 1rem 1rem 1rem 1.05rem;
   border-radius: 1.35rem;
-  background: rgba(250, 250, 247, 0.7);
+  background: rgba(250, 250, 247, 0.78);
   box-shadow: inset 0 0 0 1px rgba(107, 112, 92, 0.08);
-  transition: transform 0.45s ease, background 0.45s ease, box-shadow 0.45s ease;
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
 
 .process-step:hover {
   transform: translateY(-2px);
-  background: rgba(250, 250, 247, 0.9);
   box-shadow:
     inset 0 0 0 1px rgba(107, 112, 92, 0.14),
     0 10px 18px rgba(43, 43, 43, 0.04);
@@ -2141,13 +2517,16 @@ body::after {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.hobby-photo-placeholder {
+.hobby-photo {
   display: grid;
+  width: 100%;
   min-height: 8rem;
+  aspect-ratio: 1 / 1;
   place-items: center;
   border: 1px dashed rgba(107, 112, 92, 0.32);
   border-radius: 1rem;
   background: rgba(250, 250, 247, 0.5);
+  object-fit: cover;
   color: rgba(43, 43, 43, 0.48);
   font-size: 0.68rem;
   font-weight: 600;
@@ -2158,7 +2537,11 @@ body::after {
 .wardrobe-archive {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(240, 239, 233, 0.14), rgba(240, 239, 233, 0.14));
+  background-image:
+    linear-gradient(180deg, rgba(250, 250, 247, 0.74), rgba(230, 240, 221, 0.54)),
+    var(--marble-green);
+  background-size: cover;
+  background-position: center;
 }
 
 .wardrobe-archive > .mx-auto {
@@ -2215,8 +2598,75 @@ body::after {
   filter: saturate(0.98) contrast(0.99) brightness(1.01);
 }
 
+.closet-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.closet-card {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0.9rem;
+  border-radius: 0.65rem;
+  background: rgba(250, 250, 247, 0.74);
+  box-shadow:
+    inset 0 0 0 1px rgba(43, 43, 43, 0.07),
+    0 14px 28px rgba(43, 43, 43, 0.055);
+}
+
+.closet-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 20px rgba(43, 43, 43, 0.08);
+}
+
+.closet-plaque {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.95rem 1rem;
+  border-radius: 0.45rem;
+  background: rgba(18, 18, 18, 0.94);
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.closet-plaque h2,
+.closet-plaque p {
+  margin: 0;
+}
+
+.closet-plaque h2 {
+  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+.closet-plaque p {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.closet-status {
+  font-size: 0.62rem !important;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.52) !important;
+}
+
 .contact-display {
   padding: 1.55rem;
+  background:
+    linear-gradient(180deg, rgba(250, 250, 247, 0.8), rgba(250, 250, 247, 0.7)),
+    var(--marble-green);
+  background-size: cover;
+  background-position: center;
 }
 
 .contact-placard {
@@ -2243,7 +2693,7 @@ body::after {
   gap: 0.2rem;
   padding: 1rem 1rem 1.05rem;
   border-radius: 1.2rem;
-  background: rgba(250, 250, 247, 0.72);
+  background: rgba(250, 250, 247, 0.76);
   color: var(--charcoal);
   box-shadow: inset 0 0 0 1px rgba(107, 112, 92, 0.08);
   text-decoration: none;
@@ -2306,6 +2756,10 @@ body::after {
     grid-template-columns: 1fr;
   }
 
+  .closet-grid {
+    grid-template-columns: 1fr;
+  }
+
   .gallery-card-offset-a,
   .gallery-card-offset-b,
   .gallery-card-offset-c,
@@ -2321,6 +2775,29 @@ body::after {
 }
 
 @media (min-width: 768px) {
+  .exhibit-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .featured-exhibit-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .strategy-plaque {
+    padding: 1.45rem;
+  }
+
+  .strategy-plaque-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: column;
+  }
+
+  .strategy-plaque-item {
+    padding-top: 0;
+    border-top: 0;
+  }
+
   .exhibit-title-wall {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 2rem;
@@ -2337,6 +2814,11 @@ body::after {
   .gallery-glimpse-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2.3rem 1.9rem;
+  }
+
+  .closet-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.1rem;
   }
 
   .hobby-detail-hero {
@@ -2455,7 +2937,16 @@ body::after {
   }
 
   .dove-stat-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .dove-featured-executions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .dove-research-quotes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .dove-research-grid {
@@ -2566,9 +3057,18 @@ body::after {
 }
 
 @media (min-width: 1200px) {
+  .exhibit-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .gallery-glimpse-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2.55rem 2.05rem;
+  }
+
+  .closet-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
   }
 
   .glimpse-frame {
