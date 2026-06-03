@@ -600,11 +600,11 @@ File: `exhibit-nba-x-philharmonic.html`
 - Problem: Watching legally feels complicated and costly, making the paid experience feel less valuable than the league’s price suggests.
 - Insight: Fans are being asked to pay a premium price without consistently receiving a premium feeling.
 - Strategy: Partner NBA teams with local philharmonic orchestras to make the viewing experience more cinematic, emotional, and culturally memorable.
-- Big Idea: Slam-Dunk Symphony
+- Big Idea: NBA x Philharmonic Orchestras
 
 ### The Problem
 
-- The NBA is financially thriving, but fan access is becoming more complicated and expensive. Ratings have declined even as league revenue, team valuations, and player salaries continue to grow.
+- Fan access to NBA games online is becoming more complicated and expensive. Ratings have declined even as league revenue, team valuations, and player salaries continue to grow.
 - The issue is not that fans stopped loving basketball. The issue is that watching legally feels increasingly difficult, fragmented, and expensive.
 
 ### The NBA’s Problem
@@ -637,7 +637,7 @@ File: `exhibit-nba-x-philharmonic.html`
 ### Strategy / Big Idea
 
 - Strategy: Partner NBA teams with local philharmonic orchestras to make games feel more cinematic, dramatic, and premium, rebuilding the perceived value of watching legally.
-- Big Idea: Slam-Dunk Symphony
+- Big Idea: NBA x Philharmonic Orchestras
 - NBA x Philharmonic Orchestra. The NBA brings the game. The orchestra brings the drama.
 
 ### Creative System
@@ -707,6 +707,13 @@ File: `exhibit-redbubble-anything-but-basic.html`
 - Strategy: Position Redbubble as the marketplace where personal taste becomes visible connection.
 - Big Idea: Anything But Basic
 
+### Creative Executions
+
+- Print Ads
+- Digital Ads
+- Alternative Ads
+- SoHo Pop-Up Museum/Shop
+
 ### Campaign Context
 
 - Redbubble is an online marketplace founded to help independent artists share their work with the world. It connects more than 700,000 artists with customers globally and allows designs to be placed on a wide variety of products.
@@ -754,11 +761,8 @@ File: `exhibit-redbubble-anything-but-basic.html`
 - Use bright, quirky imagery featuring stylish individuals showing off Redbubble products. Bold colors and expressive fonts create excitement, drive awareness, and show that Redbubble offers far more than stickers.
 - Tone: Bright, quirky, expressive, stylish, witty, and playful.
 
-### Creative Executions
+### Sales Promotion
 
-- Social Ad Campaign
-- Out-of-home sticker bench / mural ideas
-- Sales Promotion
 - SoHo Pop-Up Museum/Shop
 - From May to August, Redbubble opens an interactive pop-up shop in SoHo during New York's high season. Visitors explore product-focused exhibits, take photos, and purchase featured products at the end.
 - This generates awareness for the full Redbubble marketplace and establishes the brand as a unique, authentic brand that values fun and originality.
@@ -876,9 +880,15 @@ File: `exhibit-turning-sustainability-from-claim-into-proof.html`
 - Strategy: Make Ask Ralph the private, trusted style advisor for moments of uncertainty.
 - Big Idea: In moments of hesitation, Ask Ralph.
 
+### Creative Executions
+
+- Retail Display Poster
+- Instagram Ad
+- YouTube Video
+
 ### Campaign Context
 
-- Ralph Lauren wanted to draw awareness and engagement for Ask Ralph, its new AI dressing tool. Unlike a basic shopping assistant, Ask Ralph lets consumers ask contextual styling questions and receive useful, shoppable answers in a voice that feels unmistakably Ralph Lauren.
+- Ralph Lauren wants to draw attention to Ask Ralph, its new AI dressing tool. Unlike a basic shopping assistant, Ask Ralph lets consumers ask contextual styling questions and receive useful, shoppable answers built on the fashion sense of the icon himself, Ralph Lauren.
 
 ### Key Research
 
@@ -889,7 +899,7 @@ File: `exhibit-turning-sustainability-from-claim-into-proof.html`
 - Ask Ralph has the opportunity to become a useful, human-centered tool that improves consumers' lives.
 - Audience & Style Behavior
 - The primary audience is 18-25-year-old men entering an "adult era" and the job market.
-- They want to dress better but do not know where to start.
+- They want to dress better but don't know where to start.
 - They hesitate to ask people around them for fashion advice.
 - They are active on Instagram, TikTok, and Pinterest for outfit inspiration.
 - They are open to AI when it feels personalized, easy, and aesthetically guided.
@@ -943,7 +953,7 @@ File: `exhibit-helping-a-heritage-brand-matter-to-a-new-generation.html`
 - Brand: Whiskas
 - Audience: Young cat parents overwhelmed by pet-food advice and online health claims.
 - Problem: Whiskas is caught in negative online narratives while premium brands dominate with health language.
-- Insight: The voice young cat parents trust most is the one they imagine their cat would give them.
+- Insight: The voice young cat parents trust most is their cat's.
 - Strategy: Cut through category noise by letting cats “speak” for the food they already love.
 - Big Idea: Let Them Speak
 
@@ -981,7 +991,7 @@ File: `exhibit-helping-a-heritage-brand-matter-to-a-new-generation.html`
 ### The Strategic Path
 
 - The Problem: Young cat parents feel overwhelmed by conflicting advice about what is best for their cats.
-- Consumer Insight: Young cat parents are surrounded by advice, but the voice they care about most is the one they imagine their cat would give them.
+- Consumer Insight: Young cat parents are surrounded by advice, but the voice they care about most is their cat's.
 - Brand Insight: Whiskas can cut through the noise by letting cats "speak" for the food they already love.
 - Strategy: Encourage Cat Whisperers to listen to their cats when approaching pet health in an overwhelming category, repositioning Whiskas as a safe, trusted choice that supports both cat wellbeing and cat enjoyment.
 - Strategic Idea: Let Them Speak

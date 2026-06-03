@@ -1,15 +1,25 @@
 :root {
   color-scheme: light;
-  --paper: #fafaf7;
-  --beige: #f0efe9;
-  --canvas: #eae7df;
-  --olive: #6b705c;
-  --charcoal: #2b2b2b;
-  --card: #f3f1eb;
-  --shadow-soft: 0 8px 18px rgba(43, 43, 43, 0.045);
+  --wall: #f4f0e8;
+  --gallery-white: #faf8f3;
+  --stone: #d8d0c2;
+  --charcoal: #171614;
+  --muted-ink: #3b3833;
+  --brass: #a67c3d;
+  --deep-olive: #4f5a45;
+  --museum-red: #8f1d18;
+  --paper: var(--wall);
+  --beige: #ebe4d8;
+  --canvas: var(--stone);
+  --olive: var(--deep-olive);
+  --card: var(--gallery-white);
+  --content-narrow: 720px;
+  --content-standard: 1040px;
+  --content-wide: 1280px;
+  --shadow-soft: 0 12px 26px rgba(23, 22, 20, 0.055);
   --surface-tint: rgba(255, 255, 255, 0.26);
-  --label-dark: rgba(18, 18, 18, 0.94);
-  --line-soft: rgba(43, 43, 43, 0.09);
+  --label-dark: rgba(23, 22, 20, 0.94);
+  --line-soft: rgba(23, 22, 20, 0.12);
   --marble-light: url("../images/marbletextures/whitegreymarble.jpg");
   --marble-warm: url("../images/marbletextures/whitegreygoldmarble.jpg");
   --marble-green: url("../images/marbletextures/lightgreenmarble.jpg");
@@ -28,6 +38,882 @@
   --marble-dark-surface:
     linear-gradient(135deg, rgba(13, 17, 15, 0.92), rgba(33, 44, 35, 0.86)),
     var(--marble-dark-square);
+}
+
+/* Museum-modern identity layer
+   Centralizes the refined institutional system across all existing pages. */
+html {
+  background: var(--wall);
+}
+
+body {
+  background:
+    linear-gradient(180deg, rgba(250, 248, 243, 0.2), rgba(244, 240, 232, 0.86)),
+    var(--wall);
+  color: var(--charcoal);
+  font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.58;
+}
+
+body::before {
+  opacity: 0.42;
+  background-image:
+    linear-gradient(90deg, rgba(216, 208, 194, 0.36) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(216, 208, 194, 0.24) 1px, transparent 1px),
+    radial-gradient(circle at 84% 10%, rgba(166, 124, 61, 0.12), transparent 20rem);
+  background-size: 72px 72px, 72px 72px, auto;
+  mix-blend-mode: multiply;
+}
+
+body::after {
+  opacity: 0.032;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(23, 22, 20, 0.65) 0.35px, transparent 0.55px),
+    radial-gradient(circle at 80% 30%, rgba(23, 22, 20, 0.45) 0.3px, transparent 0.5px);
+}
+
+.font-serif,
+.hero-title,
+.hero-role-title,
+.section-title,
+.exhibit-title,
+.exhibit-card-title,
+.glimpse-title,
+.strategy-plaque-item dd strong,
+.closet-plaque h2,
+.research-stat-value,
+.proof-card span,
+.nba-stat-card span,
+.dove-stat-card span,
+.dove-interpretation,
+h1,
+h2,
+h3 {
+  font-family: "Libre Baskerville", Georgia, serif !important;
+  letter-spacing: 0;
+}
+
+.font-sans,
+body,
+button,
+input,
+textarea,
+select,
+.museum-label,
+.eyebrow,
+.nav-link,
+.mobile-nav-link,
+.museum-link,
+.deck-link-button,
+figcaption,
+.exhibit-card-meta,
+.exhibit-card-number,
+.process-number,
+.contact-link-label {
+  font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+.site-shell {
+  overflow: clip;
+}
+
+.site-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, transparent 0, transparent calc(50% - 1px), rgba(166, 124, 61, 0.08) 50%, transparent calc(50% + 1px)),
+    radial-gradient(circle at 8% 92%, rgba(79, 90, 69, 0.08), transparent 18rem);
+}
+
+.top-nav {
+  border-bottom: 1px solid rgba(216, 208, 194, 0.95) !important;
+  background: rgba(244, 240, 232, 0.92);
+  backdrop-filter: blur(14px);
+}
+
+.top-nav > div:first-child {
+  max-width: var(--content-wide);
+  min-height: 4.25rem;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+}
+
+.top-nav a[href="index.html"]:first-child {
+  font-family: "Source Sans 3", sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 700;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase;
+  color: var(--charcoal) !important;
+}
+
+.top-nav a[href="index.html"]:first-child::after {
+  content: " / Museum of Thought";
+  color: rgba(59, 56, 51, 0.58);
+  font-weight: 500;
+}
+
+.top-nav nav {
+  counter-reset: museum-nav;
+  gap: clamp(1rem, 2vw, 2rem) !important;
+}
+
+.nav-link {
+  counter-increment: museum-nav;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(59, 56, 51, 0.74) !important;
+}
+
+.nav-link::before {
+  content: counter(museum-nav, decimal-leading-zero) " ";
+  color: var(--brass);
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: 0.78em;
+  letter-spacing: 0.04em;
+}
+
+.nav-link::after {
+  bottom: -0.5rem;
+  height: 1px;
+  background: var(--museum-red);
+}
+
+.nav-link:hover,
+.nav-link[aria-current="page"] {
+  color: var(--charcoal) !important;
+}
+
+.mobile-menu-toggle {
+  width: 2.65rem;
+  height: 2.65rem;
+  border: 1px solid var(--stone);
+  border-radius: 0;
+  background: var(--gallery-white);
+}
+
+.mobile-menu-toggle:hover,
+.mobile-menu-toggle[aria-expanded="true"] {
+  background: #fffdf8;
+}
+
+[data-mobile-menu] {
+  background: rgba(250, 248, 243, 0.96) !important;
+  border-color: var(--stone) !important;
+}
+
+.mobile-nav-link {
+  font-size: 0.82rem !important;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-ink) !important;
+  border-color: rgba(216, 208, 194, 0.8) !important;
+}
+
+.mobile-nav-link:nth-child(1)::before { content: "01 "; color: var(--brass); }
+.mobile-nav-link:nth-child(2)::before { content: "02 "; color: var(--brass); }
+.mobile-nav-link:nth-child(3)::before { content: "03 "; color: var(--brass); }
+.mobile-nav-link:nth-child(4)::before { content: "04 "; color: var(--brass); }
+
+.gallery-section {
+  padding: clamp(4.8rem, 8vw, 7.4rem) 0;
+  overflow: hidden;
+}
+
+.gallery-section::after {
+  height: 1px;
+  bottom: 0;
+  width: min(var(--content-wide), calc(100% - 3rem));
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  background: rgba(216, 208, 194, 0.86);
+}
+
+.section-wash {
+  opacity: 0.2;
+  background-image:
+    radial-gradient(circle at 86% 12%, rgba(166, 124, 61, 0.12), transparent 18rem),
+    radial-gradient(circle at 12% 88%, rgba(79, 90, 69, 0.08), transparent 16rem);
+  mix-blend-mode: multiply;
+}
+
+.eyebrow,
+.museum-label,
+.exhibit-top-back,
+.exhibit-card-number,
+.exhibit-card-meta,
+figcaption,
+.glimpse-meta,
+.penguin-gallery-caption,
+.ralph-gallery-caption,
+.redbubble-gallery-card figcaption,
+.contact-kicker,
+.closet-status {
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.13em !important;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--deep-olive) !important;
+}
+
+.museum-label::before,
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 1.6rem;
+  height: 1px;
+  margin-right: 0.65rem;
+  vertical-align: middle;
+  background: var(--brass);
+}
+
+.hero-section {
+  min-height: calc(100vh - 4.25rem);
+  padding-top: clamp(3rem, 7vw, 6.5rem) !important;
+  padding-bottom: clamp(3rem, 7vw, 6.5rem) !important;
+}
+
+.hero-section::before {
+  inset: 4.5rem 4vw auto auto;
+  width: min(38vw, 30rem);
+  height: min(68vh, 43rem);
+  opacity: 0.22;
+  border-left: 1px solid rgba(166, 124, 61, 0.24);
+  border-right: 1px solid rgba(166, 124, 61, 0.14);
+}
+
+.hero-grid,
+.top-nav > div,
+.gallery-section > .mx-auto,
+footer > div {
+  max-width: var(--content-wide) !important;
+}
+
+.hero-title {
+  max-width: 9ch;
+  font-size: clamp(4rem, 10vw, 9rem);
+  line-height: 0.98;
+  color: var(--charcoal) !important;
+}
+
+.hero-role-title {
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 1;
+  color: var(--charcoal) !important;
+}
+
+.section-title {
+  max-width: 12ch;
+  font-size: clamp(3rem, 7.5vw, 6.75rem);
+  line-height: 1;
+  color: var(--charcoal) !important;
+}
+
+.exhibit-title {
+  font-size: clamp(2.85rem, 6.8vw, 6.85rem);
+  line-height: 1.02;
+  color: var(--charcoal) !important;
+}
+
+p,
+li,
+dd,
+.exhibit-card-payoff {
+  color: rgba(59, 56, 51, 0.78);
+}
+
+.hero-section p[class*="leading"],
+.gallery-section p[class*="leading"],
+.soft-panel p,
+.process-panel p {
+  max-width: var(--content-narrow);
+}
+
+.museum-link,
+.deck-link-button,
+.execution-link {
+  min-height: 2.75rem;
+  padding: 0.75rem 1.05rem;
+  border: 1px solid var(--charcoal);
+  border-radius: 0;
+  background: var(--charcoal);
+  box-shadow: none;
+  color: var(--gallery-white) !important;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  transition: background-color 0.28s ease, color 0.28s ease, border-color 0.28s ease, transform 0.28s ease;
+}
+
+.museum-link:hover,
+.deck-link-button:hover,
+.execution-link:hover {
+  transform: translateY(-1px);
+  border-color: var(--brass);
+  background: var(--gallery-white);
+  color: var(--charcoal) !important;
+}
+
+.museum-link[href*="artist"],
+.exhibit-top-back,
+[data-back-link] {
+  background: transparent;
+  color: var(--charcoal) !important;
+  text-decoration: none;
+}
+
+.exhibit-card,
+.strategy-plaque,
+.soft-panel,
+.process-panel,
+.research-stat-card,
+.small-callout,
+.channel-card,
+.deliverables-grid p,
+.proof-card,
+.whiskas-mini-card,
+.whiskas-execution-card,
+.whiskas-supporting-card,
+.nba-research-copy,
+.dove-research-point,
+.closet-card,
+.contact-link-card {
+  border: 1px solid var(--stone);
+  border-radius: 0;
+  background: var(--gallery-white);
+  box-shadow: none;
+}
+
+.soft-panel,
+.process-panel {
+  padding: clamp(1.25rem, 3vw, 2.4rem);
+}
+
+.exhibit-card {
+  padding: 1.15rem;
+  gap: 1rem;
+}
+
+.exhibit-card::before,
+.strategy-plaque::before {
+  height: 3px;
+  background: linear-gradient(90deg, var(--brass), rgba(166, 124, 61, 0.18));
+  opacity: 1;
+}
+
+.exhibit-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 0.28rem;
+  background-image: var(--marble-green-accent);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.78;
+}
+
+.exhibit-card:hover,
+.exhibit-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--brass);
+  box-shadow: 0 10px 28px rgba(23, 22, 20, 0.06);
+}
+
+.exhibit-card-media,
+.exhibit-title-frame,
+.dove-featured-execution,
+.whiskas-preview-link,
+.whiskas-supporting-preview,
+.nba-execution-card,
+.nba-gallery-card,
+.redbubble-gallery-card,
+.penguin-gallery-card,
+.ralph-gallery-card,
+.closet-card {
+  position: relative;
+}
+
+.exhibit-card-media {
+  min-height: 13rem;
+  padding: 1rem;
+  border: 1px solid rgba(216, 208, 194, 0.74);
+  background: #fffdf8;
+}
+
+.exhibit-card-media img,
+.exhibit-title-frame img,
+.dove-featured-execution img,
+.ralph-gallery-image,
+.penguin-gallery-image,
+.redbubble-gallery-image,
+.nba-gallery-image,
+.nba-execution-image,
+.whiskas-execution-image,
+.whiskas-supporting-image,
+.closet-image,
+.wardrobe-image,
+.hobby-photo {
+  border-radius: 0 !important;
+}
+
+.exhibit-card-media img,
+.exhibit-title-frame img {
+  padding: 0.65rem;
+  border: 1px solid var(--charcoal);
+  background: var(--gallery-white);
+  box-shadow:
+    0 0 0 8px #fffdf8,
+    0 0 0 9px rgba(166, 124, 61, 0.48),
+    0 18px 34px rgba(23, 22, 20, 0.08);
+}
+
+.exhibit-card-label {
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--stone);
+}
+
+.exhibit-card-title {
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  line-height: 1.22;
+  color: var(--charcoal);
+}
+
+.exhibit-card-meta {
+  color: rgba(59, 56, 51, 0.62) !important;
+}
+
+.gallery-category {
+  gap: 1.35rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--stone);
+}
+
+.gallery-category-heading {
+  display: grid;
+  grid-template-columns: minmax(7rem, 0.18fr) minmax(0, 1fr);
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.gallery-category-heading h2 {
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(216, 208, 194, 0.86);
+}
+
+.exhibit-title-wall {
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  padding-top: clamp(1rem, 2vw, 2rem);
+}
+
+.exhibit-title-copy {
+  max-width: 58rem;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--charcoal);
+}
+
+.exhibit-title-copy::after {
+  content: "";
+  display: block;
+  width: min(100%, 42rem);
+  height: 1px;
+  margin-top: 1.5rem;
+  background: var(--stone);
+}
+
+.exhibit-title-copy .eyebrow,
+.exhibit-title-copy p,
+.exhibit-title-copy h1,
+.exhibit-title-copy h2,
+.featured-card .eyebrow,
+.featured-card h3,
+.featured-card p,
+.featured-card span {
+  color: inherit !important;
+}
+
+.exhibit-title-copy p:last-child {
+  color: rgba(59, 56, 51, 0.62) !important;
+}
+
+/* Final spacing correction for gallery/title walls. */
+main > .gallery-section:first-child {
+  padding-top: clamp(1.6rem, 3.5vw, 2.8rem) !important;
+}
+
+.gallery-section.pt-0 {
+  padding-top: 0 !important;
+}
+
+.gallery-section.pt-2 {
+  padding-top: 0.5rem !important;
+}
+
+/* Remove excess blank space above first gallery/title-wall content. */
+main > .gallery-section:first-child {
+  padding-top: clamp(1.6rem, 3.5vw, 2.8rem) !important;
+}
+
+.gallery-section.pt-0 {
+  padding-top: 0 !important;
+}
+
+.gallery-section.pt-2 {
+  padding-top: 0.5rem !important;
+}
+
+.exhibit-title-frame {
+  padding: 1.1rem;
+  border: 1px solid var(--stone);
+  background: var(--gallery-white);
+}
+
+.exhibit-title-frame img {
+  width: min(100%, 18rem);
+}
+
+.strategy-plaque {
+  padding: clamp(1.2rem, 2.5vw, 1.8rem);
+}
+
+.strategy-plaque-grid {
+  gap: 0;
+  border-top: 1px solid var(--stone);
+  border-left: 1px solid var(--stone);
+}
+
+.strategy-plaque-item {
+  padding: 0.85rem 0.95rem;
+  border-right: 1px solid var(--stone);
+  border-bottom: 1px solid var(--stone);
+  border-top: 0;
+}
+
+.strategy-plaque-item dt {
+  color: var(--deep-olive);
+}
+
+.strategy-plaque-item dd {
+  color: var(--muted-ink);
+}
+
+.strategy-plaque-item dd strong {
+  font-size: 1.05rem;
+  color: var(--charcoal);
+}
+
+.process-panel,
+.insight-block {
+  border-left: 3px solid var(--brass);
+  border-radius: 0;
+}
+
+.insight-block::before {
+  display: none;
+}
+
+figcaption,
+.penguin-gallery-caption,
+.ralph-gallery-caption,
+.redbubble-gallery-card figcaption,
+.dove-featured-execution figcaption {
+  margin-top: 0.65rem;
+  color: rgba(59, 56, 51, 0.62) !important;
+}
+
+.dove-featured-execution,
+.ralph-gallery-card,
+.penguin-gallery-card,
+.redbubble-gallery-card,
+.nba-gallery-card,
+.nba-execution-card {
+  padding: 0.85rem;
+  border: 1px solid var(--stone);
+  background: var(--gallery-white);
+}
+
+.dove-featured-execution img,
+.ralph-gallery-image,
+.penguin-gallery-image,
+.redbubble-gallery-image,
+.nba-gallery-image,
+.nba-execution-image,
+.whiskas-execution-image,
+.whiskas-supporting-image {
+  border: 1px solid var(--charcoal);
+  background: #fffdf8;
+  box-shadow: none;
+}
+
+.dove-stat-card,
+.nba-stat-card {
+  border-radius: 0;
+  border: 1px solid var(--stone);
+  background: var(--gallery-white);
+  box-shadow: none;
+}
+
+.dove-stat-card span,
+.nba-stat-card span {
+  color: var(--brass);
+}
+
+.thinking-diagram-wrap {
+  border: 1px solid var(--stone);
+  background:
+    linear-gradient(180deg, rgba(250, 248, 243, 0.86), rgba(250, 248, 243, 0.78)),
+    var(--marble-green);
+}
+
+.thinking-diagram-header {
+  max-width: var(--content-narrow);
+  margin-bottom: 2rem;
+}
+
+.thinking-diagram {
+  position: relative;
+  gap: 0;
+  counter-reset: process-room;
+}
+
+.process-step {
+  border-radius: 0;
+  border: 1px solid var(--stone);
+  border-left: 3px solid var(--deep-olive);
+  background: rgba(250, 248, 243, 0.92);
+  box-shadow: none;
+}
+
+.process-step::after {
+  background: var(--brass);
+}
+
+.process-step:hover {
+  transform: none;
+  border-color: var(--brass);
+  box-shadow: none;
+}
+
+.process-number {
+  color: var(--brass);
+}
+
+.process-number::before {
+  content: "Room ";
+}
+
+.process-title {
+  font-family: "Source Sans 3", sans-serif !important;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+}
+
+.turning-point {
+  border-left-color: var(--museum-red);
+  background: rgba(143, 29, 24, 0.055);
+}
+
+.insight-step {
+  border-left-color: var(--brass);
+  background: rgba(166, 124, 61, 0.08);
+}
+
+.insight-step .process-title {
+  font-family: "Libre Baskerville", Georgia, serif !important;
+  text-transform: none;
+}
+
+.wardrobe-archive {
+  border-top: 1px solid var(--stone);
+  border-bottom: 1px solid var(--stone);
+  background:
+    linear-gradient(180deg, rgba(244, 240, 232, 0.88), rgba(244, 240, 232, 0.76)),
+    var(--marble-green);
+}
+
+.wardrobe-string {
+  background: linear-gradient(180deg, rgba(166, 124, 61, 0.18), rgba(23, 22, 20, 0.42));
+}
+
+.wardrobe-image,
+.closet-image,
+.hobby-photo {
+  padding: 0.55rem;
+  border: 1px solid var(--stone);
+  background: var(--gallery-white);
+  box-shadow: none;
+}
+
+.closet-plaque,
+.glimpse-label {
+  border-radius: 0;
+  background: var(--charcoal);
+  box-shadow: none;
+}
+
+.contact-display {
+  max-width: var(--content-narrow);
+  border: 1px solid var(--stone);
+  background:
+    linear-gradient(180deg, rgba(250, 248, 243, 0.9), rgba(250, 248, 243, 0.78)),
+    var(--marble-green);
+  box-shadow: none;
+}
+
+.contact-link-card {
+  border-radius: 0;
+  background: var(--gallery-white);
+}
+
+.contact-link-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--brass);
+  opacity: 1;
+  box-shadow: none;
+}
+
+.contact-link-value {
+  color: var(--charcoal);
+  text-decoration-color: rgba(166, 124, 61, 0.54);
+}
+
+footer {
+  margin-top: 0 !important;
+  border-top: 1px solid var(--stone);
+  background: rgba(244, 240, 232, 0.94) !important;
+}
+
+footer > div {
+  padding-top: 1.1rem !important;
+  padding-bottom: 1.1rem !important;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(59, 56, 51, 0.62);
+}
+
+@media (min-width: 768px) {
+  .exhibit-card-grid {
+    gap: 1.2rem;
+  }
+
+  .strategy-plaque-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: column;
+  }
+
+  .thinking-diagram {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.1rem;
+  }
+
+  .process-step {
+    min-height: 9rem;
+    padding: 1rem;
+  }
+
+  .process-step::after {
+    left: auto;
+    right: -1.1rem;
+    top: 50%;
+    bottom: auto;
+    width: 1.1rem;
+    height: 1px;
+    transform: none;
+  }
+
+  .process-step:nth-child(5)::after {
+    right: 50%;
+    top: auto;
+    bottom: -1.1rem;
+    width: 1px;
+    height: 1.1rem;
+  }
+
+  .process-step:nth-child(6)::after,
+  .process-step:nth-child(7)::after,
+  .process-step:nth-child(8)::after,
+  .process-step:nth-child(9)::after {
+    left: -1.1rem;
+    right: auto;
+  }
+
+  .process-step:nth-child(6) {
+    grid-column: 5;
+    grid-row: 2;
+  }
+
+  .process-step:nth-child(7) {
+    grid-column: 4;
+    grid-row: 2;
+  }
+
+  .process-step:nth-child(8) {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .process-step:nth-child(9) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .process-step:nth-child(10) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
+
+  .top-nav a[href="index.html"]:first-child::after {
+    content: "";
+  }
+
+  .hero-title {
+    font-size: clamp(3.4rem, 18vw, 5.8rem);
+  }
+
+  .section-title,
+  .exhibit-title {
+    font-size: clamp(2.6rem, 15vw, 4.4rem);
+  }
+
+  .gallery-section {
+    padding: 4rem 0;
+  }
+
+  .gallery-category-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .strategy-plaque-grid {
+    border-left: 0;
+  }
+
+  .strategy-plaque-item {
+    border-left: 1px solid var(--stone);
+  }
 }
 
 html {
@@ -411,17 +1297,6 @@ body::after {
   transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
 }
 
-.exhibit-card::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto;
-  height: 0.28rem;
-  background-image: var(--marble-green-accent);
-  background-size: cover;
-  background-position: center;
-  opacity: 0.78;
-}
-
 .exhibit-card:hover,
 .exhibit-card:focus-visible {
   transform: translateY(-3px);
@@ -468,7 +1343,7 @@ body::after {
 
 .exhibit-card-title {
   margin: 0;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: clamp(1.35rem, 2.5vw, 2rem);
   line-height: 1.1;
   letter-spacing: -0.01em;
@@ -555,7 +1430,7 @@ body::after {
 }
 
 .strategy-plaque-item dd strong {
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.15rem;
   line-height: 1.15;
   color: rgba(43, 43, 43, 0.95);
@@ -644,7 +1519,7 @@ body::after {
 
 .glimpse-title {
   margin: 0.28rem 0 0;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.08rem;
   line-height: 1.1;
   letter-spacing: -0.01em;
@@ -785,7 +1660,7 @@ body::after {
 .research-stat-value {
   display: block;
   margin-bottom: 0.2rem;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.35rem;
   line-height: 1;
   letter-spacing: -0.01em;
@@ -993,7 +1868,7 @@ body::after {
 .deliverables-grid strong {
   display: block;
   margin-bottom: 0.18rem;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.15rem;
   line-height: 1.15;
   color: rgba(43, 43, 43, 0.92);
@@ -1065,7 +1940,7 @@ body::after {
 .proof-card span {
   display: block;
   margin-bottom: 0.25rem;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.55rem;
   line-height: 1;
   color: rgba(43, 43, 43, 0.92);
@@ -1202,7 +2077,7 @@ body::after {
 
 .whiskas-execution-copy h3,
 .whiskas-supporting-card h3 {
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.35rem;
   line-height: 1.12;
   color: rgba(43, 43, 43, 0.94);
@@ -1297,7 +2172,7 @@ body::after {
 .nba-stat-card span {
   display: block;
   margin-bottom: 0.25rem;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.7rem;
   line-height: 1;
   color: rgba(244, 212, 142, 0.96);
@@ -1351,7 +2226,7 @@ body::after {
 
 .nba-quote-card blockquote {
   margin: 0;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.2rem;
   line-height: 1.18;
   color: rgba(43, 43, 43, 0.9);
@@ -1439,7 +2314,7 @@ body::after {
 
 .nba-execution-copy h3 {
   margin: 0;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.35rem;
   line-height: 1.12;
   color: rgba(43, 43, 43, 0.94);
@@ -1486,7 +2361,7 @@ body::after {
 
 .nba-pairing-card span {
   display: block;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.1rem;
   line-height: 1.1;
   color: rgba(43, 43, 43, 0.92);
@@ -1572,7 +2447,7 @@ body::after {
 
 .dove-context-problem p {
   margin: 0;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.35rem;
   line-height: 1.18;
   color: rgba(43, 43, 43, 0.9);
@@ -1636,7 +2511,7 @@ body::after {
 .dove-stat-card span {
   display: block;
   margin-bottom: 0.25rem;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.65rem;
   line-height: 1;
   color: rgba(43, 43, 43, 0.92);
@@ -1709,7 +2584,7 @@ body::after {
   border-radius: 0.55rem;
   background: rgba(255, 255, 255, 0.54);
   box-shadow: inset 0 0 0 1px rgba(99, 142, 166, 0.12);
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.25rem;
   line-height: 1.18;
   color: rgba(43, 43, 43, 0.9);
@@ -1738,7 +2613,7 @@ body::after {
 }
 
 .dove-research-flow h3 {
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.2rem;
   line-height: 1.1;
   color: rgba(43, 43, 43, 0.92);
@@ -1772,7 +2647,7 @@ body::after {
 
 .dove-quote-card blockquote {
   margin: 0;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.16rem;
   line-height: 1.2;
   color: rgba(43, 43, 43, 0.9);
@@ -1800,7 +2675,7 @@ body::after {
 
 .dove-tension-card p {
   margin: 0;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.55rem;
   line-height: 1.14;
   color: rgba(255, 255, 255, 0.92);
@@ -1882,7 +2757,7 @@ body::after {
 
 .dove-execution-copy h3 {
   margin: 0;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.45rem;
   line-height: 1.12;
   color: rgba(43, 43, 43, 0.94);
@@ -2013,7 +2888,7 @@ body::after {
 }
 
 .redbubble-insight-card h3 {
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.55rem;
   line-height: 1.14;
   color: rgba(255, 255, 255, 0.92);
@@ -2087,7 +2962,7 @@ body::after {
 .redbubble-stat-card span {
   display: block;
   margin-bottom: 0.25rem;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.6rem;
   line-height: 1;
   color: rgba(43, 43, 43, 0.92);
@@ -2120,7 +2995,7 @@ body::after {
 }
 
 .redbubble-research-copy h3 {
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.35rem;
   line-height: 1.12;
 }
@@ -2154,7 +3029,7 @@ body::after {
 
 .redbubble-quote-card blockquote {
   margin: 0;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.12rem;
   line-height: 1.2;
   color: rgba(43, 43, 43, 0.9);
@@ -2217,7 +3092,7 @@ body::after {
 
 .redbubble-execution-copy h3 {
   margin: 0;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.35rem;
   line-height: 1.12;
 }
@@ -2252,7 +3127,7 @@ body::after {
 .redbubble-budget-card span {
   display: block;
   margin-bottom: 0.28rem;
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.45rem;
   line-height: 1;
 }
@@ -2397,6 +3272,49 @@ body::after {
   margin-top: 0;
 }
 
+.about-me-section {
+  margin-top: 2rem;
+}
+
+.about-me-copy {
+  max-width: 58rem;
+}
+
+.about-me-copy p + p {
+  margin-top: 1rem;
+}
+
+.about-photo-marquee {
+  overflow: hidden;
+  width: 100%;
+  scrollbar-width: none;
+}
+
+.about-photo-marquee::-webkit-scrollbar {
+  display: none;
+}
+
+.about-photo-track {
+  display: flex;
+  align-items: flex-start;
+  width: max-content;
+  animation: wardrobeLoop 48s linear infinite;
+}
+
+.about-photo-item {
+  margin-right: clamp(1.35rem, 2.8vw, 2.6rem);
+}
+
+.about-photo-image {
+  display: block;
+  width: clamp(12rem, 22vw, 20rem);
+  aspect-ratio: 4 / 5;
+  border: 1px solid rgba(216, 208, 194, 0.92);
+  border-radius: 0.95rem;
+  background: var(--gallery-white);
+  object-fit: cover;
+}
+
 .thinking-diagram-header {
   margin-bottom: 1.35rem;
 }
@@ -2452,7 +3370,7 @@ body::after {
 
 .process-title {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   font-size: 0.98rem;
   line-height: 1.45;
   font-weight: 500;
@@ -2481,7 +3399,7 @@ body::after {
 }
 
 .insight-step .process-title {
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.28rem;
   line-height: 1.06;
   letter-spacing: -0.01em;
@@ -2641,7 +3559,7 @@ body::after {
 }
 
 .closet-plaque h2 {
-  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-family: "Libre Baskerville", Georgia, serif;
   font-size: 1.25rem;
   line-height: 1.1;
 }
@@ -3140,4 +4058,2048 @@ body::after {
   .think-feel-do-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+/* Final museum-system overrides: keep this last in the cascade. */
+body {
+  background:
+    linear-gradient(180deg, rgba(250, 248, 243, 0.2), rgba(244, 240, 232, 0.9)),
+    var(--wall) !important;
+  color: var(--charcoal) !important;
+  font-family: "Source Sans 3", system-ui, sans-serif !important;
+}
+
+.font-serif,
+.hero-title,
+.hero-role-title,
+.section-title,
+.exhibit-title,
+.exhibit-card-title,
+.glimpse-title,
+.strategy-plaque-item dd strong,
+.closet-plaque h2,
+h1,
+h2,
+h3 {
+  font-family: "Libre Baskerville", Georgia, serif !important;
+  letter-spacing: 0 !important;
+}
+
+.top-nav {
+  border-bottom: 1px solid var(--stone) !important;
+  background: rgba(244, 240, 232, 0.94) !important;
+}
+
+.top-nav a[href="index.html"]:first-child {
+  font-family: "Source Sans 3", sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+.top-nav a[href="index.html"]:first-child::after {
+  content: " / Museum of Thought";
+  color: rgba(59, 56, 51, 0.58);
+  font-weight: 500;
+}
+
+.top-nav nav {
+  counter-reset: museum-nav;
+}
+
+.nav-link {
+  counter-increment: museum-nav;
+  font-family: "Source Sans 3", sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.13em !important;
+  text-transform: uppercase !important;
+}
+
+.nav-link::before {
+  content: counter(museum-nav, decimal-leading-zero) " ";
+  color: var(--brass);
+}
+
+.nav-link::after {
+  background: var(--museum-red) !important;
+}
+
+.top-nav a[href="index.html"]:first-child::after {
+  content: "" !important;
+  display: none !important;
+}
+
+.mobile-nav-link:nth-child(1)::before { content: "01 "; color: var(--brass); }
+.mobile-nav-link:nth-child(2)::before { content: "02 "; color: var(--brass); }
+.mobile-nav-link:nth-child(3)::before { content: "03 "; color: var(--brass); }
+.mobile-nav-link:nth-child(4)::before { content: "04 "; color: var(--brass); }
+
+.gallery-section {
+  padding: clamp(4.8rem, 8vw, 7.4rem) 0 !important;
+}
+
+.section-wash {
+  opacity: 0.16 !important;
+  background-image:
+    radial-gradient(circle at 86% 12%, rgba(166, 124, 61, 0.1), transparent 18rem),
+    radial-gradient(circle at 12% 88%, rgba(79, 90, 69, 0.06), transparent 16rem) !important;
+  mix-blend-mode: multiply !important;
+}
+
+.hero-section::before {
+  opacity: 0.08 !important;
+  background:
+    linear-gradient(90deg, rgba(244, 240, 232, 0), rgba(79, 90, 69, 0.14), rgba(244, 240, 232, 0)) !important;
+}
+
+.hero-title {
+  font-size: clamp(4rem, 10vw, 9rem) !important;
+  line-height: 0.98 !important;
+}
+
+.section-title {
+  font-size: clamp(3rem, 7.5vw, 6.75rem) !important;
+  line-height: 1 !important;
+}
+
+.exhibit-title {
+  font-size: clamp(2.85rem, 6.8vw, 6.85rem) !important;
+  line-height: 1.02 !important;
+}
+
+.eyebrow,
+.museum-label,
+.exhibit-card-number,
+.exhibit-card-meta,
+figcaption {
+  font-family: "Source Sans 3", sans-serif !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.13em !important;
+  text-transform: uppercase !important;
+}
+
+.museum-label::before,
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 1.6rem;
+  height: 1px;
+  margin-right: 0.65rem;
+  vertical-align: middle;
+  background: var(--brass);
+}
+
+.museum-link,
+.deck-link-button,
+.execution-link {
+  border: 1px solid var(--charcoal) !important;
+  border-radius: 0 !important;
+  background: var(--charcoal) !important;
+  box-shadow: none !important;
+  color: var(--gallery-white) !important;
+  font-family: "Source Sans 3", sans-serif !important;
+}
+
+.museum-link:hover,
+.deck-link-button:hover,
+.execution-link:hover {
+  border-color: var(--brass) !important;
+  background: var(--gallery-white) !important;
+  color: var(--charcoal) !important;
+}
+
+.exhibit-card,
+.strategy-plaque,
+.soft-panel,
+.process-panel,
+.research-stat-card,
+.small-callout,
+.channel-card,
+.dove-research-point,
+.closet-card,
+.contact-link-card {
+  border: 1px solid var(--stone) !important;
+  border-radius: 0 !important;
+  background: var(--gallery-white) !important;
+  box-shadow: none !important;
+}
+
+.exhibit-card::before,
+.strategy-plaque::before {
+  height: 3px !important;
+  background: linear-gradient(90deg, var(--brass), rgba(166, 124, 61, 0.18)) !important;
+}
+
+.exhibit-card:hover,
+.exhibit-card:focus-visible {
+  transform: translateY(-2px) !important;
+  border-color: var(--brass) !important;
+  box-shadow: 0 10px 28px rgba(23, 22, 20, 0.06) !important;
+}
+
+.gallery-category-heading {
+  display: grid !important;
+  grid-template-columns: minmax(7rem, 0.18fr) minmax(0, 1fr) !important;
+  align-items: baseline !important;
+  gap: 1rem !important;
+}
+
+.gallery-category-heading h2 {
+  padding-bottom: 0.8rem !important;
+  border-bottom: 1px solid rgba(216, 208, 194, 0.86) !important;
+}
+
+.exhibit-title-copy {
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--charcoal) !important;
+}
+
+.exhibit-title-copy .eyebrow,
+.exhibit-title-copy h1,
+.exhibit-title-copy h2,
+.exhibit-title-copy p {
+  color: inherit !important;
+}
+
+.exhibit-title-copy::after {
+  content: "";
+  display: block;
+  width: min(100%, 42rem);
+  height: 1px;
+  margin-top: 1.5rem;
+  background: var(--stone);
+}
+
+.exhibit-title-frame,
+.dove-featured-execution,
+.ralph-gallery-card,
+.penguin-gallery-card,
+.redbubble-gallery-card,
+.nba-gallery-card,
+.nba-execution-card {
+  border: 1px solid var(--stone) !important;
+  border-radius: 0 !important;
+  background: var(--gallery-white) !important;
+  box-shadow: none !important;
+}
+
+.exhibit-title-frame img,
+.exhibit-card-media img {
+  padding: 0.65rem !important;
+  border: 1px solid var(--charcoal) !important;
+  border-radius: 0 !important;
+  background: var(--gallery-white) !important;
+  box-shadow:
+    0 0 0 8px #fffdf8,
+    0 0 0 9px rgba(166, 124, 61, 0.48),
+    0 18px 34px rgba(23, 22, 20, 0.08) !important;
+}
+
+.strategy-plaque-grid {
+  gap: 0 !important;
+  border-top: 1px solid var(--stone) !important;
+  border-left: 1px solid var(--stone) !important;
+}
+
+.strategy-plaque-item {
+  padding: 0.85rem 0.95rem !important;
+  border-top: 0 !important;
+  border-right: 1px solid var(--stone) !important;
+  border-bottom: 1px solid var(--stone) !important;
+}
+
+.thinking-diagram-wrap {
+  border: 1px solid var(--stone) !important;
+  border-radius: 0 !important;
+  background: var(--gallery-white) !important;
+}
+
+.process-step {
+  border: 1px solid var(--stone) !important;
+  border-left: 3px solid var(--deep-olive) !important;
+  border-radius: 0 !important;
+  background: rgba(250, 248, 243, 0.92) !important;
+  box-shadow: none !important;
+}
+
+.process-number::before {
+  content: "Room ";
+}
+
+.process-title {
+  font-family: "Source Sans 3", sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.03em !important;
+  text-transform: uppercase !important;
+}
+
+.wardrobe-archive,
+.contact-display {
+  border-top: 1px solid var(--stone) !important;
+  border-bottom: 1px solid var(--stone) !important;
+  background: rgba(250, 248, 243, 0.58) !important;
+}
+
+.closet-plaque,
+.glimpse-label {
+  border-radius: 0 !important;
+  background: var(--charcoal) !important;
+  box-shadow: none !important;
+}
+
+footer {
+  margin-top: 0 !important;
+  border-top: 1px solid var(--stone) !important;
+  background: rgba(244, 240, 232, 0.94) !important;
+}
+
+footer > div {
+  max-width: var(--content-wide) !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+@media (min-width: 768px) {
+  .thinking-diagram {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 1.1rem !important;
+  }
+
+  .process-step {
+    min-height: 9rem !important;
+  }
+
+  .process-step::after {
+    left: auto !important;
+    right: -1.1rem !important;
+    top: 50% !important;
+    bottom: auto !important;
+    width: 1.1rem !important;
+    height: 1px !important;
+  }
+
+  .process-step:nth-child(5)::after {
+    right: 50% !important;
+    top: auto !important;
+    bottom: -1.1rem !important;
+    width: 1px !important;
+    height: 1.1rem !important;
+  }
+
+  .process-step:nth-child(6)::after,
+  .process-step:nth-child(7)::after,
+  .process-step:nth-child(8)::after,
+  .process-step:nth-child(9)::after {
+    left: -1.1rem !important;
+    right: auto !important;
+  }
+
+  .process-step:nth-child(6) {
+    grid-column: 5 !important;
+    grid-row: 2 !important;
+  }
+
+  .process-step:nth-child(7) {
+    grid-column: 4 !important;
+    grid-row: 2 !important;
+  }
+
+  .process-step:nth-child(8) {
+    grid-column: 3 !important;
+    grid-row: 2 !important;
+  }
+
+  .process-step:nth-child(9) {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+  }
+
+  .process-step:nth-child(10) {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-title,
+  .exhibit-title {
+    font-size: clamp(2.6rem, 15vw, 4.4rem) !important;
+  }
+
+  .hero-title {
+    font-size: clamp(3.4rem, 18vw, 5.8rem) !important;
+  }
+
+  .top-nav a[href="index.html"]:first-child::after {
+    content: "" !important;
+    display: none !important;
+  }
+
+  .gallery-category-heading {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Homepage entrance reset: return to centered portrait with text on both sides. */
+.hero-section {
+  min-height: calc(100vh - 6rem) !important;
+  padding-top: 2.5rem !important;
+  padding-bottom: 2.5rem !important;
+}
+
+.hero-section::before {
+  display: none !important;
+}
+
+.hero-grid {
+  max-width: 72rem !important;
+}
+
+.hero-title {
+  max-width: none !important;
+  font-size: clamp(42px, 6vw, 72px) !important;
+  line-height: 1.1 !important;
+}
+
+.hero-role-title {
+  font-size: clamp(36px, 5vw, 60px) !important;
+  line-height: 1.08 !important;
+}
+
+.hero-portrait-wrap {
+  width: min(100%, 23rem) !important;
+}
+
+.portrait-card.hero-frame-card {
+  min-height: 320px;
+}
+
+.hero-frame-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .portrait-card.hero-frame-card {
+    min-height: 410px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: clamp(42px, 13vw, 64px) !important;
+  }
+
+  .hero-role-title {
+    font-size: clamp(34px, 11vw, 54px) !important;
+  }
+}
+
+/* Framed image reset: the artwork files already include their own frames. */
+.exhibit-card-media,
+.exhibit-title-frame,
+.glimpse-frame {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.exhibit-card-media {
+  padding: 0 !important;
+}
+
+.exhibit-title-frame {
+  padding: 0 !important;
+}
+
+.exhibit-card-media img,
+.exhibit-title-frame img,
+.glimpse-art,
+.hero-frame-image {
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Button contrast reset: keep labels readable before and after hover. */
+.museum-link,
+.deck-link-button,
+.execution-link {
+  border-color: var(--charcoal) !important;
+  background: var(--gallery-white) !important;
+  color: var(--charcoal) !important;
+}
+
+.museum-link:hover,
+.museum-link:focus-visible,
+.deck-link-button:hover,
+.deck-link-button:focus-visible,
+.execution-link:hover,
+.execution-link:focus-visible {
+  border-color: var(--brass) !important;
+  background: var(--charcoal) !important;
+  color: var(--gallery-white) !important;
+}
+
+/* Title plaque reset: restore the earlier dark title-wall card treatment. */
+.exhibit-title-copy {
+  max-width: 48rem !important;
+  padding: 1.35rem !important;
+  border: 0 !important;
+  border-radius: 1.45rem !important;
+  background: rgba(18, 18, 18, 0.94) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 12px 26px rgba(18, 18, 18, 0.08) !important;
+}
+
+.exhibit-title-copy::after {
+  display: none !important;
+}
+
+.exhibit-title-copy .eyebrow {
+  color: rgba(255, 255, 255, 0.56) !important;
+}
+
+.exhibit-title-copy h1,
+.exhibit-title-copy h2,
+.exhibit-title-copy .exhibit-title {
+  color: rgba(255, 255, 255, 0.94) !important;
+}
+
+.exhibit-title-copy p {
+  color: rgba(255, 255, 255, 0.68) !important;
+}
+
+/* Compact navbar refinement. */
+.top-nav > div:first-child {
+  min-height: 3.45rem !important;
+  padding-top: 0.45rem !important;
+  padding-bottom: 0.45rem !important;
+}
+
+.top-nav a[href="index.html"]:first-child {
+  font-weight: 600 !important;
+}
+
+.nav-link {
+  font-weight: 500 !important;
+}
+
+.nav-link::before {
+  font-weight: 400 !important;
+}
+
+.mobile-nav-link {
+  font-weight: 500 !important;
+}
+
+/* Title wall correction: remove dark plaque cards and keep readable black text. */
+.exhibit-title-copy {
+  max-width: 58rem !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: var(--charcoal) !important;
+  box-shadow: none !important;
+}
+
+.exhibit-title-copy::after {
+  content: "" !important;
+  display: block !important;
+  width: min(100%, 42rem) !important;
+  height: 1px !important;
+  margin-top: 1.5rem !important;
+  background: var(--stone) !important;
+}
+
+.exhibit-title-copy .eyebrow {
+  color: var(--deep-olive) !important;
+}
+
+.exhibit-title-copy h1,
+.exhibit-title-copy h2,
+.exhibit-title-copy .exhibit-title,
+.exhibit-title-copy p {
+  color: var(--charcoal) !important;
+}
+
+.exhibit-title-copy p:last-child {
+  color: rgba(59, 56, 51, 0.62) !important;
+}
+
+/* Final spacing correction for gallery/title walls. */
+main > .gallery-section:first-child {
+  padding-top: clamp(1.6rem, 3.5vw, 2.8rem) !important;
+}
+
+.gallery-section.pt-0 {
+  padding-top: 0 !important;
+}
+
+.gallery-section.pt-2 {
+  padding-top: 0.5rem !important;
+}
+
+/* Keep active nav labels visually consistent with the other room numbers. */
+.top-nav .nav-link,
+.top-nav .nav-link[aria-current="page"],
+.top-nav nav a.nav-link.nav-link,
+.top-nav nav a.nav-link.nav-link[aria-current="page"] {
+  color: rgba(59, 56, 51, 0.76) !important;
+  font-family: "Source Sans 3", sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.13em !important;
+  text-transform: uppercase !important;
+}
+
+.top-nav .nav-link::before,
+.top-nav .nav-link[aria-current="page"]::before,
+.top-nav nav a.nav-link.nav-link::before,
+.top-nav nav a.nav-link.nav-link[aria-current="page"]::before {
+  color: var(--brass) !important;
+  font-family: "Libre Baskerville", Georgia, serif !important;
+  font-size: 0.78em !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.04em !important;
+}
+
+.top-nav .nav-link::after,
+.top-nav .nav-link[aria-current="page"]::after,
+.top-nav nav a.nav-link.nav-link::after,
+.top-nav nav a.nav-link.nav-link[aria-current="page"]::after {
+  content: "" !important;
+  display: block !important;
+  background: var(--museum-red) !important;
+  transform: scaleX(0) !important;
+  transform-origin: left !important;
+  transition: transform 500ms ease !important;
+}
+
+.top-nav .nav-link[aria-current="page"]::after,
+.top-nav .nav-link:hover::after,
+.top-nav nav a.nav-link.nav-link[aria-current="page"]::after,
+.top-nav nav a.nav-link.nav-link:hover::after {
+  transform: scaleX(1) !important;
+}
+
+.top-nav .nav-link:hover,
+.top-nav .nav-link[aria-current="page"],
+.top-nav nav a.nav-link.nav-link:hover,
+.top-nav nav a.nav-link.nav-link[aria-current="page"] {
+  color: rgba(59, 56, 51, 0.76) !important;
+}
+
+/* Design test switcher. */
+.design-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.15rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid rgba(23, 22, 20, 0.18);
+  border-radius: 999px;
+  background: rgba(250, 248, 243, 0.74);
+  color: var(--charcoal);
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    transform 220ms ease;
+}
+
+.design-toggle:hover,
+.design-toggle:focus-visible {
+  border-color: var(--brass);
+  background: var(--charcoal);
+  color: var(--gallery-white);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* Strategy Innovation Lab test theme. Scoped behind the header switch. */
+body.lab-theme {
+  color-scheme: dark;
+  --lab-black: #050505;
+  --carbon: #111111;
+  --graphite: #1c1c1c;
+  --concrete: #e7e4dd;
+  --signal-white: #f6f4ee;
+  --muted-gray: #8c8c8c;
+  --grid-line: rgba(246, 244, 238, 0.14);
+  --grid-line-dark: rgba(5, 5, 5, 0.12);
+  --volt: #d7ff2f;
+  --signal-red: #ff3b30;
+  --data-blue: #4d8dff;
+  --charcoal: var(--signal-white);
+  --muted-ink: rgba(246, 244, 238, 0.72);
+  --paper: var(--lab-black);
+  --wall: var(--lab-black);
+  --gallery-white: var(--carbon);
+  --stone: rgba(246, 244, 238, 0.16);
+  --brass: var(--volt);
+  --deep-olive: var(--volt);
+  --museum-red: var(--signal-red);
+  background:
+    radial-gradient(circle at 82% 12%, rgba(77, 141, 255, 0.13), transparent 24rem),
+    radial-gradient(circle at 14% 86%, rgba(215, 255, 47, 0.08), transparent 18rem),
+    linear-gradient(180deg, var(--lab-black), var(--carbon));
+  color: var(--signal-white);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body.lab-theme::before {
+  opacity: 1;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(rgba(246, 244, 238, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(246, 244, 238, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px, 48px 48px, 192px 192px, 192px 192px;
+  mix-blend-mode: normal;
+}
+
+body.lab-theme::after,
+body.lab-theme .section-wash,
+body.lab-theme .hero-section::after {
+  display: none !important;
+}
+
+body.lab-theme .font-serif,
+body.lab-theme h1,
+body.lab-theme h2,
+body.lab-theme h3,
+body.lab-theme .hero-title,
+body.lab-theme .hero-role-title,
+body.lab-theme .section-title,
+body.lab-theme .exhibit-title,
+body.lab-theme .exhibit-card-title,
+body.lab-theme .glimpse-title,
+body.lab-theme .strategy-plaque-item dd strong,
+body.lab-theme .closet-plaque h2,
+body.lab-theme .research-stat-value,
+body.lab-theme .proof-card span,
+body.lab-theme .nba-stat-card span,
+body.lab-theme .dove-stat-card span,
+body.lab-theme .dove-interpretation {
+  font-family: "Space Grotesk", "Inter", system-ui, sans-serif !important;
+  letter-spacing: -0.035em !important;
+}
+
+body.lab-theme,
+body.lab-theme button,
+body.lab-theme input,
+body.lab-theme textarea,
+body.lab-theme select,
+body.lab-theme .font-sans,
+body.lab-theme .museum-label,
+body.lab-theme .eyebrow,
+body.lab-theme .nav-link,
+body.lab-theme .mobile-nav-link,
+body.lab-theme .museum-link,
+body.lab-theme .deck-link-button,
+body.lab-theme figcaption,
+body.lab-theme .exhibit-card-meta,
+body.lab-theme .exhibit-card-number,
+body.lab-theme .process-number,
+body.lab-theme .contact-link-label {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+body.lab-theme .site-shell::before {
+  background:
+    linear-gradient(90deg, transparent, rgba(215, 255, 47, 0.22), transparent),
+    radial-gradient(circle at 72% 28%, rgba(255, 59, 48, 0.08), transparent 18rem);
+}
+
+body.lab-theme .top-nav {
+  border-bottom: 1px solid rgba(246, 244, 238, 0.14) !important;
+  background: rgba(5, 5, 5, 0.84) !important;
+  backdrop-filter: blur(18px);
+}
+
+body.lab-theme .top-nav > div:first-child {
+  max-width: 100%;
+  min-height: 3.75rem !important;
+  padding-inline: clamp(1rem, 4vw, 2.75rem) !important;
+}
+
+body.lab-theme .top-nav a[href="index.html"]:first-child {
+  color: var(--signal-white) !important;
+  font-family: "Space Grotesk", "Inter", system-ui, sans-serif !important;
+  font-size: 0.76rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+}
+
+body.lab-theme .top-nav a[href="index.html"]:first-child::after {
+  content: " / Strategy Innovation Lab";
+  color: rgba(246, 244, 238, 0.46);
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+body.lab-theme .top-nav .nav-link,
+body.lab-theme .top-nav .nav-link[aria-current="page"],
+body.lab-theme .top-nav nav a.nav-link.nav-link,
+body.lab-theme .top-nav nav a.nav-link.nav-link[aria-current="page"] {
+  color: rgba(246, 244, 238, 0.7) !important;
+  font-size: 0.66rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.16em !important;
+}
+
+body.lab-theme .top-nav .nav-link::before,
+body.lab-theme .top-nav nav a.nav-link.nav-link::before {
+  color: var(--volt) !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 0.86em !important;
+}
+
+body.lab-theme .top-nav .nav-link::after,
+body.lab-theme .top-nav nav a.nav-link.nav-link::after {
+  bottom: -0.72rem;
+  height: 2px;
+  background: var(--volt) !important;
+}
+
+body.lab-theme .top-nav .nav-link:hover,
+body.lab-theme .top-nav .nav-link[aria-current="page"] {
+  color: var(--signal-white) !important;
+}
+
+body.lab-theme .design-toggle {
+  border-color: rgba(215, 255, 47, 0.42);
+  background: rgba(215, 255, 47, 0.1);
+  color: var(--volt);
+}
+
+body.lab-theme .design-toggle:hover,
+body.lab-theme .design-toggle:focus-visible {
+  background: var(--volt);
+  color: var(--lab-black);
+}
+
+body.lab-theme .mobile-menu-toggle,
+body.lab-theme [data-mobile-menu] {
+  border-color: rgba(246, 244, 238, 0.16) !important;
+  background: rgba(17, 17, 17, 0.96) !important;
+  color: var(--signal-white) !important;
+}
+
+body.lab-theme .mobile-nav-link {
+  border-color: rgba(246, 244, 238, 0.12) !important;
+  color: rgba(246, 244, 238, 0.74) !important;
+}
+
+body.lab-theme .page-enter {
+  background: transparent;
+}
+
+body.lab-theme .hero-section {
+  min-height: calc(100vh - 3.75rem) !important;
+  padding-top: clamp(3rem, 7vw, 7rem) !important;
+  padding-bottom: clamp(3rem, 7vw, 7rem) !important;
+  background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+    radial-gradient(circle at 70% 18%, rgba(77, 141, 255, 0.2), transparent 22rem),
+    var(--lab-black) !important;
+  background-size: 48px 48px, 48px 48px, auto, auto !important;
+}
+
+body.lab-theme .hero-grid {
+  max-width: min(100%, 88rem) !important;
+}
+
+body.lab-theme .hero-section .grid {
+  align-items: stretch;
+  gap: clamp(1rem, 3vw, 2.5rem) !important;
+}
+
+body.lab-theme .hero-section .eyebrow::before {
+  content: "BRYCE PETERSON / STRATEGY SYSTEMS";
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--volt);
+}
+
+body.lab-theme .eyebrow,
+body.lab-theme .museum-label,
+body.lab-theme .exhibit-card-number,
+body.lab-theme .exhibit-card-meta,
+body.lab-theme figcaption,
+body.lab-theme .contact-kicker {
+  color: rgba(246, 244, 238, 0.62) !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+}
+
+body.lab-theme .hero-title {
+  color: var(--signal-white) !important;
+  font-size: clamp(4rem, 10.5vw, 10rem) !important;
+  font-weight: 700 !important;
+  line-height: 0.86 !important;
+  text-transform: uppercase;
+}
+
+body.lab-theme .hero-role-title {
+  color: var(--volt) !important;
+  font-size: clamp(2.4rem, 6vw, 6.5rem) !important;
+  font-weight: 700 !important;
+  line-height: 0.9 !important;
+  text-transform: uppercase;
+}
+
+body.lab-theme .hero-section p,
+body.lab-theme .gallery-section p,
+body.lab-theme .soft-panel p,
+body.lab-theme .exhibit-title-copy p {
+  color: rgba(246, 244, 238, 0.72) !important;
+}
+
+body.lab-theme [class*="text-charcoal"],
+body.lab-theme [class*="text-ink"],
+body.lab-theme [class*="text-olive"] {
+  color: rgba(246, 244, 238, 0.72) !important;
+}
+
+body.lab-theme [class*="text-charcoal"] strong,
+body.lab-theme [class*="text-ink"] strong,
+body.lab-theme [class*="text-olive"] strong {
+  color: var(--signal-white) !important;
+}
+
+body.lab-theme [class*="bg-paper"],
+body.lab-theme [class*="bg-white"],
+body.lab-theme [class*="bg-mist"] {
+  background-color: rgba(17, 17, 17, 0.74) !important;
+}
+
+body.lab-theme .hero-portrait-wrap {
+  width: min(100%, 26rem) !important;
+}
+
+body.lab-theme .portrait-card,
+body.lab-theme .hero-frame-card {
+  overflow: hidden;
+  min-height: 460px !important;
+  border: 1px solid rgba(246, 244, 238, 0.16) !important;
+  border-radius: 0 !important;
+  background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+    var(--graphite) !important;
+  background-size: 24px 24px, 24px 24px, auto !important;
+  box-shadow: none !important;
+}
+
+body.lab-theme .hero-frame-image,
+body.lab-theme .portrait-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
+  filter: grayscale(1) contrast(1.08);
+  mix-blend-mode: luminosity;
+}
+
+body.lab-theme .gallery-section,
+body.lab-theme .wardrobe-archive {
+  padding-top: clamp(4.5rem, 9vw, 8rem) !important;
+  padding-bottom: clamp(4.5rem, 9vw, 8rem) !important;
+  background: transparent !important;
+}
+
+body.lab-theme .gallery-section:nth-of-type(even) {
+  background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+    var(--carbon) !important;
+  background-size: 48px 48px, 48px 48px, auto !important;
+}
+
+body.lab-theme .section-title,
+body.lab-theme .exhibit-title {
+  color: var(--signal-white) !important;
+  font-size: clamp(3rem, 8vw, 8rem) !important;
+  font-weight: 700 !important;
+  line-height: 0.9 !important;
+  text-transform: uppercase;
+}
+
+body.lab-theme .soft-panel,
+body.lab-theme .wall-label,
+body.lab-theme .resume-feature,
+body.lab-theme .strategy-plaque,
+body.lab-theme .contact-display,
+body.lab-theme .contact-placard,
+body.lab-theme .dove-context-panel,
+body.lab-theme .dove-strategy-panel,
+body.lab-theme .nba-opportunity-panel,
+body.lab-theme .nba-insight-card,
+body.lab-theme .nba-big-idea-card {
+  border: 1px solid rgba(246, 244, 238, 0.14) !important;
+  border-radius: 0 !important;
+  background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+    rgba(17, 17, 17, 0.86) !important;
+  background-size: 32px 32px, 32px 32px, auto !important;
+  color: var(--signal-white) !important;
+  box-shadow: none !important;
+}
+
+body.lab-theme .soft-panel h2,
+body.lab-theme .soft-panel h3,
+body.lab-theme .strategy-plaque h2,
+body.lab-theme .contact-display h1,
+body.lab-theme .contact-display h2 {
+  color: var(--signal-white) !important;
+}
+
+body.lab-theme .museum-link,
+body.lab-theme .deck-link-button,
+body.lab-theme .execution-link {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(246, 244, 238, 0.26) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: var(--signal-white) !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 0.7rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  box-shadow: none !important;
+}
+
+body.lab-theme .museum-link::before,
+body.lab-theme .deck-link-button::before,
+body.lab-theme .execution-link::before {
+  content: "";
+  position: absolute;
+  inset: auto auto 0 0;
+  width: 100%;
+  height: 2px;
+  background: var(--volt);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 260ms ease;
+}
+
+body.lab-theme .museum-link:hover,
+body.lab-theme .museum-link:focus-visible,
+body.lab-theme .deck-link-button:hover,
+body.lab-theme .deck-link-button:focus-visible,
+body.lab-theme .execution-link:hover,
+body.lab-theme .execution-link:focus-visible {
+  border-color: var(--volt) !important;
+  background: rgba(215, 255, 47, 0.08) !important;
+  color: var(--volt) !important;
+  transform: translateY(-1px);
+}
+
+body.lab-theme .museum-link:hover::before,
+body.lab-theme .museum-link:focus-visible::before,
+body.lab-theme .deck-link-button:hover::before,
+body.lab-theme .deck-link-button:focus-visible::before,
+body.lab-theme .execution-link:hover::before,
+body.lab-theme .execution-link:focus-visible::before {
+  transform: scaleX(1);
+}
+
+body.lab-theme .exhibit-card-grid,
+body.lab-theme .featured-exhibit-grid,
+body.lab-theme .closet-grid {
+  gap: 1px !important;
+  border: 1px solid rgba(246, 244, 238, 0.14);
+  background: rgba(246, 244, 238, 0.14);
+}
+
+body.lab-theme .exhibit-card,
+body.lab-theme .closet-card,
+body.lab-theme .contact-link-card {
+  position: relative;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background:
+    linear-gradient(135deg, rgba(246, 244, 238, 0.055), transparent 46%),
+    var(--carbon) !important;
+  color: var(--signal-white) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body.lab-theme .exhibit-card::before,
+body.lab-theme .closet-card::before,
+body.lab-theme .contact-link-card::before {
+  content: "VIEW CASE";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  padding: 0.35rem 0.45rem;
+  border: 1px solid rgba(215, 255, 47, 0.38);
+  color: var(--volt);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+
+body.lab-theme .closet-card::before {
+  content: "OPEN FILE";
+}
+
+body.lab-theme .contact-link-card::before {
+  content: "CONNECT";
+}
+
+body.lab-theme .exhibit-card:hover,
+body.lab-theme .exhibit-card:focus-visible,
+body.lab-theme .closet-card:hover,
+body.lab-theme .closet-card:focus-visible,
+body.lab-theme .contact-link-card:hover,
+body.lab-theme .contact-link-card:focus-visible {
+  outline: 1px solid var(--volt) !important;
+  outline-offset: -1px;
+}
+
+body.lab-theme .exhibit-card:hover::before,
+body.lab-theme .exhibit-card:focus-visible::before,
+body.lab-theme .closet-card:hover::before,
+body.lab-theme .closet-card:focus-visible::before,
+body.lab-theme .contact-link-card:hover::before,
+body.lab-theme .contact-link-card:focus-visible::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.lab-theme .exhibit-card-media {
+  overflow: hidden;
+  aspect-ratio: 16 / 11;
+  border-bottom: 1px solid rgba(246, 244, 238, 0.14) !important;
+  background: var(--graphite) !important;
+}
+
+body.lab-theme .exhibit-card-media img,
+body.lab-theme .exhibit-title-frame img,
+body.lab-theme .glimpse-art,
+body.lab-theme .closet-image,
+body.lab-theme .dove-featured-execution img,
+body.lab-theme .nba-execution-image,
+body.lab-theme .nba-gallery-image {
+  border-radius: 0 !important;
+  filter: grayscale(0.8) contrast(1.08) saturate(0.72);
+  transition: transform 360ms ease, filter 360ms ease;
+}
+
+body.lab-theme .exhibit-card:hover .exhibit-card-media img,
+body.lab-theme .exhibit-card:focus-visible .exhibit-card-media img {
+  transform: scale(1.04);
+  filter: grayscale(0.25) contrast(1.06) saturate(0.95);
+}
+
+body.lab-theme .exhibit-card-label {
+  padding: clamp(1.2rem, 2.8vw, 2rem) !important;
+}
+
+body.lab-theme .exhibit-card-title {
+  color: var(--signal-white) !important;
+  font-size: clamp(1.55rem, 3vw, 2.8rem) !important;
+  font-weight: 700 !important;
+  line-height: 0.96 !important;
+  text-transform: uppercase;
+}
+
+body.lab-theme .exhibit-card-payoff {
+  color: rgba(246, 244, 238, 0.7) !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 0.95rem !important;
+  line-height: 1.55 !important;
+}
+
+body.lab-theme .exhibit-title-wall {
+  padding-top: clamp(3rem, 7vw, 7rem) !important;
+  background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+    var(--lab-black) !important;
+  background-size: 48px 48px, 48px 48px, auto !important;
+}
+
+body.lab-theme .exhibit-title-copy {
+  max-width: 74rem !important;
+}
+
+body.lab-theme .exhibit-title-copy::after {
+  background: rgba(215, 255, 47, 0.5) !important;
+}
+
+body.lab-theme .exhibit-title-copy .eyebrow {
+  color: var(--volt) !important;
+}
+
+body.lab-theme .exhibit-title-copy h1,
+body.lab-theme .exhibit-title-copy h2,
+body.lab-theme .exhibit-title-copy .exhibit-title {
+  color: var(--signal-white) !important;
+}
+
+body.lab-theme .exhibit-title-frame,
+body.lab-theme .glimpse-frame {
+  overflow: hidden;
+  border: 1px solid rgba(246, 244, 238, 0.16) !important;
+  border-radius: 0 !important;
+  background: var(--graphite) !important;
+}
+
+body.lab-theme .strategy-plaque-grid {
+  gap: 1px !important;
+  border: 1px solid rgba(246, 244, 238, 0.14);
+  background: rgba(246, 244, 238, 0.14);
+}
+
+body.lab-theme .strategy-plaque-item {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: rgba(5, 5, 5, 0.6) !important;
+}
+
+body.lab-theme .strategy-plaque-item dt {
+  color: var(--volt) !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+}
+
+body.lab-theme .strategy-plaque-item dd,
+body.lab-theme .strategy-plaque-item dd strong {
+  color: var(--signal-white) !important;
+}
+
+body.lab-theme .research-card,
+body.lab-theme .dove-stat-card,
+body.lab-theme .quote-card,
+body.lab-theme .nba-stat-card,
+body.lab-theme .nba-quote-card,
+body.lab-theme .proof-card,
+body.lab-theme .dove-featured-execution,
+body.lab-theme .nba-execution-card,
+body.lab-theme .nba-gallery-card,
+body.lab-theme .penguin-gallery-card,
+body.lab-theme .ralph-gallery-card {
+  border: 1px solid rgba(246, 244, 238, 0.14) !important;
+  border-radius: 0 !important;
+  background: rgba(17, 17, 17, 0.84) !important;
+  color: var(--signal-white) !important;
+  box-shadow: none !important;
+}
+
+body.lab-theme .thinking-diagram-wrap {
+  border: 1px solid rgba(246, 244, 238, 0.14) !important;
+  border-radius: 0 !important;
+  background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+    var(--carbon) !important;
+  background-size: 32px 32px, 32px 32px, auto !important;
+  box-shadow: none !important;
+}
+
+body.lab-theme .thinking-diagram {
+  gap: 1px !important;
+  border: 1px solid rgba(246, 244, 238, 0.14);
+  background: rgba(246, 244, 238, 0.14);
+}
+
+body.lab-theme .process-step {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: rgba(5, 5, 5, 0.72) !important;
+  color: var(--signal-white) !important;
+  box-shadow: none !important;
+}
+
+body.lab-theme .process-step::after {
+  background: var(--volt) !important;
+}
+
+body.lab-theme .process-number {
+  color: var(--volt) !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+}
+
+body.lab-theme .process-number::before {
+  content: "STEP " !important;
+}
+
+body.lab-theme .process-title {
+  color: var(--signal-white) !important;
+  font-family: "Space Grotesk", "Inter", system-ui, sans-serif !important;
+  text-transform: uppercase;
+}
+
+body.lab-theme .turning-point,
+body.lab-theme .insight-step,
+body.lab-theme .step-insight {
+  background: rgba(215, 255, 47, 0.1) !important;
+}
+
+body.lab-theme .wardrobe-item,
+body.lab-theme .wardrobe-image,
+body.lab-theme .archival-object,
+body.lab-theme .closet-card {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+body.lab-theme .wardrobe-string {
+  background: var(--volt) !important;
+}
+
+body.lab-theme .contact-link-label,
+body.lab-theme .contact-link-value {
+  color: var(--signal-white) !important;
+}
+
+body.lab-theme footer {
+  border-top: 1px solid rgba(246, 244, 238, 0.14) !important;
+  background: var(--lab-black) !important;
+}
+
+body.lab-theme footer > div {
+  max-width: 100%;
+  color: rgba(246, 244, 238, 0.58) !important;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 0.68rem !important;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .design-toggle {
+    margin-left: auto;
+  }
+
+  body.lab-theme .hero-section .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.lab-theme .hero-title,
+  body.lab-theme .section-title,
+  body.lab-theme .exhibit-title {
+    font-size: clamp(3.2rem, 17vw, 5.8rem) !important;
+  }
+
+  body.lab-theme .hero-role-title {
+    font-size: clamp(2.5rem, 14vw, 5rem) !important;
+  }
+
+  body.lab-theme .hero-portrait-wrap {
+    order: -1;
+  }
+
+  body.lab-theme .portrait-card,
+  body.lab-theme .hero-frame-card {
+    min-height: 340px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.lab-theme *,
+  body.lab-theme *::before,
+  body.lab-theme *::after {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Campaign-page light shading pass: keep individual exhibit sections readable. */
+body:not(.lab-theme) .dove-insight-card,
+body:not(.lab-theme) .dove-big-idea-card,
+body:not(.lab-theme) .dove-tension-card,
+body:not(.lab-theme) .nba-opportunity-panel,
+body:not(.lab-theme) .nba-insight-card,
+body:not(.lab-theme) .nba-big-idea-card,
+body:not(.lab-theme) .nba-creative-panel,
+body:not(.lab-theme) .nba-strategy-panel,
+body:not(.lab-theme) .redbubble-insight-card,
+body:not(.lab-theme) .redbubble-insight-card-alt,
+body:not(.lab-theme) .redbubble-big-idea-card,
+body:not(.lab-theme) .redbubble-strategy-panel,
+body:not(.lab-theme) .redbubble-creative-panel,
+body:not(.lab-theme) .strategy-line-card,
+body:not(.lab-theme) .dove-context-panel,
+body:not(.lab-theme) .dove-strategy-panel {
+  border: 1px solid rgba(216, 208, 194, 0.9) !important;
+  border-radius: 1.15rem !important;
+  background:
+    linear-gradient(135deg, rgba(250, 248, 243, 0.92), rgba(244, 240, 232, 0.78)),
+    var(--gallery-white) !important;
+  color: var(--charcoal) !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.38),
+    0 10px 24px rgba(23, 22, 20, 0.035) !important;
+}
+
+body:not(.lab-theme) .dove-insight-card *,
+body:not(.lab-theme) .dove-big-idea-card *,
+body:not(.lab-theme) .dove-tension-card *,
+body:not(.lab-theme) .nba-opportunity-panel *,
+body:not(.lab-theme) .nba-insight-card *,
+body:not(.lab-theme) .nba-big-idea-card *,
+body:not(.lab-theme) .nba-creative-panel *,
+body:not(.lab-theme) .nba-strategy-panel *,
+body:not(.lab-theme) .redbubble-insight-card *,
+body:not(.lab-theme) .redbubble-insight-card-alt *,
+body:not(.lab-theme) .redbubble-big-idea-card *,
+body:not(.lab-theme) .redbubble-strategy-panel *,
+body:not(.lab-theme) .redbubble-creative-panel *,
+body:not(.lab-theme) .strategy-line-card *,
+body:not(.lab-theme) .dove-context-panel *,
+body:not(.lab-theme) .dove-strategy-panel * {
+  color: var(--charcoal) !important;
+}
+
+body:not(.lab-theme) .dove-insight-card .eyebrow,
+body:not(.lab-theme) .dove-big-idea-card .eyebrow,
+body:not(.lab-theme) .dove-tension-card .eyebrow,
+body:not(.lab-theme) .nba-opportunity-panel .eyebrow,
+body:not(.lab-theme) .nba-insight-card .eyebrow,
+body:not(.lab-theme) .nba-big-idea-card .eyebrow,
+body:not(.lab-theme) .nba-creative-panel .eyebrow,
+body:not(.lab-theme) .nba-strategy-panel .eyebrow,
+body:not(.lab-theme) .redbubble-insight-card .eyebrow,
+body:not(.lab-theme) .redbubble-insight-card-alt .eyebrow,
+body:not(.lab-theme) .redbubble-big-idea-card .eyebrow,
+body:not(.lab-theme) .redbubble-strategy-panel .eyebrow,
+body:not(.lab-theme) .redbubble-creative-panel .eyebrow,
+body:not(.lab-theme) .strategy-line-card .eyebrow,
+body:not(.lab-theme) .dove-context-panel .eyebrow,
+body:not(.lab-theme) .dove-strategy-panel .eyebrow {
+  color: var(--deep-olive) !important;
+}
+
+body:not(.lab-theme) .dove-insight-card p,
+body:not(.lab-theme) .dove-big-idea-card p,
+body:not(.lab-theme) .dove-tension-card p,
+body:not(.lab-theme) .nba-opportunity-panel p,
+body:not(.lab-theme) .nba-insight-card p,
+body:not(.lab-theme) .nba-big-idea-card p,
+body:not(.lab-theme) .nba-creative-panel p,
+body:not(.lab-theme) .nba-strategy-panel p,
+body:not(.lab-theme) .redbubble-insight-card p,
+body:not(.lab-theme) .redbubble-insight-card-alt p,
+body:not(.lab-theme) .redbubble-big-idea-card p,
+body:not(.lab-theme) .redbubble-strategy-panel p,
+body:not(.lab-theme) .redbubble-creative-panel p,
+body:not(.lab-theme) .strategy-line-card p,
+body:not(.lab-theme) .dove-context-panel p,
+body:not(.lab-theme) .dove-strategy-panel p {
+  color: rgba(59, 56, 51, 0.72) !important;
+}
+
+.nsac-role-stack {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.nsac-role-panel {
+  display: grid;
+  gap: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+.nsac-presenter-panel,
+.nsac-reflection-panel {
+  max-width: 58rem;
+}
+
+.nsac-presenter-panel {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+.nsac-slide-frame,
+.nsac-pdf-frame,
+.nsac-presenting-frame {
+  margin: 0;
+  border: 1px solid rgba(216, 208, 194, 0.9);
+  background: #fffdf8;
+}
+
+.nsac-slide-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nsac-presenting-frame {
+  overflow: hidden;
+}
+
+.nsac-presenting-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 52% 58%;
+  image-orientation: from-image;
+}
+
+.nsac-slide-frame figcaption,
+.nsac-pdf-frame figcaption,
+.nsac-presenting-frame figcaption {
+  padding: 0.7rem 0.85rem;
+  border-top: 1px solid rgba(216, 208, 194, 0.78);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(79, 90, 69, 0.9);
+}
+
+.nsac-playbook-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.nsac-creative-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.nsac-creative-frame {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  border: 1px solid rgba(216, 208, 194, 0.9);
+  background: var(--gallery-white);
+}
+
+.nsac-creative-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 34rem;
+  object-fit: contain;
+  background: var(--gallery-white);
+}
+
+.nsac-creative-frame figcaption {
+  padding: 0.7rem 0.85rem;
+  border-top: 1px solid rgba(216, 208, 194, 0.78);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(79, 90, 69, 0.9);
+}
+
+.nsac-pdf-frame iframe {
+  display: block;
+  width: 100%;
+  height: clamp(24rem, 62vw, 42rem);
+  border: 0;
+  background: #fff;
+}
+
+.nsac-testing-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.nsac-reflection-list {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nsac-reflection-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: rgba(59, 56, 51, 0.74);
+  line-height: 1.7;
+}
+
+.nsac-reflection-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 0.42rem;
+  height: 0.42rem;
+  background: var(--brass);
+}
+
+.nsac-quotes-section {
+  overflow: clip;
+}
+
+.nsac-quote-collage {
+  columns: 1;
+  column-gap: 1rem;
+  min-height: 70vh;
+}
+
+.nsac-quote-collage blockquote {
+  break-inside: avoid;
+  margin: 0 0 1rem;
+  padding: clamp(1rem, 2vw, 1.35rem);
+  border: 1px solid rgba(216, 208, 194, 0.92);
+  background:
+    linear-gradient(135deg, rgba(250, 248, 243, 0.96), rgba(244, 240, 232, 0.78)),
+    var(--gallery-white);
+  color: rgba(23, 22, 20, 0.76);
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(0.92rem, 1.45vw, 1.08rem);
+  line-height: 1.7;
+  transform: translateY(var(--quote-shift, 0px)) rotate(var(--quote-rotate, 0deg));
+  transition: transform 0.08s linear;
+  will-change: transform;
+}
+
+.nsac-quote-collage blockquote:nth-child(4n + 2) {
+  background:
+    linear-gradient(135deg, rgba(255, 253, 248, 0.98), rgba(232, 227, 216, 0.76)),
+    var(--gallery-white);
+}
+
+.nsac-quote-collage blockquote:nth-child(4n + 3) {
+  border-color: rgba(166, 124, 61, 0.35);
+}
+
+@media (min-width: 700px) {
+  .nsac-playbook-grid,
+  .nsac-creative-grid,
+  .nsac-testing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nsac-creative-frame-wide {
+    grid-column: 1 / -1;
+  }
+
+  .nsac-testing-grid .nsac-slide-frame:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .nsac-quote-collage {
+    columns: 2;
+  }
+}
+
+@media (min-width: 980px) {
+  .nsac-role-panel:first-child {
+    grid-template-columns: minmax(0, 0.82fr) minmax(22rem, 1.18fr);
+    align-items: start;
+  }
+
+  .nsac-presenter-panel {
+    grid-template-columns: minmax(0, 0.9fr) minmax(18rem, 0.78fr);
+    align-items: center;
+  }
+
+  .nsac-testing-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .nsac-creative-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .nsac-testing-grid .nsac-slide-frame:last-child {
+    grid-column: auto;
+  }
+
+  .nsac-quote-collage {
+    columns: 3;
+    column-gap: 1.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nsac-quote-collage blockquote {
+    transform: none !important;
+    transition: none;
+  }
+}
+
+/* Global heading alignment: headings use the full available content column and wrap only when the container requires it. */
+.hero-title,
+.section-title,
+.exhibit-title,
+.exhibit-title-copy,
+.gallery-section h1,
+.gallery-section h2,
+.gallery-section h3 {
+  max-width: 100% !important;
+}
+
+.section-title,
+.exhibit-title,
+.exhibit-title-copy h1,
+.exhibit-title-copy h2 {
+  width: 100% !important;
+  text-wrap: normal;
+  overflow-wrap: normal;
+  hyphens: manual;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: none !important;
+}
+
+.inquiries-summary,
+.inquiries-page-intro,
+.contact-display {
+  text-align: center;
+}
+
+.inquiries-summary .eyebrow,
+.inquiries-page-intro .eyebrow,
+.contact-display .contact-kicker {
+  text-align: left;
+}
+
+.inquiries-summary p:not(.eyebrow),
+.inquiries-page-intro p:not(.eyebrow),
+.inquiries-summary .museum-link,
+.contact-display {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inquiries-summary .mt-6 {
+  display: flex;
+  justify-content: center;
+}
+
+.featured-exhibit-grid .exhibit-card {
+  display: grid !important;
+  grid-template-rows: auto 1fr !important;
+  height: 100% !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.featured-exhibit-grid .exhibit-card::before {
+  display: none !important;
+}
+
+.featured-exhibit-grid .exhibit-card-media {
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.featured-exhibit-grid .exhibit-card-media img {
+  width: min(100%, 18rem) !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 14px 24px rgba(23, 22, 20, 0.08)) !important;
+}
+
+.featured-exhibit-grid .exhibit-card-label {
+  display: grid !important;
+  grid-template-rows: auto minmax(5.8rem, auto) auto 1fr !important;
+  height: 100% !important;
+  padding: 1.15rem !important;
+  border: 1px solid var(--stone) !important;
+  background: var(--gallery-white) !important;
+}
+
+.featured-exhibit-grid .exhibit-card-title {
+  min-height: 5.8rem !important;
+}
+
+@media (min-width: 768px) {
+  .featured-exhibit-grid {
+    align-items: stretch !important;
+  }
+
+  .featured-exhibit-grid .exhibit-card {
+    min-height: 37rem !important;
+  }
+
+  .featured-exhibit-grid .exhibit-card-media {
+    height: 26rem !important;
+    display: flex !important;
+    align-items: end !important;
+    justify-content: center !important;
+  }
+
+  .featured-exhibit-grid .exhibit-card-media img {
+    max-height: 25rem !important;
+    object-fit: contain !important;
+  }
+
+  .featured-exhibit-grid .exhibit-card-label {
+    min-height: 15.75rem !important;
+  }
+}
+
+/* Global copy alignment: body copy should wrap to its actual parent container, not an artificial narrow text measure. */
+.gallery-section p[class*="leading"],
+.soft-panel p,
+.process-panel p,
+.strategy-plaque dd,
+.exhibit-card-payoff,
+.dove-signal-list p,
+.dove-interpretation,
+.small-callout p,
+.research-stat-card p,
+.proof-card p,
+.channel-card p,
+.whiskas-mini-card p,
+.whiskas-execution-card p,
+.whiskas-supporting-card p,
+.nba-research-copy p,
+.redbubble-gallery-card p,
+.penguin-gallery-card p,
+.ralph-gallery-card p {
+  max-width: 100% !important;
+}
+
+.gallery-section p[class*="max-w-2xl"],
+.gallery-section p[class*="max-w-3xl"],
+.gallery-section p[class*="max-w-md"] {
+  max-width: 100% !important;
+}
+
+body:not(.lab-theme) .dove-stat-card,
+body:not(.lab-theme) .dove-action-card,
+body:not(.lab-theme) .dove-execution-card,
+body:not(.lab-theme) .dove-works-card {
+  border: 1px solid var(--stone) !important;
+  background: var(--gallery-white) !important;
+  box-shadow: none !important;
+}
+
+body:not(.lab-theme) .dove-example-lines span {
+  background: rgba(244, 240, 232, 0.94) !important;
+  box-shadow: inset 0 0 0 1px rgba(216, 208, 194, 0.86) !important;
+}
+
+body:not(.lab-theme) .whiskas-context-panel,
+body:not(.lab-theme) .whiskas-research-panel,
+body:not(.lab-theme) .proof-card,
+body:not(.lab-theme) .whiskas-path-card,
+body:not(.lab-theme) .whiskas-mini-card,
+body:not(.lab-theme) .whiskas-execution-card,
+body:not(.lab-theme) .whiskas-supporting-card {
+  border: 1px solid var(--stone) !important;
+  background: var(--gallery-white) !important;
+  box-shadow: none !important;
+}
+
+body:not(.lab-theme) .whiskas-preview-link,
+body:not(.lab-theme) .whiskas-supporting-preview {
+  background: var(--gallery-white) !important;
+}
+
+body:not(.lab-theme) .whiskas-strategy-card,
+body:not(.lab-theme) .whiskas-idea-card {
+  border: 1px solid var(--stone) !important;
+  background: var(--gallery-white) !important;
+  box-shadow: none !important;
+}
+
+body:not(.lab-theme) .whiskas-strategy-card *,
+body:not(.lab-theme) .whiskas-idea-card * {
+  color: var(--charcoal) !important;
+}
+
+body:not(.lab-theme) .whiskas-strategy-card .eyebrow,
+body:not(.lab-theme) .whiskas-idea-card .eyebrow {
+  color: var(--deep-olive) !important;
+}
+
+body:not(.lab-theme) .whiskas-idea-card p {
+  color: rgba(59, 56, 51, 0.72) !important;
+}
+
+body:not(.lab-theme) .redbubble-context-panel,
+body:not(.lab-theme) .redbubble-strategy-panel,
+body:not(.lab-theme) .redbubble-creative-panel,
+body:not(.lab-theme) .redbubble-problem-card,
+body:not(.lab-theme) .redbubble-insight-card,
+body:not(.lab-theme) .redbubble-insight-card-alt,
+body:not(.lab-theme) .redbubble-big-idea-card,
+body:not(.lab-theme) .redbubble-popup-feature,
+body:not(.lab-theme) .redbubble-audience-panel,
+body:not(.lab-theme) .redbubble-stat-card,
+body:not(.lab-theme) .redbubble-research-copy,
+body:not(.lab-theme) .redbubble-media-copy,
+body:not(.lab-theme) .redbubble-quote-card,
+body:not(.lab-theme) .redbubble-execution-card,
+body:not(.lab-theme) .redbubble-budget-card,
+body:not(.lab-theme) .redbubble-kpi-grid article {
+  border: 1px solid var(--stone) !important;
+  background: var(--gallery-white) !important;
+  box-shadow: none !important;
+}
+
+body:not(.lab-theme) .redbubble-value-list li,
+body:not(.lab-theme) .redbubble-example-lines span,
+body:not(.lab-theme) .redbubble-execution-image,
+body:not(.lab-theme) .redbubble-gallery-image {
+  background: var(--gallery-white) !important;
+  box-shadow: inset 0 0 0 1px rgba(216, 208, 194, 0.86) !important;
+}
+
+body:not(.lab-theme) .redbubble-problem-card *,
+body:not(.lab-theme) .redbubble-insight-card *,
+body:not(.lab-theme) .redbubble-insight-card-alt *,
+body:not(.lab-theme) .redbubble-big-idea-card *,
+body:not(.lab-theme) .redbubble-popup-feature * {
+  color: var(--charcoal) !important;
+}
+
+body:not(.lab-theme) .redbubble-problem-card .eyebrow,
+body:not(.lab-theme) .redbubble-insight-card .eyebrow,
+body:not(.lab-theme) .redbubble-insight-card-alt .eyebrow,
+body:not(.lab-theme) .redbubble-big-idea-card .eyebrow,
+body:not(.lab-theme) .redbubble-popup-feature .eyebrow {
+  color: var(--deep-olive) !important;
+}
+
+body:not(.lab-theme) .redbubble-problem-card p,
+body:not(.lab-theme) .redbubble-insight-card p,
+body:not(.lab-theme) .redbubble-insight-card-alt p,
+body:not(.lab-theme) .redbubble-big-idea-card p,
+body:not(.lab-theme) .redbubble-popup-feature p {
+  color: rgba(59, 56, 51, 0.72) !important;
+}
+
+body:not(.lab-theme) .nba-context-panel,
+body:not(.lab-theme) .nba-creative-panel,
+body:not(.lab-theme) .nba-strategy-panel,
+body:not(.lab-theme) .nba-problem-panel,
+body:not(.lab-theme) .nba-problem-panel p,
+body:not(.lab-theme) .nba-stat-card,
+body:not(.lab-theme) .nba-research-copy,
+body:not(.lab-theme) .nba-quote-card,
+body:not(.lab-theme) .nba-opportunity-panel,
+body:not(.lab-theme) .nba-insight-card,
+body:not(.lab-theme) .nba-big-idea-card,
+body:not(.lab-theme) .nba-execution-card,
+body:not(.lab-theme) .nba-fan-touchpoint,
+body:not(.lab-theme) .nba-pairing-card,
+body:not(.lab-theme) .nba-gallery-card,
+body:not(.lab-theme) .nba-deck-cta {
+  border: 1px solid var(--stone) !important;
+  background: var(--gallery-white) !important;
+  box-shadow: none !important;
+}
+
+body:not(.lab-theme) .nba-execution-image,
+body:not(.lab-theme) .nba-gallery-image {
+  background: var(--gallery-white) !important;
+  box-shadow: inset 0 0 0 1px rgba(216, 208, 194, 0.86) !important;
+}
+
+body:not(.lab-theme) .nba-opportunity-panel *,
+body:not(.lab-theme) .nba-insight-card *,
+body:not(.lab-theme) .nba-big-idea-card * {
+  color: var(--charcoal) !important;
+}
+
+body:not(.lab-theme) .nba-opportunity-panel .eyebrow,
+body:not(.lab-theme) .nba-big-idea-card .eyebrow,
+body:not(.lab-theme) .nba-fan-touchpoint .eyebrow {
+  color: var(--deep-olive) !important;
+}
+
+body:not(.lab-theme) .nba-opportunity-panel p,
+body:not(.lab-theme) .nba-insight-card p,
+body:not(.lab-theme) .nba-big-idea-card p,
+body:not(.lab-theme) .nba-fan-touchpoint p:last-child {
+  color: rgba(59, 56, 51, 0.72) !important;
+}
+
+body:not(.lab-theme) .nba-problem-panel p,
+body:not(.lab-theme) .nba-stat-card p,
+body:not(.lab-theme) .nba-quote-card blockquote,
+body:not(.lab-theme) .nba-execution-copy p,
+body:not(.lab-theme) .nba-pairing-card p {
+  color: rgba(59, 56, 51, 0.72) !important;
+}
+
+body:not(.lab-theme) .nba-stat-card span,
+body:not(.lab-theme) .nba-research-copy h3,
+body:not(.lab-theme) .nba-execution-copy h3,
+body:not(.lab-theme) .nba-pairing-card span,
+body:not(.lab-theme) .nba-deck-cta h2 {
+  color: var(--charcoal) !important;
+}
+
+body:not(.lab-theme) .nba-quote-card figcaption,
+body:not(.lab-theme) .nba-gallery-card figcaption {
+  color: var(--deep-olive) !important;
+}
+
+body:not(.lab-theme) .brand-accent-panel,
+body:not(.lab-theme) .penguin-insight-block,
+body:not(.lab-theme) .small-callout,
+body:not(.lab-theme) .research-stat-card,
+body:not(.lab-theme) .social-system-grid .process-panel,
+body:not(.lab-theme) .platform-layer,
+body:not(.lab-theme) .platform-grid p,
+body:not(.lab-theme) .penguin-gallery-card {
+  border: 1px solid var(--stone) !important;
+  background: var(--gallery-white) !important;
+  box-shadow: none !important;
+}
+
+body:not(.lab-theme) .penguin-gallery-image {
+  background: var(--gallery-white) !important;
+  box-shadow: inset 0 0 0 1px rgba(216, 208, 194, 0.86) !important;
 }

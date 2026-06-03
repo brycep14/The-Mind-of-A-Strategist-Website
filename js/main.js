@@ -1,3 +1,63 @@
+const designModeKey = "museum-of-thought-design-mode";
+const designSwitcherPublic = false;
+const primaryDesignMode = "museum";
+const getDesignMode = () => {
+  try {
+    return window.localStorage.getItem(designModeKey);
+  } catch {
+    return null;
+  }
+};
+const setDesignMode = (mode) => {
+  try {
+    window.localStorage.setItem(designModeKey, mode);
+  } catch {
+    // The switch still works for the current page if storage is unavailable.
+  }
+};
+const storedDesignMode = designSwitcherPublic ? getDesignMode() : primaryDesignMode;
+const prefersLabMode = storedDesignMode !== "museum";
+
+document.body.classList.toggle("lab-theme", prefersLabMode);
+
+const installDesignToggle = () => {
+  const navInner = document.querySelector(".top-nav > div:first-child");
+
+  if (!navInner || document.querySelector("[data-design-toggle]")) {
+    return;
+  }
+
+  const toggle = document.createElement("button");
+  toggle.type = "button";
+  toggle.className = "design-toggle";
+  toggle.dataset.designToggle = "";
+
+  const syncToggle = () => {
+    const isLabMode = document.body.classList.contains("lab-theme");
+    toggle.setAttribute("aria-pressed", String(isLabMode));
+    toggle.textContent = isLabMode ? "Museum Mode" : "Lab Mode";
+    toggle.setAttribute(
+      "aria-label",
+      isLabMode ? "Switch back to the museum design" : "Switch to the strategy innovation lab design",
+    );
+  };
+
+  toggle.addEventListener("click", () => {
+    const isLabMode = document.body.classList.toggle("lab-theme");
+    setDesignMode(isLabMode ? "lab" : "museum");
+    syncToggle();
+  });
+
+  syncToggle();
+
+  const mobileToggle = navInner.querySelector("[data-menu-toggle]");
+  navInner.insertBefore(toggle, mobileToggle || null);
+};
+
+if (designSwitcherPublic) {
+  installDesignToggle();
+}
+
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
 
@@ -64,6 +124,45 @@ if (sourceConfig) {
     nextUrl.searchParams.set("from", source);
     link.setAttribute("href", `${nextUrl.pathname.split("/").pop()}${nextUrl.search}`);
   });
+}
+
+const quoteCollages = document.querySelectorAll("[data-quote-collage]");
+const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+if (quoteCollages.length && !motionQuery.matches) {
+  let quoteFrame = null;
+
+  const updateQuoteCollages = () => {
+    quoteFrame = null;
+
+    quoteCollages.forEach((collage) => {
+      const rect = collage.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || 1;
+      const progress = Math.min(Math.max((viewportHeight - rect.top) / (viewportHeight + rect.height), 0), 1);
+
+      collage.querySelectorAll("blockquote").forEach((quote, index) => {
+        const direction = index % 2 === 0 ? 1 : -1;
+        const depth = 10 + (index % 7) * 4;
+        const shift = (progress - 0.5) * depth * direction;
+        const rotate = ((index % 5) - 2) * 0.28 + (progress - 0.5) * direction * 0.5;
+
+        quote.style.setProperty("--quote-shift", `${shift.toFixed(2)}px`);
+        quote.style.setProperty("--quote-rotate", `${rotate.toFixed(2)}deg`);
+      });
+    });
+  };
+
+  const requestQuoteUpdate = () => {
+    if (quoteFrame) {
+      return;
+    }
+
+    quoteFrame = window.requestAnimationFrame(updateQuoteCollages);
+  };
+
+  updateQuoteCollages();
+  window.addEventListener("scroll", requestQuoteUpdate, { passive: true });
+  window.addEventListener("resize", requestQuoteUpdate);
 }
 
 const penguinGallery = document.querySelector("[data-penguin-gallery]");

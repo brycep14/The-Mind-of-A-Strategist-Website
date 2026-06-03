@@ -8,25 +8,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://use.typekit.net/rbk1jkj.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              paper: "#FAFAF7",
-              ink: "#2B2B2B",
-              charcoal: "#2B2B2B",
-              olive: "#6B705C",
-              mist: "#ECE9E1",
+              paper: "#F4F0E8",
+              ink: "#171614",
+              charcoal: "#171614",
+              olive: "#4F5A45",
+              mist: "#D8D0C2",
             },
             fontFamily: {
-              sans: ["Inter", "sans-serif"],
-              serif: ["ivypresto-display", "Playfair Display", "serif"],
+              sans: ["Source Sans 3", "sans-serif"],
+              serif: ["Libre Baskerville", "Georgia", "serif"],
             },
           },
         },
@@ -63,18 +62,26 @@
         <section class="gallery-section pt-10 md:pt-16">
           <div class="section-wash"></div>
           <div class="mx-auto w-full max-w-6xl px-6 md:px-10">
-            <section class="soft-panel resume-feature mb-10 p-7 md:mb-14 md:p-9">
-              <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">Resume</p>
-              <h1 class="section-title font-serif text-charcoal">The formal record.</h1>
-              <p class="mt-4 max-w-2xl text-base leading-8 text-charcoal/72 md:text-lg md:leading-9">
-                A quick view of the experience, education, and work history behind the gallery.
-              </p>
-              <div class="mt-6">
-                <a class="deck-link-button" href="images/RealAdResumeBrycePeterson.pdf" target="_blank" rel="noreferrer">View My Resume →</a>
+            <section class="about-me-section soft-panel p-7 md:p-9">
+              <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">About Me</p>
+              <h2 class="section-title font-serif text-charcoal">Bryce Peterson</h2>
+              <div class="about-me-copy mt-6 text-base leading-8 text-charcoal/72 md:text-lg md:leading-9">
+                <p>I’m Bryce Peterson, a fan of sports, an enjoyer of art, a lover of dinosaurs, and an aspiring advertising strategist.</p>
+                <p>I’m currently studying advertising at Brigham Young University and part of the prestigious BYU AdLab.</p>
+                <p>I enjoy doing new activities, exploring new hobbies, and learning new fun facts. My brain seems to work best when my hands are given something to do.</p>
+                <p>Despite my 6’5” height now, I was too short during my school years to play basketball (my dream sport) so I settled for cross country and track. Running taught me a lot about discipline, grit, and determination, but nowadays I just use it to get into shape for intramural basketball (which is my NBA finals these days).</p>
+                <p>Born in Oklahoma, I hold strong allegiance to Oklahoma City Thunder basketball, and to the Oklahoma and Oklahoma State University teams (my parents were a modern day Romeo and Juliet if you know what Bedlam is).</p>
+                <p>Brigham Young University has captured my heart now though. I have fallen in love with its mountains (perfect for close skiing), its people, and its cool temperatures (cold &gt; hot).</p>
+                <p>I hope to learn everything I can about whatever subjects I can get my hand on in hopes of creating advertising campaigns that will inspire positive actions beyond brand sales (though those are important too).</p>
+                <p>If you want to talk or play sports, have a hobby you want someone to try with you, or just want to make something inspiring, please hit me up!</p>
+              </div>
+              <div class="about-photo-marquee mt-8" hidden aria-label="About Me photo carousel">
+                <div class="about-photo-track">
+                </div>
               </div>
             </section>
 
-            <div class="relative mb-10 md:mb-14">
+            <div class="relative mb-10 mt-14 md:mb-14 md:mt-16">
               <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">About the Artist</p>
               <h1 class="section-title font-serif text-charcoal">The Insight Loop</h1>
               <p class="mt-5 max-w-2xl text-base leading-8 text-charcoal/68 md:text-lg">
@@ -107,7 +114,7 @@
                   </li>
                   <li class="process-step turning-point step-backward-one">
                     <span class="process-number">04</span>
-                    <h2 class="process-title">Loop back: what would need to be true?</h2>
+                    <h2 class="process-title">Loop Back: What Would Need to Be True?</h2>
                   </li>
                   <li class="process-step step-primary">
                     <span class="process-number">05</span>
@@ -127,7 +134,7 @@
                   </li>
                   <li class="process-step turning-point step-backward-two">
                     <span class="process-number">09</span>
-                    <h2 class="process-title">Loop back: does the idea still hold?</h2>
+                    <h2 class="process-title">Loop Back: Does the Idea Still Hold?</h2>
                   </li>
                   <li class="process-step step-creative">
                     <span class="process-number">10</span>
@@ -135,28 +142,6 @@
                   </li>
                 </ol>
               </div>
-
-            <div class="about-copy-grid">
-              <div class="space-y-7">
-                <div class="soft-panel p-7 md:p-9">
-                  <p class="text-base leading-8 text-charcoal/72 md:text-lg md:leading-9">
-                    I’m Bryce Peterson, an advertising strategist interested in the gap between what people say, what they feel, and what culture makes hard to admit. I like finding the tension inside a problem and turning it into a clear direction a creative team can build from.
-                  </p>
-                </div>
-                <div class="soft-panel p-7 md:p-9">
-                  <h2 class="mb-4 font-serif text-[2rem] leading-tight text-charcoal">Philosophy</h2>
-                  <p class="text-base leading-8 text-charcoal/72 md:text-lg md:leading-9">
-                    I believe strategy is strongest when instinct and evidence are allowed to challenge each other. The first idea matters because it reveals a direction, but the research decides whether that direction has a real human reason to exist.
-                  </p>
-                </div>
-                <div class="soft-panel p-7 md:p-9">
-                  <h2 class="mb-4 font-serif text-[2rem] leading-tight text-charcoal">Vision</h2>
-                  <p class="text-base leading-8 text-charcoal/72 md:text-lg md:leading-9">
-                    I want to make work that is useful before it is flashy: work that gives brands a sharper role in people’s lives, gives creatives a stronger springboard, and makes the final idea feel inevitable once you see the thinking behind it.
-                  </p>
-                </div>
-              </div>
-            </div>
 
             <div class="wardrobe-archive mt-14 py-12 md:mt-16 md:py-16">
               <div class="mb-8 md:mb-10">
@@ -231,52 +216,6 @@
               </div>
             </div>
 
-            <div class="about-artist-gallery mt-14 md:mt-16">
-              <div class="relative mb-8 md:mb-10">
-                <p class="eyebrow mb-4 text-[0.72rem] font-medium uppercase text-olive/90">Beyond the Brief</p>
-                <h2 class="section-title font-serif text-charcoal">Hobbies, side projects, and the other rooms I keep wandering into</h2>
-                <p class="mt-5 max-w-2xl text-base leading-8 text-charcoal/68 md:text-lg">
-                  A few quieter obsessions that keep feeding the work from the side.
-                </p>
-              </div>
-
-              <div class="gallery-glimpse">
-                <div class="gallery-glimpse-grid">
-                  <a class="gallery-glimpse-piece hobby-link-card" href="hobby-music.html">
-                    <div class="glimpse-frame">
-                      <img class="glimpse-art" src="images/guitartalentshowpictureframe.png" alt="Framed music hobby portrait" loading="lazy" decoding="async" />
-                    </div>
-                    <div class="glimpse-label glimpse-label-small">
-                      <p class="glimpse-meta">Hobby 01</p>
-                      <h3 class="glimpse-title">Music</h3>
-                      <p class="glimpse-description">Songs, sounds, and the little performances that keep ideas moving.</p>
-                    </div>
-                  </a>
-
-                  <a class="gallery-glimpse-piece hobby-link-card" href="hobby-basketball.html">
-                    <div class="glimpse-frame">
-                      <img class="glimpse-art" src="images/basketballhobbypictureframe.png" alt="Framed basketball hobby portrait" loading="lazy" decoding="async" />
-                    </div>
-                    <div class="glimpse-label glimpse-label-small">
-                      <p class="glimpse-meta">Hobby 02</p>
-                      <h3 class="glimpse-title">Basketball</h3>
-                      <p class="glimpse-description">Competition keeps me honest about repetition, adjustment, and what improvement actually demands.</p>
-                    </div>
-                  </a>
-
-                  <a class="gallery-glimpse-piece hobby-link-card" href="hobby-adventuring.html">
-                    <div class="glimpse-frame">
-                      <img class="glimpse-art" src="images/adventurehobbypictureframe.png" alt="Framed adventuring hobby portrait" loading="lazy" decoding="async" />
-                    </div>
-                    <div class="glimpse-label glimpse-label-small">
-                      <p class="glimpse-meta">Hobby 03</p>
-                      <h3 class="glimpse-title">Adventuring</h3>
-                      <p class="glimpse-description">Getting outside, wandering somewhere new, and collecting better stories.</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
       </main>
