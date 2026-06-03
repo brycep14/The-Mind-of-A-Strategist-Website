@@ -69,20 +69,6 @@ if (menuToggle && mobileMenu) {
   });
 }
 
-const processToggle = document.querySelector("[data-process-toggle]");
-const processChart = document.querySelector("#artist-process-chart");
-
-if (processToggle && processChart) {
-  processToggle.addEventListener("click", () => {
-    const isExpanded = processToggle.getAttribute("aria-expanded") === "true";
-    const nextExpanded = !isExpanded;
-
-    processToggle.setAttribute("aria-expanded", String(nextExpanded));
-    processToggle.textContent = nextExpanded ? "Hide The Insight Loop" : "View The Insight Loop";
-    processChart.hidden = !nextExpanded;
-  });
-}
-
 const pageParams = new URLSearchParams(window.location.search);
 const source = pageParams.get("from");
 

@@ -63,13 +63,6 @@ File: `index.html`
 - Redbubble | 2024 | Spec Campaign
 - Positions Redbubble as a marketplace for visible identity and connection, not just product decoration.
 
-### How I Think Preview
-
-- How I Think
-- Problem → Instinct → Evidence → Insight → Idea
-- I start with the consumer problem, test my first creative instinct against research, and keep looping until the tension, insight, strategy, and idea all point in the same direction.
-- See the Framework →
-
 ### Curator’s Note / Artist Statement
 
 - Curator’s Note
@@ -181,26 +174,6 @@ File: `artist-statement.html`
 - The formal record.
 - A quick view of the experience, education, and work history behind the gallery.
 - View My Resume →
-- About the Artist
-- The Insight Loop
-- A museum-style map of how I turn a consumer problem into a strategy and then loop back to make sure the insight, evidence, and idea actually line up.
-- Hide The Insight Loop
-
-### Process Framework
-
-- Problem → Instinct → Evidence → Insight → Idea
-- I often start with a gut creative direction, then work backward through research and forward again through strategy. The loop-back moments are where I test whether the idea is actually earned.
-- 01 Problem
-- 02 Gut Reaction
-- 03 Imagined Execution
-- 04 Loop back: what would need to be true?
-- 05 Research
-- 06 Themes
-- 07 Evidence Check
-- 08 Insight
-- 09 Loop back: does the idea still hold?
-- 10 Strategy → Creative Starters
-
 ### About Copy
 
 - I’m Bryce Peterson, an advertising strategist interested in the gap between what people say, what they feel, and what culture makes hard to admit. I like finding the tension inside a problem and turning it into a clear direction a creative team can build from.
