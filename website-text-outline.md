@@ -72,12 +72,11 @@ File: `index.html`
 - Life is meant for improvement, is it not?
 - Read About the Artist →
 
-### Personal Taste Archive
+### My Personal Style
 
-- Personal Taste Archive
+- My Personal Style
 - Throwing a Fit
 - A small side room for texture, thrifted finds, and the visual taste that feeds the work from outside the brief.
-- Explore the Closet →
 
 ### Contact CTA
 
@@ -190,12 +189,11 @@ File: `artist-statement.html`
 
 ### Beyond The Brief
 
-#### Personal Taste Archive
+#### My Personal Style
 
-- Personal Taste Archive
+- My Personal Style
 - Throwing a Fit
 - The only thing better than a new sweater, is a thrifted one.
-- Explore the Closet →
 
 ---
 
@@ -210,7 +208,7 @@ File: `closet.html`
 ### Intro
 
 - ← Back to About the Artist
-- Personal Taste Archive
+- My Personal Style
 - The Closet
 - A closer look at the sweater collection: texture, pattern, and the little visual choices that keep feeding the work.
 
